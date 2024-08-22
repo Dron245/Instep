@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	@@include('html/_head.htm',{ "title":"HomePage" })
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="page__main main">
+					<div class="main__decor-circkle">
+						<svg width="511" height="1487" viewBox="0 0 511 1487" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<g filter="url(#filter0_f_2174_1229)">
+							  <circle cx="-258" cy="718" r="315" fill="#73E4EC" />
+							</g>
+							<defs>
+							  <filter id="filter0_f_2174_1229" x="-1027" y="-51" width="1538" height="1538" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+								 <feFlood flood-opacity="0" result="BackgroundImageFix" />
+								 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+								 <feGaussianBlur stdDeviation="227" result="effect1_foregroundBlur_2174_1229" />
+							  </filter>
+							</defs>
+						 </svg>
+					</div>
+					<div class="main__decor-left"><img src="@img/main/decor_left.png" alt="decor"></div>
+					<div class="main__container">
+						<div class="main__actions">
+							<h1 class="main__title">Протезы instep</h1>
+							<p class="main__text">Ваш путь к активной жизни без границ</p>
+							<button data-popup="#popup" class="main__button button button_yellow">бесплатная консультация</button>
+						</div>
+						<div class="main__img testimg">
+							<img src="@img/main/1.png" alt="Image" />
+						</div>
+					</div>
+					<div class="main__decor-right"><img src="@img/main/decor_right.png" alt="decor"></div>
+				</section>
+
+				<!-- <div class="test3">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facere facilis
+						tempora commodi, consectetur error incidunt, quo provident reprehenderit aspernatur
+						ut! Fugiat ratione obcaecati, animi consequuntur eos cupiditate distinctio
+						voluptatum, beatae perferendis ipsa enim magnam ducimus. Quo odio autem, porro
+						recusandae aliquam ut dolorum! Deleniti magnam expedita ut ab ratione debitis
+						eligendi unde perspiciatis, labore libero! Sed harum, accusantium quos aperiam
+						incidunt fugiat rerum architecto perferendis libero tempore, natus consequatur
+						velit? Pariatur commodi reprehenderit quia, quisquam vitae sequi possimus odio,
+						quasi totam corporis a, illo iure quo excepturi? Recusandae nobis fugiat tempora
+						veniam distinctio voluptatem, excepturi hic illo nemo autem.
+					</div> -->
+
+				<!-- <button class="button main__button"><img src="@img/vk.svg" alt="Image"> ВКонтакте</button> -->
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

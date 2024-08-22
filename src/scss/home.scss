@@ -1,0 +1,110 @@
+//======MAIN==============================================================================================
+
+.page {
+
+	&__main {
+	}
+}
+.main {
+	position: relative;
+	&__decor-left {
+		position: absolute;
+		left: 0;
+		top: 150px;
+		@media (min-width:toEm(1350)){
+			@include adaptiveValue("top", -350, 150,0,4000,1350);
+			  @include adaptiveValue("width", 1000,304,0, 4000,1350);
+		}
+		img {
+		 width:100%;
+		 height:auto
+		}
+	}
+
+	&__decor-right {
+		position: absolute;
+		right: 0;
+		top: -200px;
+		@media (min-width:toEm(1350)){
+			@include adaptiveValue("top", -350, -200,0,4000,1350);
+			  @include adaptiveValue("width", 1000,304,0, 4000,1350);
+		}
+		img {
+			width:100%;
+			height:auto
+		  }
+	}
+	&__decor-circkle {
+		position: absolute;
+		top: -150px;
+	}
+	&__container {
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+	}
+
+	&__actions {
+		flex: 0 0 45.213675%; /* 529/1170 */
+		aspect-ratio: 529/440;
+		background: url("@img/main/cover3.svg") 0px 0 / cover no-repeat;
+		padding: 64px 38px;
+	}
+
+	&__title {
+		font-weight: 700;
+	font-size: 70px;
+	line-height: 99%;
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+	font-family: $fontSecondFamily;
+	}
+
+	&__text {
+		margin-top: 12px;
+		font-size: 20px;
+		font-weight: 500;
+	}
+	
+	&__button {
+		margin-top: 75px;
+		height: 61px;
+		padding-inline: 38px;
+		text-transform: uppercase;
+	}
+
+	&__img {
+		img {
+		 width:100%;
+		 height:auto
+		}
+	}
+
+	
+}
+.test2 {
+}
+.testsvg {
+}
+.button {
+
+	&_yellow {
+	}
+}
+
+.test3 {
+	margin-top: 10px;
+	position: relative;
+	padding: 10px;
+	border: 1px solid $akcent2;
+	&:before {
+		content: "";
+		border: 1px solid $akcent2;
+		position: absolute;
+		inset: 0px;
+		filter: blur(5px);
+	}
+}
+
+
+//====================================================================================================

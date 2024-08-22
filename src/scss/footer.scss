@@ -1,0 +1,108 @@
+//====================================================================================================
+.footer {
+	clip-path: polygon(90% 0, 100% 15%, 100% 100%, 0 100%, 0 15%, 10% 0);
+	// background-color: darkblue;
+	.header__link {
+		width: 28.547009%; /* 334/1170 */
+		height: 50px;
+	}
+	&__container {
+		padding-top: 116px;
+	}
+
+	&__top {
+		// outline: 1px solid red;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+	}
+
+	&__contacts {
+		flex: 0 0 200px;
+		display: grid;
+		gap: 10px;
+		transform: translateY(12px);
+	}
+
+	&__link {
+		text-align: end;
+	}
+
+	&__center {
+	}
+
+	&__bottom {
+	}
+
+	&__bottom-bg {
+		display: flex;
+		justify-content: center;
+		img {
+		 width:100%;
+		 height:auto
+		}
+	}
+}
+.header {
+
+	&__logo {
+	}
+
+	&__menu {
+	}
+
+	&__link {
+	}
+}
+.menu {
+
+	&__body {
+	}
+
+	&__list {
+	}
+
+	&__item {
+	}
+
+	&__link {
+	}
+}
+.light {
+}
+.center-footer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 32px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid $osnovnoy;
+	&__social {
+		display: flex;
+		gap: 15px;
+		transform: translateY(-12px);
+	}
+
+	&__link {
+	}
+}
+.button {
+}
+.bottom-footer {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+	&__link {
+	}
+
+	&__text {
+		text-align: right;
+		& p:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+}
+
+//====================================================================================================

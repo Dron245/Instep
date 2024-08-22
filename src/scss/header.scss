@@ -1,0 +1,31 @@
+.header {
+	padding-top: 90px;
+	padding-bottom: 60px;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		display: grid;
+		gap: 5px;
+		max-width: 170px;
+		p {
+			font-size: toRem(12);
+			letter-spacing: 0.01em;
+		}
+	}
+
+	&__menu {
+		
+	}
+
+	&__link {
+		width: 200px;
+		height: 47px;
+
+		
+	}
+}
+

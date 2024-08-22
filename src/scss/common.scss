@@ -1,0 +1,60 @@
+// Заголовки, общие БЄМ блоки и прочее...
+.button {
+	position: relative;
+	border: 1px solid;
+	display: flex;
+	gap: 5px;
+	font-weight: 700;
+	font-size: 17px;
+	align-items: center;
+	justify-content: center;
+	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
+	&_yellow[class] {
+		border-color: $akcent;
+		&:active {
+			background-color: $akcent;
+		}
+		&::before{
+			border-color: $akcent;
+		}
+		&::after{
+			border-top-color: $akcent;
+		}
+	}
+
+	&:before {
+		content: "";
+		border: 1px solid;
+		position: absolute;
+		inset: 0px;
+		transition: filter 0.3s;
+		filter: blur(0px);
+	}
+	&:hover {
+		&::before {
+			filter: blur(5px);
+		}
+	}
+	&:active {
+		&::before {
+			filter: blur(5px);
+		}
+	}
+}
+.button::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 20px;
+	right: -4px;
+	border-top: 6px solid;
+	width: 54px;
+	transform-origin: right top;
+	transform: rotate(-46deg);
+	top: calc(100% - 15px);
+	bottom: 0;
+	right: -1px;
+	width: 28px;
+	transform-origin: right top;
+	transform: rotate(-40deg);
+}
