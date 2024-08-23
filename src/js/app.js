@@ -87,7 +87,7 @@ flsFunctions.tabs();
 Документация:
 Сниппет (HTML):
 */
- import './libs/keywords.js'
+// import './libs/keywords.js'
 
 /*
 Модуль "Попапы"

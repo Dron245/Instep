@@ -1,0 +1,58 @@
+.page {
+	&__stroke {
+	}
+}
+.stroke {
+	&__content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		height: 80px;
+		width: 110%;
+		left: -5px;
+		// width:300px;
+		margin: 0 auto;
+		background: $akcent2;
+		rotate: -3deg;
+		// filter: blur(10px);
+		&::after {
+			content: "";
+			position: absolute;
+			border: 5px solid $akcent2;
+			inset: 0px;
+			filter: blur(10px);
+		}
+	}
+
+	&__text {
+		color: $osnovnoy-2;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 0.93;
+		text-transform: uppercase;
+		animation: text 25s infinite linear;
+		white-space: nowrap;
+		@media (min-width: toEm(2600)) {
+			animation: text2 25s infinite linear;
+		}
+	}
+	@keyframes text {
+		0% {
+			transform: translate(0, 0);
+		}
+
+		100% {
+			transform: translate(-70%, 0);
+		}
+	}
+	@keyframes text2 {
+		0% {
+			transform: translate(0, 0);
+		}
+
+		100% {
+			transform: translate(-50%, 0);
+		}
+	}
+}
+
