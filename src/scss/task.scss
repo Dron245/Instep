@@ -1,0 +1,55 @@
+.page {
+	&__task {
+		position: relative;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.task {
+	&__container {
+		display: flex;
+		gap: 30px;
+	}
+
+	&__item {
+		&:first-child {
+			flex: 0 0 48.717949%; /* 570/1170 */
+		}
+		.text:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		font-weight: 500;
+		font-size: 25px;
+		line-height: 100%;
+		letter-spacing: 0.01em;
+		margin-bottom: 80px;
+	}
+
+	&__decor {
+		position: absolute;
+		right: 0;
+		z-index: -1;
+
+		&_handle {
+			top: -280px;
+			@media (min-width: toEm(1350)) {
+				@include adaptiveValue("top", -750, -280, 0, 4000, 1350);
+				@include adaptiveValue("width", 1000, 300, 0, 4000, 1350);
+			}
+		}
+
+		&_elipse {
+			top: -700px;
+			z-index: -2;
+		}
+	}
+}

@@ -1,0 +1,52 @@
+.page {
+
+	&__work {
+	}
+}
+.work {
+	position: relative;
+	&__decor {
+		position: absolute;
+		left: 0;
+		top: -280px;
+		@media (min-width: toEm(1350)) {
+			@include adaptiveValue("top", -750, -280, 0, 4000, 1350);
+			@include adaptiveValue("width", 1000, 300, 0, 4000, 1350);
+		}
+	}
+
+	&__container {
+		display: flex;
+		gap: 30px;
+	}
+
+	&__item {
+		&:first-child{
+			flex: 0 0 40.17094%; /* 470/1170 */
+		}
+		&:last-child{
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	&__title {
+	}
+
+	&__social {
+		margin-top: auto;
+		display: flex;
+		gap: 35px;
+	}
+
+	&__link {
+		width: 200px;
+		height: 54px;
+		
+	}
+}
+.text {
+}
+.button {
+}

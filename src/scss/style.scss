@@ -162,4 +162,9 @@ body {
 @import "footer";
 
 // Подключение стилей отдельных страниц
-@import "home";
+@import "main";
+@import "slider";
+@import "production";
+@import "new";
+@import "task";
+@import "work";

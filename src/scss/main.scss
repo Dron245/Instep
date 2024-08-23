@@ -25,6 +25,7 @@
 		position: absolute;
 		right: 0;
 		top: -200px;
+		z-index: -1;
 		@media (min-width:toEm(1350)){
 			@include adaptiveValue("top", -350, -200,0,4000,1350);
 			  @include adaptiveValue("width", 1000,304,0, 4000,1350);
@@ -79,32 +80,8 @@
 		 height:auto
 		}
 	}
-
-	
-}
-.test2 {
-}
-.testsvg {
-}
-.button {
-
-	&_yellow {
-	}
 }
 
-.test3 {
-	margin-top: 10px;
-	position: relative;
-	padding: 10px;
-	border: 1px solid $akcent2;
-	&:before {
-		content: "";
-		border: 1px solid $akcent2;
-		position: absolute;
-		inset: 0px;
-		filter: blur(5px);
-	}
-}
 
 
 //====================================================================================================
