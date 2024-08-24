@@ -1,4 +1,66 @@
 // Заголовки, общие БЄМ блоки и прочее...
+.button__wrapper {
+	position: relative;
+	.t, .b, .l, .r, .cut {
+		position: absolute;
+		transition: filter 0.3s;
+		z-index: 3;
+		background-color: $akcent2;
+	}
+	&_yellow {
+		.t, .b, .l, .r, .cut {
+			position: absolute;
+		transition: filter 0.3s;
+		z-index: -1;
+			background-color: $akcent;
+		}
+	}
+	.t {
+		width: 100%;
+		height: 1px;
+		top: 0;
+		left: 0;
+	}
+	.l {
+		width: 1px;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	.r {
+		width: 1px;
+		right: 0;
+		top: 0;
+		height: calc(100% - 14px);
+	}
+	.b {
+		height: 1px;
+		width: calc(100% - 17px);
+		left: 0;
+		bottom: 0;
+	}
+	.cut {
+		right: 0;
+		width: 1px;
+		bottom: 0;
+		height: 1px;
+		transform: rotate(40deg);
+		transform-origin: right top;
+		top: calc(100% - 15px);
+		bottom: 0;
+		right: 1px;
+		width: 20px;
+		transform-origin: right top;
+		transform: rotate(-40deg);
+	}
+	&:hover .t, &:hover .l,&:hover .r,&:hover .b, &:hover .cut {
+		filter: blur(10px);
+	}
+	&:active {
+		// background-color: $akcent2;
+	}
+}
+
 .button {
 	position: relative;
 	border: 1px solid $akcent2;
@@ -9,9 +71,41 @@
 	align-items: center;
 	justify-content: center;
 	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
-	// border-color: $akcent2;
-	.skew {
-
+	z-index: 2;
+	&:before {
+		content: "";
+		border: 1px solid;
+		border-color: $akcent2;
+		position: absolute;
+		inset: -1px;
+		transition: filter 0.3s;
+		filter: blur(0px);
+	}
+	&:hover {
+		&::before {
+			// filter: blur(5px);
+			// z-index: 1;
+		}
+	}
+	&:active {
+		&::before {
+			// filter: blur(5px);
+		}
+	}
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: -4px;
+		border-top: 6px solid $akcent2;
+		width: 54px;
+		transform-origin: right top;
+		top: calc(100% - 15px);
+		bottom: 0;
+		right: -1px;
+		width: 28px;
+		transform-origin: right top;
+		transform: rotate(-40deg);
 	}
 	&:active {
 		background-color: $akcent2;
@@ -35,43 +129,7 @@
 		}
 	}
 
-	&:before {
-		content: "";
-		border: 1px solid;
-		border-color: $akcent2;
-		position: absolute;
-		inset: 0px;
-		transition: filter 0.3s;
-		filter: blur(0px);
-	}
-	&:hover {
-		&::before {
-			filter: blur(5px);
-			z-index: 1;
-		}
-	}
-	&:active {
-		&::before {
-			filter: blur(5px);
-		}
-	}
-	&::after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 20px;
-		right: -4px;
-		border-top: 6px solid $akcent2;
-		width: 54px;
-		transform-origin: right top;
-		transform: rotate(-46deg);
-		top: calc(100% - 15px);
-		bottom: 0;
-		right: -1px;
-		width: 28px;
-		transform-origin: right top;
-		transform: rotate(-40deg);
-	}
+	
 }
 
 section:not(:first-child) {

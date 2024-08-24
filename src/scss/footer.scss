@@ -2,9 +2,13 @@
 .footer {
 	clip-path: polygon(90% 0, 100% 15%, 100% 100%, 0 100%, 0 15%, 10% 0);
 	// background-color: darkblue;
-	.header__link {
+	.button__wrapper {
+
 		width: 28.547009%; /* 334/1170 */
+	}
+	.header__link {
 		height: 50px;
+		width: initial;
 	}
 	&__container {
 		padding-top: 116px;

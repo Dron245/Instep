@@ -50,6 +50,9 @@
 		aspect-ratio: 529/440;
 		background: url("@img/main/cover3.svg") 0px 0 / cover no-repeat;
 		padding: 64px 38px;
+		.button__wrapper {
+			width: fit-content;
+		}
 	}
 
 	&__title {
