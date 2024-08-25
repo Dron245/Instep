@@ -96,7 +96,7 @@ letter-spacing: 0.01em;
 	// @media (max-width:$mobile){
 	flex-direction: column;
 	width: max-content;
-	height: 260px;
+	// height: 260px;
 	// @include adaptiveValue("height", 380, 170,0,768,320);
 	// }
 
@@ -112,8 +112,8 @@ letter-spacing: 0.01em;
 		// @media (max-width:$mobile){
 		width: 2px;
 		height: 95%;
-		top: 1%;
-		left: 50%;
+		top: 8px;
+		left: 7.5px;
 		transform: translate(-50%, 0%);
 		&::after{
 			content:'';
@@ -122,34 +122,30 @@ letter-spacing: 0.01em;
 			background-color: $akcent2;
 			filter: blur(10px);
 		}
-		// filter: blur(10px);
 		// }
 	}
 
 	&__circle {
-		background-color: $akcent2;
-		border-radius: 50%;
-		width: 15px;
-		height: 15px;
-		// filter: blur(10px);
-		// border: 2px solid $akcent2;
+		
 		justify-content: center;
 		position: relative;
 		z-index: 4;
-		&::after{
+		&::before, &::after{
 			content:'';
 			position: absolute;
-			inset: 0;
-			filter: blur(10px);
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
 			background-color: $akcent2;
-			z-index: 2;
+			top: 7px;
+			}
+		&::after{
+			filter: blur(10px);
 		}
 		&:last-child {
 			& .progress__description {
-				// left: initial;
-				// right: 23px;
-				right: initial;
-				left: 100%;
+				// right: initial;
+				// left: 100%;
 			}
 		}
 		&:first-child {
@@ -159,30 +155,42 @@ letter-spacing: 0.01em;
 				}
 			}
 		}
-
-		@media (max-width: $tablet) {
-			// width: 35px;
-			// height: 35px;
-		}
-		@media (max-width: $mobile) {
-			// width: 30px;
-			// height: 30px;
-		}
-		@media (max-width: $mobileSmall) {
-			// width: 20px;
-			// height: 20px;
-		}
 	}
 
 	&__description {
-		padding-left: 15px;
-		position: absolute;
-		top: -6px;
+		padding-left: 30px;
+		// position: absolute;
+		// top: -6px;
 		left: 100%;
-		width: max-content;
 		font-weight: 500;
 		font-size: 25px;
+		display: block;
+		padding-bottom: 10px;
+		// width: 300px;
 		line-height: 120%;
+		position: relative;
+		left: 0;
+		&::before,&::after{
+			content:'';
+			position: absolute;
+			left: 6.5px;
+			top: 15px;
+			width: 2px;
+			height: 110%;
+			background-color: $akcent2;
+		}
+		&::after{
+			filter: blur(10px);
+		}
+		&_last {
+			&::before, &::after{
+				display: none;
+			}
+
+		}
+		&:last-child{
+			
+		}
 		@media (max-width: $tablet) {
 			// font-size: 16px;
 		}
