@@ -27,4 +27,11 @@ window.addEventListener("DOMContentLoaded", () => {
 	function documentActions(e) {
 		const targetElement = e.target;
 	}
+
+	const inrb = document.querySelector('.in-rb');
+	const inlt = document.querySelector('.in-lt');
+	setInterval(function(){inrb.style.display='block'},2000)
+	setInterval(function(){inrb.style.display='none'},4000,2000)
+	setInterval(function(){inlt.style.display='block'},2000)
+	setInterval(function(){inlt.style.display='none'},4000,2000)
 })
