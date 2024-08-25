@@ -30,8 +30,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	const inrb = document.querySelector('.in-rb');
 	const inlt = document.querySelector('.in-lt');
-	setInterval(function(){inrb.style.display='block'},2000)
-	setInterval(function(){inrb.style.display='none'},4000,2000)
-	setInterval(function(){inlt.style.display='block'},2000)
-	setInterval(function(){inlt.style.display='none'},4000,2000)
+	setInterval(function(){inrb.style.opacity='1'},2000)
+	setInterval(function(){inrb.style.opacity='0'},4000,2000)
+	setInterval(function(){inlt.style.opacity='1'},2000)
+	setInterval(function(){inlt.style.opacity='0'},4000,2000)
 })

@@ -46,11 +46,13 @@
 			.in-rb {
 				position: absolute;
 				background-color: $akcent2;
-				display: none;
+				// display: none;
+				opacity: 0;
 				width: 2px;
 				z-index: 4;
 				transform: rotate(45deg);
 				height: 97px;
+				transition: opacity 0.2s;
 			}
 			.in-rb {
 				transform-origin: top;
@@ -85,7 +87,7 @@
 				background-color: #1a232a;
 				background-repeat: no-repeat;
 				background-position: 0 0;
-				background: repeating-conic-gradient(from -66.5deg, $akcent2 0% 25%, transparent 25% 50%, $akcent2 50%);
+				background: repeating-conic-gradient(from -71.5deg, $akcent2 0% 25%, transparent 25% 50%, $akcent2 50%);
 				animation: rotate 8s linear infinite;
 			}
 
