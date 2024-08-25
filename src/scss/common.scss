@@ -1,17 +1,25 @@
 // Заголовки, общие БЄМ блоки и прочее...
 .button__wrapper {
 	position: relative;
-	.t, .b, .l, .r, .cut {
+	.t,
+	.b,
+	.l,
+	.r,
+	.cut {
 		position: absolute;
 		transition: filter 0.3s;
-		z-index: 3;
+		z-index: 1;
 		background-color: $akcent2;
 	}
 	&_yellow {
-		.t, .b, .l, .r, .cut {
+		.t,
+		.b,
+		.l,
+		.r,
+		.cut {
 			position: absolute;
-		transition: filter 0.3s;
-		z-index: -1;
+			transition: filter 0.3s;
+			z-index: 1;
 			background-color: $akcent;
 		}
 	}
@@ -53,84 +61,89 @@
 		transform-origin: right top;
 		transform: rotate(-40deg);
 	}
-	&:hover .t, &:hover .l,&:hover .r,&:hover .b, &:hover .cut {
+	&:hover .t,
+	&:hover .l,
+	&:hover .r,
+	&:hover .b,
+	&:hover .cut {
 		filter: blur(10px);
+		// filter: drop-shadow();
 	}
 	&:active {
 		// background-color: $akcent2;
 	}
-}
-
-.button {
-	position: relative;
-	border: 1px solid $akcent2;
-	display: flex;
-	gap: 5px;
-	font-weight: 700;
-	font-size: 17px;
-	align-items: center;
-	justify-content: center;
-	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
-	z-index: 2;
-	&:before {
-		content: "";
-		border: 1px solid;
-		border-color: $akcent2;
-		position: absolute;
-		inset: -1px;
-		transition: filter 0.3s;
-		filter: blur(0px);
-	}
-	&:hover {
-		&::before {
-			// filter: blur(5px);
-			// z-index: 1;
-		}
-	}
-	&:active {
-		&::before {
-			// filter: blur(5px);
-		}
-	}
-	&::after {
-		content: "";
-		display: block;
-		position: absolute;
-		right: -4px;
-		border-top: 6px solid $akcent2;
-		width: 54px;
-		transform-origin: right top;
-		top: calc(100% - 15px);
-		bottom: 0;
-		right: -1px;
-		width: 28px;
-		transform-origin: right top;
-		transform: rotate(-40deg);
-	}
-	&:active {
-		background-color: $akcent2;
-	}
-	&::before {
-		// border-color: $akcent2;
-	}
-	&::after {
-		border-top-color: $akcent2;
-	}
-	&_yellow[class] {
-		border-color: $akcent;
-		&:active {
-			background-color: $akcent;
-		}
-		&::before {
+	.button {
+		position: relative;
+		border: 1px solid $akcent2;
+		display: flex;
+		gap: 5px;
+		font-weight: 700;
+		font-size: 17px;
+		align-items: center;
+		justify-content: center;
+		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
+		z-index: 2;
+		&_yellow[class] {
 			border-color: $akcent;
+			&:active {
+				background-color: $akcent;
+			}
+			&::before {
+				border-color: $akcent;
+			}
+			&::after {
+				border-top-color: $akcent;
+			}
+		}
+		&:before {
+			// content: "";
+			border: 1px solid;
+			border-color: $akcent2;
+			position: absolute;
+			inset: -1px;
+			transition: filter 0.3s;
+			filter: blur(0px);
+		}
+		&:hover {
+			&::before {
+				// filter: blur(5px);
+				// z-index: 1;
+			}
+		}
+		&:active {
+			&::before {
+				// filter: blur(5px);
+			}
 		}
 		&::after {
-			border-top-color: $akcent;
+			content: "";
+			display: block;
+			position: absolute;
+			right: -4px;
+			border-top: 6px solid $akcent2;
+			width: 54px;
+			transform-origin: right top;
+			top: calc(100% - 15px);
+			bottom: 0;
+			right: -1px;
+			width: 28px;
+			transform-origin: right top;
+			transform: rotate(-40deg);
 		}
+		&:active {
+			background-color: $akcent2;
+		}
+		&::before {
+			// border-color: $akcent2;
+		}
+		&::after {
+			border-top-color: $akcent2;
+		}
+		
 	}
-
-	
 }
+
+//========================================================================================================================================================
 
 section:not(:first-child) {
 	margin-top: 150px;
