@@ -55,18 +55,32 @@
 				z-index: 4;
 				transform: rotate(45deg);
 				height: 97px;
-				transition: opacity 0.4s;
+				// transition: opacity 0.4s;
 			}
 			.in-rb {
 				transform-origin: top;
 				right: 15px;
 				bottom: -12px;
+				&._view {
+					animation: view 2s linear infinite;
+				}
 			}
-
+			
 			.in-lt {
 				top: -12px;
 				left: 15px;
 				transform-origin: bottom;
+				&._view {
+					animation: view 2s linear infinite;
+				}
+			}
+			@keyframes view {
+				
+					0% {opacity: 0;}
+					32% {opacity: 1;}
+					92% {opacity: 1;}
+					100% {opacity: 0;}
+			
 			}
 		}
 		.in {

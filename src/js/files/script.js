@@ -30,8 +30,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	const inrb = document.querySelector('.in-rb');
 	const inlt = document.querySelector('.in-lt');
-	setInterval(function(){inrb.style.opacity='1'},2000)
-	setInterval(function(){inrb.style.opacity='0'},4000,2000)
-	setInterval(function(){inlt.style.opacity='1'},2000)
-	setInterval(function(){inlt.style.opacity='0'},4000,2000)
+	setInterval(function(){inrb.classList.add('_view')},2000)
+	setInterval(function(){inrb.classList.remove('_view')},4000,2000)
+	setInterval(function(){inlt.classList.add('_view')},2000)
+	setInterval(function(){inlt.classList.remove('_view')},4000,2000)
 })
