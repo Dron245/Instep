@@ -1,0 +1,63 @@
+.page {
+
+	&__request {
+	}
+}
+.request {
+
+	&__container {
+		display: flex;
+		gap: 67px;
+	}
+
+	&__body {
+	}
+
+	&__title {
+	}
+
+	&__text {
+	}
+}
+.popup {
+
+	&__form {
+		.request & {
+			flex: 0 0 570px;
+		}
+	}
+
+	&__form-item {
+	}
+
+	&__subtext {
+	}
+
+	&__button {
+	}
+}
+.input {
+}
+.input-mask {
+}
+.button {
+
+	&_yellow {
+	}
+
+	&__wrapper {
+
+		&_yellow {
+		}
+	}
+}
+.t {
+}
+.b {
+}
+.l {
+}
+.r {
+}
+.cut {
+}
