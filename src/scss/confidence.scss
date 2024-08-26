@@ -1,0 +1,173 @@
+.page {
+
+	&__confidence {
+	}
+}
+.confidence {
+	position: relative;
+	&__decor {
+	position: absolute;
+		&_elipce {
+		}
+
+		&_cepb {
+		right: 16%;
+		top: 167px;
+		z-index: -1;
+		}
+	}
+
+	&__container {
+	}
+
+	&__title {
+		text-align: right;
+		margin-bottom: 60px;
+	}
+
+	&__content {
+	}
+
+	&__top {
+		display: flex;
+		margin-bottom: 30px;
+	}
+
+	&__text {
+		@media (min-width:$mobile){
+			  
+			flex: 0 0 48.461538%; /* 567/1170 */
+		}
+	}
+
+	&__last-img {
+		display: flex;
+		gap: 30px;
+		@media (max-width:$mobile){
+			 display: none; 
+		}
+	}
+
+	&__subtitle {
+		font-weight: 700;
+font-size: 30px;
+font-family: $fontSecondFamily;
+color: $akcent;
+/* line-height: 52px; */ 
+line-height: 173%;
+letter-spacing: 0.01em;
+text-transform: uppercase;
+margin-bottom: 30px;
+& + p {
+	margin-bottom: 20px;
+}
+	}
+
+	&__bottom {
+	}
+
+	&__slider {
+		&.swiper {
+			overflow: initial;
+		}
+	& + p {
+		// display: none;
+		}
+	}
+
+	&__wrapper {
+		@media (min-width:$mobile){
+			 gap: 30px; 
+		}
+	}
+
+	&__slide {
+		@media (min-width:$mobile){
+			 flex: 0 0 270px; 
+		}
+		img {
+		 width:100%;
+		 height:auto
+		}
+		&_rotate-top {
+			@media (min-width:$mobile){
+				  transform: rotate(-10deg);
+				  top: 30px;
+				  left: 10px;
+				  position: relative;
+				  z-index: 2;
+				&::before{
+					content:'';
+					position: absolute;
+					inset: -12px;
+					border: 3px solid $akcent2;
+					background-color: transparent;
+					box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+					
+				}
+				&::after{
+					content:'';
+					position: absolute;
+					inset: -12px;
+					border: 3px solid $akcent2;
+					background-color: transparent;
+					filter: blur(10px);
+					border-radius: 20px;
+				}
+			}
+			
+		}
+
+		&_last-top {
+			// position: absolute;
+		}
+
+		&_text {
+			display: flex;
+			p.text {
+				height: fit-content;
+				margin-top: auto;
+				font-size: 16px;
+				line-height: 1.31;
+			}
+			@media (max-width:$mobile){
+				margin-top: 20px;
+			}
+		}
+	}
+
+	&__pagination {
+		margin-top: 20px;
+		display: flex;
+		gap: 5px;
+		align-items: center;
+		justify-content: center;
+		.swiper-pagination-bullet {
+			width: 30px;
+			height: 5px;
+			background-color: $osnovnoy;
+			@media (max-width:$mobile){
+				 width: 18px; 
+			}
+		}
+		
+		.swiper-pagination-bullet-active {
+			background-color: $akcent;
+			@media (max-width:$mobile){
+				width: 24px;
+				  
+			}
+		}
+		@media (min-width:$mobile){
+			 display: none; 
+		}
+	}
+}
+.text {
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}

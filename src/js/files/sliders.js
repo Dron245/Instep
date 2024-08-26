@@ -130,9 +130,73 @@ function initSlidersScroll() {
 	}
 }
 
+
+
+
 window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
+
+	//Слайдер "скидки и акции на главной"
+	if(document.querySelector('.confidence__slider')){
+		const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
+		let swiper;
+	
+		breakpoint = window.matchMedia(breakpoint);
+	
+		const enableSwiper = function(className, settings) {
+		swiper = new Swiper(className, settings);
+	
+		  if (callback) {
+			 callback(swiper);
+		  }
+		}
+	
+		const checker = function() {
+		  if (breakpoint.matches) {
+			 return enableSwiper(swiperClass, swiperSettings);
+		  } else {
+			 if (swiper !== undefined) swiper.destroy(true, true);
+			 return;
+		  }
+		};
+	
+		breakpoint.addEventListener('change', checker);
+		checker();
+	 }
+	
+	 resizableSwiper(
+		'(max-width: 767.96px)',
+		'.confidence__slider',
+		{
+			modules: [Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1.7,
+			spaceBetween: 20,
+			// autoHeight: true,
+			speed: 800,
+			
+			// Пагинация
+			
+			pagination: {
+				el: '.confidence__pagination',
+				clickable: true,
+			},
+			
+			// Брейкпоинты
+			breakpoints: {
+				360: {
+					slidesPerView: 1,
+					// spaceBetween: 20,
+					// autoHeight: true,
+				},
+				
+			},
+		},
+		// someFunc
+	  );
+	}
 	//Запуск инициализации скролла на базе слайдера (по классу swiper_scroll)
 	//initSlidersScroll();
 });

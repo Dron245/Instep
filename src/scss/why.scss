@@ -1,0 +1,56 @@
+.page {
+
+	&__why {
+		position: relative;
+	}
+}
+.why {
+
+	&__decor {
+		position: absolute;
+		z-index: -1;
+		&_cepb {
+			// top: 700px;
+			bottom: -300px;
+		}
+
+		&_handle {
+			top: -50px;
+			right: 0;
+		}
+	
+		&_lcepb {
+			top: 365px;
+		}
+
+		&_rcepb {
+			top: -290px;
+			right: 0;
+		}
+
+		&_belipce {
+			right: 0;
+		}
+	}
+
+	&__container {
+		.list {
+			max-width: 870px;
+		}
+	}
+
+	&__content {
+		display: flex;
+	}
+
+	&__galery {
+	}
+
+	&__img {
+	}
+
+	&__title {
+		margin-bottom: 60px;
+	}
+}
+

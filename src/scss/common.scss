@@ -68,7 +68,7 @@
 	&:hover .cut {
 		filter: blur(10px);
 	}
-	
+
 	.button {
 		position: relative;
 		border: 1px solid $akcent2;
@@ -101,7 +101,7 @@
 			transition: filter 0.3s;
 			filter: blur(0px);
 		}
-		
+
 		&::after {
 			content: "";
 			display: block;
@@ -120,11 +120,10 @@
 		&:active {
 			background-color: $akcent2;
 		}
-		
+
 		&::after {
 			border-top-color: $akcent2;
 		}
-		
 	}
 }
 
@@ -151,5 +150,50 @@ h2[class*="__title"] {
 	letter-spacing: 0.01em;
 	span {
 		color: $akcent;
+	}
+}
+
+div[class*="decor"] {
+	@media (min-width: toEm(1920)) {
+		display: none;
+	}
+}
+
+.list {
+	&__item {
+		display: flex;
+		align-items: flex-start;
+		gap: 66px;
+		padding-block: 20px;
+		border-bottom: 1px solid $osnovnoy;
+		&:first-child {
+			border-top: 1px solid $osnovnoy;
+		}
+	}
+}
+.punkt {
+	font-weight: 700;
+	font-size: 28px;
+	color: $akcent;
+	font-family: $fontSecondFamily;
+	/* line-height: 27px; */
+	line-height: 96%;
+	letter-spacing: 0.01em;
+	text-transform: uppercase;
+}
+.list-item-content {
+	&__title {
+		font-weight: 700;
+		font-size: 25px;
+		font-family: $fontSecondFamily;
+		/* line-height: 27px; */
+		line-height: 108%;
+		letter-spacing: 0.01em;
+		margin-bottom: 10px;
+	}
+
+	&__text {
+		line-height: 131%;
+		letter-spacing: 0.01em;
 	}
 }
