@@ -13,7 +13,8 @@
 		position: relative;
 		height: 571px;
 		border: 2px solid $akcent;
-		clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 calc(0% + 70px));
+		// clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 calc(0% + 70px));
+		clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 70px);
 		border-radius: 2px;
 		.content {
 			position: absolute;
@@ -86,7 +87,8 @@
 		.in {
 			position: absolute;
 			inset: 15px;
-			clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 calc(0% + 70px));
+			// clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 calc(0% + 70px));
+			clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 70px);
 			span {
 				position: absolute;
 				background-color: $akcent2;

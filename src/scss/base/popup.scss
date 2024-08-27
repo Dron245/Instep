@@ -141,10 +141,13 @@ margin-bottom: 30px;
 		}
 	}
 	&._form-error {
-		border-color: #ba0000 ;
+		border:1px solid #ba0000 ;
+		.form__error {
+			display: none;
+		}
 		&::before,&::after{
-			content:'';
-			border-color: #ba0000 ;
+			// content:'';
+			border:1px solid  #ba0000;
 		}
 	}
 

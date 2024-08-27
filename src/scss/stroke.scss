@@ -30,10 +30,10 @@
 		font-size: 30px;
 		line-height: 0.93;
 		text-transform: uppercase;
-		animation: text 25s infinite linear;
+		animation: text 50s infinite linear;
 		white-space: nowrap;
 		@media (min-width: toEm(2600)) {
-			animation: text2 25s infinite linear;
+			animation: text2 40s infinite linear;
 		}
 	}
 	@keyframes text {

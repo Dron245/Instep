@@ -100,6 +100,79 @@ function initSliders() {
 			}
 		});
 	}
+
+	if (document.querySelector('.reviews__slider')) { //Указываем класс нужного слайдера
+		//Создаем слайдер
+				new Swiper('.reviews__slider', { //Указываем класс нужного слайдера
+						//Подключаем модули слайдера
+						//для конкретного случая
+					modules: [Pagination],
+					observer: true,
+					observeParents: true,
+					slidesPerView: 1,
+					spaceBetween: 0,
+					// autoHeight: true,
+					speed: 800,
+		
+					loop: true,
+		
+					/*
+					// Эффекты
+					autoplay: {
+						delay: 3000,
+						disableOnInteraction: false,
+					},
+					*/
+		
+					// Пагинация
+					
+					pagination: {
+						el: '.reviews__pagination',
+						clickable: true,
+					},
+					
+		
+					// Скроллбар
+					/*
+					scrollbar: {
+						el: '.swiper-scrollbar',
+						draggable: true,
+					},
+					*/
+		
+					// Кнопки "влево/вправо"
+					// navigation: {
+					// 	prevEl: '.swiper-button-prev',
+					// 	nextEl: '.swiper-button-next',
+					// },
+					/*
+					// Брейкпоинты
+					breakpoints: {
+						640: {
+							slidesPerView: 1,
+							spaceBetween: 0,
+							autoHeight: true,
+						},
+						768: {
+							slidesPerView: 2,
+							spaceBetween: 20,
+						},
+						992: {
+							slidesPerView: 3,
+							spaceBetween: 20,
+						},
+						1268: {
+							slidesPerView: 4,
+							spaceBetween: 30,
+						},
+					},
+					*/
+					// События
+					on: {
+		
+					}
+				});
+			}
 }
 //Скролл на базе слайдера (по классу swiper scroll для оболочки слайдера)
 function initSlidersScroll() {
@@ -137,7 +210,7 @@ window.addEventListener("load", function (e) {
 	// Запуск инициализации слайдеров
 	initSliders();
 
-	//Слайдер "скидки и акции на главной"
+	//"
 	if(document.querySelector('.confidence__slider')){
 		const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
 		let swiper;
@@ -181,6 +254,126 @@ window.addEventListener("load", function (e) {
 			
 			pagination: {
 				el: '.confidence__pagination',
+				clickable: true,
+			},
+			
+			// Брейкпоинты
+			breakpoints: {
+				360: {
+					slidesPerView: 1,
+					// spaceBetween: 20,
+					// autoHeight: true,
+				},
+				
+			},
+		},
+		// someFunc
+	  );
+	}
+
+	if(document.querySelector('.videos__slider')){
+		const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
+		let swiper;
+	
+		breakpoint = window.matchMedia(breakpoint);
+	
+		const enableSwiper = function(className, settings) {
+		swiper = new Swiper(className, settings);
+	
+		  if (callback) {
+			 callback(swiper);
+		  }
+		}
+	
+		const checker = function() {
+		  if (breakpoint.matches) {
+			 return enableSwiper(swiperClass, swiperSettings);
+		  } else {
+			 if (swiper !== undefined) swiper.destroy(true, true);
+			 return;
+		  }
+		};
+	
+		breakpoint.addEventListener('change', checker);
+		checker();
+	 }
+	
+	 resizableSwiper(
+		'(max-width: 767.96px)',
+		'.videos__slider',
+		{
+			modules: [Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1.7,
+			spaceBetween: 20,
+			// autoHeight: true,
+			speed: 800,
+			
+			// Пагинация
+			
+			pagination: {
+				el: '.videos__pagination',
+				clickable: true,
+			},
+			
+			// Брейкпоинты
+			breakpoints: {
+				360: {
+					slidesPerView: 1,
+					// spaceBetween: 20,
+					// autoHeight: true,
+				},
+				
+			},
+		},
+		// someFunc
+	  );
+	}
+
+	if(document.querySelector('.vk__slider')){
+		const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {
+		let swiper;
+	
+		breakpoint = window.matchMedia(breakpoint);
+	
+		const enableSwiper = function(className, settings) {
+		swiper = new Swiper(className, settings);
+	
+		  if (callback) {
+			 callback(swiper);
+		  }
+		}
+	
+		const checker = function() {
+		  if (breakpoint.matches) {
+			 return enableSwiper(swiperClass, swiperSettings);
+		  } else {
+			 if (swiper !== undefined) swiper.destroy(true, true);
+			 return;
+		  }
+		};
+	
+		breakpoint.addEventListener('change', checker);
+		checker();
+	 }
+	
+	 resizableSwiper(
+		'(max-width: 767.96px)',
+		'.vk__slider',
+		{
+			modules: [Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1.7,
+			spaceBetween: 20,
+			// autoHeight: true,
+			speed: 800,
+			
+			// Пагинация
+			
+			pagination: {
+				el: '.vk__pagination',
 				clickable: true,
 			},
 			

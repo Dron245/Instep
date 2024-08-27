@@ -8,10 +8,12 @@
 		&__decor {
 			position: absolute;
 			&_l {
+				left: -400px;
 			}
 
 			&_r {
-				right: 0;
+				top: -200px;
+				right: -100px;
 			}
 		}
 
@@ -54,5 +56,7 @@ letter-spacing: 0.01em;
 
 	&__map {
 		margin-top: 60px;
+		position: relative;
+		z-index: 3;
 	}
 }

@@ -182,19 +182,13 @@
 	}
 
 	&__pagination {
-		margin-top: 20px;
-		display: flex;
-		gap: 5px;
-		align-items: center;
-		justify-content: center;
-		.swiper-pagination-bullet {
-			width: 30px;
-			height: 5px;
-			background-color: $osnovnoy;
-		}
-
-		.swiper-pagination-bullet-active {
-			background-color: $akcent;
+		@media (min-width:$mobile){
+			margin-top: 20px;
+			 display: flex;
+			 .swiper-pagination-bullet {
+				
+				height: 5px;
+			 }
 		}
 	}
 }

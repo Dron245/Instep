@@ -1,0 +1,51 @@
+.page {
+}
+.tv {
+
+		&__container {
+			display: flex;
+
+		}
+
+		&__item {
+			flex: 0 0 50%;
+			&:not(:last-child) {
+				margin-right: 50px;
+			}
+		}
+		
+		&__img {
+			border: 1px solid $akcent2;
+			aspect-ratio: 550/365;
+			position: relative;
+			background-color: $osnovnoy-2;
+			// z-index: 2;
+			display: grid;
+			place-items: center;
+			
+			.videos__link {
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+			}
+		}
+
+		&__after {
+			position: absolute;
+			top: -20px;
+			right: -20px;
+			z-index: -1;
+			img {
+			 width:100%;
+			 height:auto
+			}
+		}
+}
+.videos {
+
+		&__img {
+		}
+
+		&__link {
+		}
+}

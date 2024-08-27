@@ -1,0 +1,118 @@
+.page {
+
+	&__vk {
+	}
+}
+.vk {
+
+	&__container {
+	}
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 50px;
+	}
+
+	&__title {
+	}
+
+	&__content {
+	}
+
+	&__slider[class] {
+		@media (min-width:$mobile){
+			 overflow: initial; 
+		}
+	}
+
+	&__wrapper[class] {
+		@media (min-width:$mobile){
+			flex-wrap: wrap;
+			row-gap: 40px;
+			column-gap: 50px;
+			}
+	}
+
+	&__slide {
+		position: relative;
+		z-index: 2;
+		@media (min-width:$mobile){
+			  flex: 0 0 30.48%; /* 360/1170 */
+		}
+	}
+
+	&__link {
+	width: 100%;
+	position: relative;
+	z-index: 3;
+		img {
+		 width:100%;
+		 height:auto
+		}
+	}
+
+	&__after {
+		position: absolute;
+			top: -20px;
+			right: -20px;
+			z-index: 2;
+			img {
+			 width:100%;
+			 height:auto;
+				&.img-blur {
+					position: absolute;
+					inset: 0;
+					filter: blur(10px);
+					width: initial;
+					height: initial;
+				}
+			}
+			@media (max-width:$mobile){
+				 display: none; 
+			}
+	}
+	&__pagination {
+	}
+
+	&__button {
+		width: 270px;
+		height: 60px;
+		text-transform: uppercase;
+	}
+}
+.button {
+
+	&_yellow {
+	}
+
+	&__wrapper {
+
+		&_yellow {
+		}
+	}
+}
+.t {
+}
+.b {
+}
+.l {
+}
+.r {
+}
+.cut {
+}
+.fonds {
+
+	&__button {
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.pagination {
+}
