@@ -7,10 +7,14 @@
 }
 .main {
 	position: relative;
+	.menu-open & {
+		z-index: 1;
+	}
 	&__decor-left {
 		position: absolute;
 		left: 0;
 		top: 150px;
+		z-index: -1;
 		@media (min-width:toEm(1350)){
 			@include adaptiveValue("top", -350, 150,0,4000,1350);
 			  @include adaptiveValue("width", 1000,304,0, 4000,1350);
@@ -38,6 +42,7 @@
 	&__decor-circkle {
 		position: absolute;
 		top: -150px;
+		z-index: -1;
 	}
 	&__container {
 		display: flex;
@@ -48,7 +53,7 @@
 	&__actions {
 		flex: 0 0 45.213675%; /* 529/1170 */
 		aspect-ratio: 529/440;
-		background: url("@img/main/cover3.svg") 0px 0 / cover no-repeat;
+		background: url("@img/main/cover3.svg") 0px 0 / contain no-repeat;
 		padding: 64px 38px;
 		.button__wrapper {
 			width: fit-content;

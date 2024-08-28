@@ -30,9 +30,17 @@ window.addEventListener("DOMContentLoaded", () => {
 		})
 	});
 	document.addEventListener("click", documentActions);
-	
+	let flag = true;
 	function documentActions(e) {
 		const targetElement = e.target;
+		// console.log(targetElement);
+		if (!targetElement.closest(".menсu__icon") && !targetElement.closest(".menu__body") && flag == true) {
+			flag = false;
+		} else if (!targetElement.closest(".menсu__icon") && !targetElement.closest(".menu__body") && flag == false) {
+			flag = true;
+			document.querySelector(".menu-open") ? document.documentElement.classList.remove("lock") : null;
+			document.querySelector(".menu-open") ? document.documentElement.classList.remove("menu-open") : null;
+		}
 	}
 
 	const inrb = document.querySelector('.in-rb');
@@ -40,5 +48,6 @@ window.addEventListener("DOMContentLoaded", () => {
 	setInterval(function(){inrb.classList.add('_view')},2000)
 	setInterval(function(){inrb.classList.remove('_view')},4000,2000)
 	setInterval(function(){inlt.classList.add('_view')},2000)
-	setInterval(function(){inlt.classList.remove('_view')},4000,2000)
+	setInterval(function(){inlt.classList.remove('_view')},4000,2000);
+	
 })

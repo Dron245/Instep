@@ -108,11 +108,17 @@
 										<h3 class="slider__title">
 											Протезирование <span>без бумажной волокиты</span>
 										</h3>
-										<p class="slider__text">
+										<div class="slider__text">
 											Наши опытные юристы помогут оформить документы и проконсультируют по всем
-											вопросам протезирования
-											<a href="#" class="slider__button button button_yellow">бесплатно</a>
-										</p>
+											вопросам протезирования <div class="button__wrapper button__wrapper_yellow">
+												<span class="t"></span><span class="b"></span><span class="l"></span
+												><span class="r"></span><span class="cut"></span>
+												<a href="#" class="slider__button button button_yellow"
+													>бесплатно</a
+												>
+											</div>
+											
+										</div>
 									</div>
 									<div class="slider__img">
 										<img src="@img/slider/5.jpg" alt="Image" />
@@ -224,19 +230,23 @@
 										<span class="progress__description"
 											>Собственное производство протезов в Санкт-Петербурге</span
 										>
+										<div class="progress__line-mobile"><img src="@img/production/Frame 336000.svg" alt=""></div>
 									</div>
 									<div class="progress__circle">
 										<span class="progress__description"
 											>Более 10 лет опыта работы в сфере протезирования</span
 										>
+										<div class="progress__line-mobile"><img src="@img/production/Frame 336000.svg" alt=""></div>
 									</div>
 									<div class="progress__circle">
 										<span class="progress__description">Сотни довольных клиентов</span>
+										<div class="progress__line-mobile"><img src="@img/production/Frame 336000.svg" alt=""></div>
 									</div>
 									<div class="progress__circle">
 										<span class="progress__description"
 											>Уникальная Школа Ходьбы с собственным садом реабилитации</span
 										>
+										<div class="progress__line-mobile"><img src="@img/production/Frame 336000.svg" alt=""></div>
 									</div>
 									<div class="progress__circle">
 										<span class="progress__description progress__description_last"
@@ -256,9 +266,9 @@
 					</div>
 				</section>
 				<section class="page__new new">
-					<div class="new__decor">
+					<!-- <div class="new__decor">
 						<img src="@img/new/Ellipse 47.png" alt="Image" />
-					</div>
+					</div> -->
 					<div class="new__content">
 						<div class="new__item new__item_left">
 							<div class="new__img">
@@ -428,11 +438,11 @@
 					</div>
 					<div class="why__container">
 						<h2 class="why__title">ПОЧЕМУ МЫ?</h2>
-						<ul class="list">
+						<ul class="list list-top">
 							<li class="list__item">
 								<div class="punkt">01</div>
 								<div class="list-item-content">
-									<p class="list-item-content__title">Индивидуальные протезы высшего качества за 3-5 дней</p>
+									<p class="list-item-content__title">Индивидуальные протезы высшего качества<br> за 3-5 дней</p>
 									<p class="list-item-content__text">Создаем протезы по вашим уникальным меркам, учитывая все особенности. Гарантия 24 месяца для вашего спокойствия.</p>
 								</div>
 							</li>
@@ -467,7 +477,7 @@
 							<li class="list__item">
 								<div class="punkt">06</div>
 								<div class="list-item-content">
-									<p class="list-item-content__title">Протезы для активной жизни: от садоводства до спорта</p>
+									<p class="list-item-content__title">Протезы для активной жизни: от садоводства <br>до спорта</p>
 									<p class="list-item-content__text">Мы создаем протезы, которые подходят для любых увлечений - будь то работа в саду, рыбалка, охота или занятия спортом. Цель компании - вернуть вам возможность заниматься любимым делом без ограничений.</p>
 								</div>
 							</li>
@@ -483,28 +493,28 @@
 				</section>
 				<section class="page__services services">
 					<div class="services__container">
-						<div data-tabs="768" class="services__tabs">
+						<div data-tabs class="services__tabs">
 							<div class="services__top">
 								<h2 class="services__title">Наши услуги</h2>
 								<nav data-tabs-titles class="services__navigation">
 									<div class="button__wrapper button__wrapper_yellow _tab-active ">
 										<span class="t"></span><span class="b"></span><span class="l"></span
 										><span class="r"></span><span class="cut"></span>
-										<button type="button" class="services__button button button_yellow"
-											>Протезирование нижних конечностей</button
+										<button type="button" name="Протезирование нижних конечностей" class="services__button button button_yellow"
+											>Протезирование нижних конечностей </button
 										>
 									</div>
 									<div class="button__wrapper button__wrapper_yellow ">
 										<span class="t"></span><span class="b"></span><span class="l"></span
 										><span class="r"></span><span class="cut"></span>
-										<button type="button" class="services__button button button_yellow"
-											>Протезирование верхних конечностей</button
+										<button type="button" name="Протезирование верхних конечностей" class="services__button button button_yellow"
+											>Протезирование верхних конечностей </button
 										>
 									</div>
 									<div class="button__wrapper button__wrapper_yellow ">
 										<span class="t"></span><span class="b"></span><span class="l"></span><span class="r"></span><span class="cut"></span>
-										<button type="button" class="services__button button button_yellow"
-											>Детское<br> протезирование</button>
+										<button type="button" name="Детское протезирование" class="services__button button button_yellow"
+											>Детское протезирование </button>
 									</div>
 								</nav>
 							</div>
@@ -754,11 +764,11 @@
 								<h2 class="fonds__title">Мы гордимся<br>сотрудничеством с ведущими благотворительными фондами</h2>
 								<div class="fonds__bottom">
 									<div class="fonds__item">
-										<p class="text">Наша работа получила высокую оценку и была отмечена в публикациях</p>
+										<p class="text">Наша работа получила высокую оценку<br> и была отмечена в публикациях</p>
 										<div class="button__wrapper button__wrapper_yellow">
 											<span class="t"></span><span class="b"></span><span class="l"></span
 											><span class="r"></span><span class="cut"></span>
-											<a href="#" class="fonds__button button button_yellow"
+											<a data-goto=".page__tv" data-goto-top="40" href="#" class="fonds__button button button_yellow"
 												>Смотреть</a
 											>
 										</div>
@@ -782,7 +792,7 @@
 						</div>
 					</div>
 				</section>
-				<section class="page tv tv">
+				<section class="page__tv tv">
 					<div class="tv__container">
 						<div class="tv__item">
 							<div class="tv__img">
@@ -999,7 +1009,7 @@
 									<div class="videos__slide videos__slide_2 swiper-slide">
 										<p class="videos__mob-title">Истории успеха</p>
 										<div class="videos__img"><img  src="@img/videos/v-02.jpg" alt="Image"></div>
-										<a data-fancybox href="@img/video/video_1.mp4" class="videos__link">
+										<a data-fancybox href="@img/video/video_2.mp4" class="videos__link">
 											<img src="@img/videos/play.svg" alt="Открыть" />
 										</a>
 										<p class="videos__text">Ксюша на наших протезах завоевывает медали в легкой атлетике и катается на коньках - живет полноценной жизнью ребенка</p>
@@ -1007,7 +1017,7 @@
 									<div class="videos__slide videos__slide_3 swiper-slide">
 										<p class="videos__mob-title">Истории успеха</p>
 										<div class="videos__img"><img  src="@img/videos/v-03.jpg" alt="Image"></div>
-										<a data-fancybox href="@img/video/video_1.mp4" class="videos__link">
+										<a data-fancybox href="@img/video/video_3.mp4" class="videos__link">
 											<img src="@img/videos/play.svg" alt="Открыть" />
 										</a>
 										<p class="videos__text">Виктория стала мамой, вышла замуж и работает фитнес инструктором в бассейне на протезе Instep</p>
@@ -1015,7 +1025,7 @@
 									<div class="videos__slide videos__slide_4 swiper-slide">
 										<p class="videos__mob-title">Истории успеха</p>
 										<div class="videos__img"><img  src="@img/videos/v-04.jpg" alt="Image"></div>
-										<a data-fancybox href="@img/video/video_1.mp4" class="videos__link">
+										<a data-fancybox href="@img/video/video_4.mp4" class="videos__link">
 											<img src="@img/videos/play.svg" alt="Открыть" />
 										</a>
 										<p class="videos__text">Андрей пробует себя в разных направлениях экстремального спорта на парных протезах Instep</p>
@@ -1024,14 +1034,14 @@
 										<p class="videos__mob-title">Истории успеха</p>
 										<div class="videos__img"><img  src="@img/videos/v-05.jpg" alt="Image"></div>
 										<p class="videos__text">Илья завоёвывает призовые места на чемпионатах России и строит планы на участие в паралимпийских играх с нашим протезом</p>
-										<a data-fancybox href="@img/video/video_1.mp4" class="videos__link">
+										<a data-fancybox href="@img/video/video_5.mp4" class="videos__link">
 											<img src="@img/videos/play.svg" alt="Открыть" />
 										</a>
 									</div>
 									<div class="videos__slide videos__slide_6 swiper-slide">
 										<p class="videos__mob-title">Истории успеха</p>
 										<div class="videos__img"><img  src="@img/videos/v-06.jpg" alt="Image"></div>
-										<a data-fancybox href="@img/video/video_1.mp4" class="videos__link">
+										<a data-fancybox href="@img/video/video_6.mp4" class="videos__link">
 											<img src="@img/videos/play.svg" alt="Открыть" />
 										</a>
 										<p class="videos__text">Тимур после успешного освоения спортивного протеза от нашей компании, решил что пора возвращаться к своему любимому хобби - игре в волейбол</p>
@@ -1132,7 +1142,7 @@
 							<p class="contacts__text">order@instep.spb.ru</p>
 						</div>
 						<div class="contacts__map">
-							<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A154779a3d84bf6ad87b8f1f85ff0ce0ea59f6278cf2e387fdd39dbfb91c6bc41&amp;source=constructor" width="1170" height="396" frameborder="0"></iframe>
+							<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A154779a3d84bf6ad87b8f1f85ff0ce0ea59f6278cf2e387fdd39dbfb91c6bc41&amp;source=constructor" width="100%" height="396" frameborder="0"></iframe>
 						</div>
 					</div>
 				</section>

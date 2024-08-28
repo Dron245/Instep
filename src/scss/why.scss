@@ -5,7 +5,12 @@
 	}
 }
 .why {
-
+	.list-top .list__item {
+		padding-right: 30px;
+		.list-item-content__text {
+			padding-right: 40px;
+		}
+	}
 	&__decor {
 		position: absolute;
 		z-index: -1;

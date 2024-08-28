@@ -44,6 +44,7 @@
 		display: flex;
 		flex-direction: column;
 		position: relative;
+		align-items: flex-start;
 		@media (max-width:$mobile){
 			 padding: 0; 
 		}
@@ -124,6 +125,19 @@ letter-spacing: 0.01em;
 		}
 	}
 	&__link {
+		position: relative;
+		&::after{
+			content:'';
+			position: absolute;
+			inset: 0;
+			border: 2px solid $akcent;
+			transition: filter 0.3s;
+		}
+		&:hover{
+			&::after{
+				filter: blur(10px);
+			}
+		}
 		@media (max-width:$mobile){
 			 padding-left: 20px; 
 		}
@@ -152,4 +166,9 @@ letter-spacing: 0.01em;
 }
 .fancybox__container[class] {
 	max-width: 2000px;
+}
+
+.fancybox__content {
+	aspect-ratio: initial !important;
+	height: 100% !important;
 }

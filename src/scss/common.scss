@@ -135,6 +135,7 @@
 		align-items: center;
 		justify-content: center;
 		.swiper-pagination-bullet {
+			cursor: pointer;
 			width: 30px;
 			height: 5px;
 			background-color: $osnovnoy;

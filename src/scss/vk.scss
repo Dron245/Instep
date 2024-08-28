@@ -80,6 +80,7 @@
 		width: 270px;
 		height: 60px;
 		text-transform: uppercase;
+		// left: 20px;
 	}
 }
 .button {
@@ -88,31 +89,10 @@
 	}
 
 	&__wrapper {
-
+		.vk & {
+			left: 20px;
+		}
 		&_yellow {
 		}
 	}
-}
-.t {
-}
-.b {
-}
-.l {
-}
-.r {
-}
-.cut {
-}
-.fonds {
-
-	&__button {
-	}
-}
-.swiper {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
-.pagination {
 }

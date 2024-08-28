@@ -96,9 +96,12 @@ letter-spacing: 0.01em;
 	// @media (max-width:$mobile){
 	flex-direction: column;
 	width: max-content;
-	// height: 260px;
-	// @include adaptiveValue("height", 380, 170,0,768,320);
-	// }
+	@media (max-width:$mobile){
+		.production & {
+
+			width: initial; 
+		}
+	}
 
 	&__line {
 		background-color: $akcent2;
@@ -126,7 +129,6 @@ letter-spacing: 0.01em;
 	}
 
 	&__circle {
-		
 		justify-content: center;
 		position: relative;
 		z-index: 4;
@@ -138,34 +140,37 @@ letter-spacing: 0.01em;
 			border-radius: 50%;
 			background-color: $akcent2;
 			top: 7px;
+			@media (max-width:$mobile){
+				.production & {
+
+					display: none; 
+				}
+			}
 			}
 		&::after{
 			filter: blur(10px);
 		}
-		&:last-child {
-			& .progress__description {
-				// right: initial;
-				// left: 100%;
-			}
-		}
-		&:first-child {
-			& .progress__description {
-				@media (max-width: $tablet) and (min-width: $mobile) {
-					// left: 0;
-				}
-			}
+		
+		@media (max-width:$mobile){
+			 &:not(:last-child) {
+				// margin-bottom: 75px;
+			 } 
 		}
 	}
-
+	&__line-mobile {
+		display: flex;
+		justify-content: center;
+		@media (min-width:$mobile){
+			 display: none; 
+		}
+	}
 	&__description {
 		padding-left: 30px;
-		// position: absolute;
-		// top: -6px;
 		left: 100%;
 		font-weight: 500;
 		font-size: 25px;
 		display: block;
-		padding-bottom: 10px;
+		padding-bottom: 20px;
 		// width: 300px;
 		line-height: 120%;
 		position: relative;
@@ -178,6 +183,11 @@ letter-spacing: 0.01em;
 			width: 2px;
 			height: 110%;
 			background-color: $akcent2;
+			@media (max-width:$mobile){
+				.production & {
+					display: none; 
+				}
+			}
 		}
 		&::after{
 			filter: blur(10px);
@@ -186,24 +196,22 @@ letter-spacing: 0.01em;
 			&::before, &::after{
 				display: none;
 			}
-
 		}
-		&:last-child{
-			
-		}
+		
 		@media (max-width: $tablet) {
 			// font-size: 16px;
 		}
 		// text-wrap: nowrap;
 		@media (max-width: $mobile) {
-			// padding-left: 20px;
-			// @include adaptiveValue("font-size", 28, 13,0,768,320);
-			// font-weight: 600;
-			// bottom: 10px;
-			// transform: translateY(-3px);
+			.production & {
+				padding-left: 0px;
+				width: 100%;
+				text-align: center;
+				padding-bottom: 0;
+			}
 		}
 		@media (max-width: $mobileSmall) {
-			//  transform: translateY(-8px);
+
 		}
 	
 	}

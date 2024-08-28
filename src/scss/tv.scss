@@ -27,6 +27,18 @@
 				position: absolute;
 				bottom: 20px;
 				right: 20px;
+				&::after{
+					content:'';
+					position: absolute;
+					inset: 0;
+					border: 2px solid $akcent;
+					transition: filter 0.3s;
+				}
+				&:hover{
+					&::after{
+						filter: blur(10px);
+					}
+				}
 			}
 		}
 

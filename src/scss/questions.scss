@@ -42,7 +42,6 @@
 
 	&__title {
 		position: relative;
-		outline: 1px solid red;
 		list-style: none;
 		background-color: $akcent;
 		display: flex;
@@ -52,7 +51,6 @@
 		font-weight: 700;
 		font-size: 30px;
 		cursor: pointer;
-		/* line-height: 25px; */
 		line-height: 83%;
 		letter-spacing: 0.01em;
 		color: #1a1a1a;
@@ -67,15 +65,29 @@
 	}
 
 	&__body {
+		position: relative;
+		top: -1px;
 		padding: 30px;
 		font-weight: 500;
 		font-size: 16px;
 		background: #1a1a1a;
 		border-radius: 1px;
 		border: 3px solid $akcent;
-		/* line-height: 21px; */
 		line-height: 131%;
 		letter-spacing: 0.01em;
 		a {text-decoration: underline;}
 	}
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+summary {
+	list-style: none;
+	list-style-type: none;
+}
+
+details > summary::marker {
+	display: none;
+	content: '';
 }

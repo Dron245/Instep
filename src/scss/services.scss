@@ -1,12 +1,9 @@
 .page {
-
 	&__services {
 	}
 }
 .services {
-
 	&__container {
-		
 	}
 
 	&__top {
@@ -14,21 +11,26 @@
 		align-items: flex-end;
 		gap: 50px;
 		margin-bottom: 70px;
+		@media (max-width: $mobile) {
+			display: block;
+		}
 	}
 
 	&__title {
 		font-family: $fontSecondFamily;
 		font-weight: 700;
-font-size: 50px;
+		font-size: 50px;
 
-/* line-height: 52px; */ 
-line-height: 104%;
-letter-spacing: 0.01em;
-text-transform: uppercase;
+		/* line-height: 52px; */
+		line-height: 104%;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		@media (max-width: $mobile) {
+			margin-bottom: 15px;
+		}
 	}
 
 	&__tabs {
-
 	}
 
 	&__navigation {
@@ -36,24 +38,67 @@ text-transform: uppercase;
 		display: flex;
 		align-items: center;
 		gap: 30px;
+		@media (max-width: $mobile) {
+			flex-direction: column;
+			gap: 0;
+			.button__wrapper {
+				width: 100%;
+				span {
+					display: none;
+				}
+			}
+		}
 	}
 
 	&__button[class] {
 		font-size: 15px;
 		line-height: 1.47;
-		font-weight: 500;
+		font-weight: 700;
 		width: 270px;
 		height: 61px;
 		text-align: left;
 		padding-left: 20px;
 		justify-content: initial;
+		@media (max-width: $mobile) {
+			clip-path: none;
+			padding-left: 0;
+			width: 100%;
+			font-weight: 700;
+			font-size: 18px;
+			color: $akcent;
+			font-family: $fontSecondFamily;
+			/* line-height: 27px; */
+			line-height: 150%;
+			letter-spacing: 0.01em;
+			text-transform: uppercase;
+			border: none;
+			position: relative;
+			&::before{
+				content:attr(name);
+				// position: absolute;
+				border: none;
+				top: 50%;
+				transform: translateY(-48%);
+				opacity: 0;
+				._tab-active & {
+					opacity: 1;
+					filter: blur(5px);
+					border-color: initial;
+				}
+			}
+			&::after{
+				display: none;
+			}
+			&:active[class] {
+				background-color: initial;
+			}
+		}
 	}
 
 	&__content {
 	}
 
 	&__body {
-
 		&_1 {
 		}
 
@@ -66,7 +111,7 @@ text-transform: uppercase;
 				margin-top: 20px;
 			}
 			.galery-services__item {
-				&:first-child{
+				&:first-child {
 					margin-top: initial;
 					margin-bottom: auto;
 				}
@@ -78,7 +123,7 @@ text-transform: uppercase;
 					transform: translateX(-50%);
 				}
 
-				&:last-child{
+				&:last-child {
 					top: initial;
 					right: 0;
 					bottom: 0;
@@ -89,7 +134,6 @@ text-transform: uppercase;
 }
 
 .services-inner {
-
 	&__body {
 		display: flex;
 		gap: 30px;
@@ -106,23 +150,23 @@ text-transform: uppercase;
 
 	&__title {
 		font-weight: 700;
-font-size: 40px;
-font-family: $fontSecondFamily;
-color: $akcent;
-/* line-height: 47px; */ 
-line-height: 117%;
-letter-spacing: 0.01em;
-text-transform: uppercase;
-margin-bottom: 30px;
+		font-size: 40px;
+		font-family: $fontSecondFamily;
+		color: $akcent;
+		/* line-height: 47px; */
+		line-height: 117%;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		margin-bottom: 30px;
 	}
 
 	&__text {
 		font-weight: 700;
-font-size: 20px;
+		font-size: 20px;
 
-/* line-height: 30px; */ 
-line-height: 150%;
-letter-spacing: 0.01em;
+		/* line-height: 30px; */
+		line-height: 150%;
+		letter-spacing: 0.01em;
 	}
 
 	&__costs {
@@ -134,7 +178,6 @@ letter-spacing: 0.01em;
 	}
 }
 .production {
-
 	&__list {
 	}
 
@@ -146,22 +189,21 @@ letter-spacing: 0.01em;
 	}
 }
 .progress {
-
 	&__circle {
 	}
 
 	&__description {
-		&::before{
+		&::before {
 			.services & {
 				height: 105%;
 			}
 		}
 		.services & {
 			font-size: 16px;
-transform: translateY(5px);
-/* line-height: 21px; */ 
-line-height: 131%;
-letter-spacing: 0.01em;
+			transform: translateY(5px);
+			/* line-height: 21px; */
+			line-height: 131%;
+			letter-spacing: 0.01em;
 		}
 	}
 }
@@ -177,23 +219,23 @@ letter-spacing: 0.01em;
 
 	&__title {
 		font-weight: 700;
-font-size: 30px;
-font-family: $fontSecondFamily;
-color: $akcent;
-/* line-height: 47px; */ 
-line-height: 157%;
-letter-spacing: 0.01em;
-text-transform: uppercase;
+		font-size: 30px;
+		font-family: $fontSecondFamily;
+		color: $akcent;
+		/* line-height: 47px; */
+		line-height: 157%;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
 	}
 
 	&__cost {
 		font-weight: 900;
-font-size: 30px;
+		font-size: 30px;
 
-/* line-height: 47px; */ 
-line-height: 157%;
-letter-spacing: 0.01em;
-text-transform: uppercase;
+		/* line-height: 47px; */
+		line-height: 157%;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
 	}
 }
 .galery-services {
@@ -211,12 +253,12 @@ text-transform: uppercase;
 		// 	right: 0;
 		// 	top: 0;
 		// }
-		&:first-child{
+		&:first-child {
 			position: relative;
 			z-index: 2;
 			margin-top: auto;
 		}
-		&:last-child{
+		&:last-child {
 			position: absolute;
 			right: 0;
 			top: 0;

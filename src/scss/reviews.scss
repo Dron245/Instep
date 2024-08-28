@@ -1,10 +1,8 @@
 .page {
-
 	&__reviews {
 	}
 }
 .reviews {
-
 	&__container {
 	}
 
@@ -30,57 +28,28 @@
 	}
 
 	&__slide {
+		cursor: pointer;
 		padding-block: 125px;
 		display: grid;
 		place-items: center;
 		background-color: white;
 		font-weight: 700;
-font-size: 40px;
-font-family: $fontSecondFamily;
-/* line-height: 48px; */ 
-line-height: 120%;
-letter-spacing: 0.01em;
-text-transform: uppercase;
-color: #000;
+		font-size: 40px;
+		font-family: $fontSecondFamily;
+		/* line-height: 48px; */
+		line-height: 120%;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		color: #000;
 	}
 
 	&__pagination {
-		@media (min-width:$mobile){
+		@media (min-width: $mobile) {
 			margin-top: 40px;
-			 display: flex;
-			 .swiper-pagination-bullet {
-				
+			display: flex;
+			.swiper-pagination-bullet {
 				height: 5px;
-			 }
+			}
 		}
 	}
-}
-.button {
-
-	&_yellow {
-	}
-
-	&__wrapper {
-
-		&_yellow {
-		}
-	}
-}
-.t {
-}
-.b {
-}
-.l {
-}
-.r {
-}
-.cut {
-}
-.swiper {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
-.pagination {
 }
