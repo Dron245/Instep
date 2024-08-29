@@ -41,6 +41,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 20px;
+		padding-inline: 8px;
+		justify-content: center;
 		@media (max-width: $mobile) {
 			flex-direction: column;
 		}

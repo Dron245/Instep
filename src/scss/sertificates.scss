@@ -1,0 +1,43 @@
+.page {
+
+	&__sertificates {
+	}
+}
+.sertificates {
+
+	&__container {
+	}
+
+	&__title {
+		margin-bottom: 53px;
+	}
+
+	&__slider {
+		cursor: pointer;
+	}
+
+	&__wrapper {
+	}
+
+	&__slide {
+		img {
+		 width:100%;
+		 height:auto
+		}
+	}
+
+	&__pagination {
+		margin-top: 40px;
+		@media (min-width:$mobile){
+			 display: flex; 
+		}
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.pagination {
+}

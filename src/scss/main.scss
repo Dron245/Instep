@@ -19,6 +19,9 @@
 			@include adaptiveValue("top", -350, 150,0,4000,1350);
 			  @include adaptiveValue("width", 1000,304,0, 4000,1350);
 		}
+		@media (max-width:1150px){
+			display: none;
+		}
 		img {
 		 width:100%;
 		 height:auto
@@ -43,36 +46,83 @@
 		position: absolute;
 		top: -150px;
 		z-index: -1;
+		
 	}
 	&__container {
 		display: flex;
 		gap: 20px;
 		justify-content: space-between;
+		@media (max-width:$mobile){
+			 flex-direction: column; 
+		}
 	}
 
 	&__actions {
 		flex: 0 0 45.213675%; /* 529/1170 */
 		aspect-ratio: 529/440;
-		background: url("@img/main/cover3.svg") 0px 0 / contain no-repeat;
-		padding: 64px 38px;
+		position: relative;
+		// background: url("@img/main/cover3.svg") 0px 0 / contain no-repeat;
+		padding: 64px 32px;
 		.button__wrapper {
 			width: fit-content;
 		}
+		@media (max-width:$tablet){
+			flex: 0 0 50%; /* 369/738 */
+			// padding: 64px toRem(20);
+		}
+		@media (max-width:$mobile){
+			padding-inline: toRem(35);
+			padding-block: 60px;
+			// aspect-ratio: 369/254;
+			display: flex;
+			flex-direction: column;
+			.button__wrapper {
+				margin-top: auto;
+				margin-bottom: 25px;
+			}
+		}
+		@media (max-width:$mobileSmall){
+			 padding-block: 40px; 
+			 padding-inline: 20px; 
+		}
 	}
 
+	&__img-d {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		img {
+		 width:100%;
+		 height:auto
+		}
+	}
 	&__title {
 		font-weight: 700;
-	font-size: 70px;
 	line-height: 99%;
 	letter-spacing: -0.01em;
 	text-transform: uppercase;
 	font-family: $fontSecondFamily;
+	@media (min-width:toEm(1170)){
+		  font-size: 70px;
+	}
+	@media (min-width: $mobile) and (max-width: 1170px){
+		  @include adaptiveValue("font-size", 70, 28,0,$maxWidthContainer, 768);
+	}
+	@media (max-width:$mobile){
+		  
+		@include adaptiveValue("font-size", 70, 30,0,768,360);
+	}
 	}
 
 	&__text {
 		margin-top: 12px;
-		font-size: 20px;
-		font-weight: 500;
+		font-weight: 600;
+		line-height: 1.25;
+		br {display: none;}
+		@include adaptiveValue("font-size", 20, 16,0,768,360);
+		@media (max-width:$mobile){
+			 br {display: block;}
+		}
 	}
 	
 	&__button {
@@ -80,6 +130,17 @@
 		height: 61px;
 		padding-inline: 38px;
 		text-transform: uppercase;
+		@media (max-width: toEm(1150)){
+			  margin-top: 50px;
+			  height: 50px;
+		}
+		@media (max-width:$tablet){
+		// white-space: nowrap;
+			// height: 50px;
+		}
+		@media (max-width:$mobile){
+			 margin-top: 0; 
+		}
 	}
 
 	&__img {

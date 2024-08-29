@@ -98,7 +98,19 @@ background-color: $osnovnoy-2;
 	display: flex;
 	justify-content: space-between;
 	margin-top: 50px;
+
+	&__docs {
+
+	}
+
 	&__link {
+		display: block;
+		&:hover{
+			text-decoration: underline;
+		}
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
 	}
 
 	&__text {

@@ -80,6 +80,9 @@
 		justify-content: center;
 		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
 		z-index: 2;
+		@media (max-width:$tablet){
+			font-size: 15px;
+		}
 		&_yellow[class] {
 			border-color: $akcent;
 			&:active {
@@ -156,7 +159,7 @@
 		}
 }
 section:not(:first-child) {
-	margin-top: 150px;
+	@include adaptiveValue("margin-top", 150, 40,0,$maxWidthContainer, 768);	
 }
 
 h2[class*="__title"] {
@@ -182,6 +185,9 @@ h2[class*="__title"] {
 div[class*="decor"] {
 	@media (min-width: toEm(1920)) {
 		display: none;
+	}
+	@media (max-width:$mobile){
+		 display: none; 
 	}
 }
 

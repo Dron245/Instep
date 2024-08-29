@@ -3,6 +3,9 @@
 	padding-bottom: 60px;
 	position: relative;
 	z-index: 2;
+	@media (max-width:$pc){
+		 padding-top: 20px; 
+	}
 	&__drop {
 		background: #020001;
     position: fixed;

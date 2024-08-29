@@ -63,7 +63,9 @@ body::after {
 	width: 100%;
 	max-width: 690px;
 	text-align: center;
-	
+	@media (max-width:$mobile){
+		 padding: toRem(50) toRem(5) toRem(75) toRem(5); 
+	}
 	.lock & {
 		visibility: visible;
 	}
@@ -108,6 +110,10 @@ letter-spacing: 0.01em;
 text-align: center;
 color: $akcent;
 margin-bottom: 20px;
+@media (max-width:$mobileSmall){
+	 font-size: 18px;
+	 line-height: 1.21; 
+}
 	}
 
 	&__text {
@@ -117,6 +123,9 @@ margin-bottom: 20px;
 /* line-height: 25px; */ 
 line-height: 125%;
 margin-bottom: 30px;
+@media (max-width:$mobileSmall){
+	 font-size: 16px; 
+}
 		#calculation & {
 			max-width: 515px;
 		}
@@ -194,6 +203,9 @@ margin-bottom: 30px;
 		max-width: 90%;
 /* line-height: 21px; */ 
 line-height: 140%;
+@media (max-width:$mobileSmall){
+	 font-size: 13px; 
+}
 	}
 
 	&__button {
