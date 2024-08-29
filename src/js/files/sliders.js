@@ -312,13 +312,13 @@ window.addEventListener("load", function (e) {
 	 }
 	
 	 resizableSwiper(
-		'(max-width: 767.96px)',
+		'(max-width: 1170.02px)',
 		'.confidence__slider',
 		{
 			modules: [Pagination],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 1.7,
+			// slidesPerView: 1,
 			spaceBetween: 20,
 			// autoHeight: true,
 			speed: 800,
@@ -334,6 +334,11 @@ window.addEventListener("load", function (e) {
 			breakpoints: {
 				360: {
 					slidesPerView: 1,
+					// spaceBetween: 20,
+					// autoHeight: true,
+				},
+				768: {
+					slidesPerView: 1.7,
 					// spaceBetween: 20,
 					// autoHeight: true,
 				},

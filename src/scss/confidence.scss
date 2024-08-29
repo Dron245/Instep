@@ -26,6 +26,9 @@
 	}
 
 	&__content {
+		@media (min-width: $mobileSmall) and (max-width: 1170px){
+			display: flex;
+		}
 	}
 
 	&__top {
@@ -35,7 +38,7 @@
 	}
 
 	&__text {
-		@media (min-width:$mobile){
+		@media (min-width:$maxWidthContainer){
 			  
 			flex: 0 0 48.461538%; /* 567/1170 */
 		}
@@ -65,11 +68,19 @@ margin-bottom: 30px;
 	}
 
 	&__bottom {
+		@media (min-width: $mobileSmall) and (max-width: 1170px){
+			flex: 0 0 47%;
+			width: 47%; /* 349/738 */
+		}
 	}
 
 	&__slider {
 		&.swiper {
-			overflow: initial;
+			@media (min-width:$mobile){
+				  
+				// overflow: initial;
+			}
+			
 		}
 	& + p {
 		// display: none;
@@ -77,13 +88,13 @@ margin-bottom: 30px;
 	}
 
 	&__wrapper {
-		@media (min-width:$mobile){
+		@media (min-width:$maxWidthContainer){
 			 gap: 30px; 
 		}
 	}
 
 	&__slide {
-		@media (min-width:$mobile){
+		@media (min-width:$maxWidthContainer){
 			 flex: 0 0 270px; 
 		}
 		img {
@@ -91,7 +102,7 @@ margin-bottom: 30px;
 		 height:auto
 		}
 		&_rotate-top {
-			@media (min-width:$mobile){
+			@media (min-width:$maxWidthContainer){
 				  transform: rotate(-10deg);
 				  top: 30px;
 				  left: 10px;
@@ -138,14 +149,8 @@ margin-bottom: 30px;
 	}
 
 	&__pagination {
-		
+		@media (max-width: toEm(1170)){
+			  display: flex;
+		}
 	}
-}
-.text {
-}
-.swiper {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
 }

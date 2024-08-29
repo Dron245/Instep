@@ -63,11 +63,20 @@
 					 display: none; 
 				}
 			}
+			.slider__img {
+				@media (max-width:$mobile){
+					 aspect-ratio: 326/197;
+					 img {
+						aspect-ratio: 326/197;
+					 } 
+				}
+			}
 		}
 		&_2 {
 			.button__wrapper {
 				// width: 456px;
 			}
+			
 			.button {
 				// width: 456px;
 				height: 98px;
@@ -76,14 +85,30 @@
 						 display: none; 
 					}
 				}
-				@media (max-width:$mobile){
+				@media (max-width:$tablet){
 					 height: 60px; 
+				}
+			}
+			.slider__img {
+				@media (max-width:$mobile){
+					 aspect-ratio: 326/197;
+					 img {
+						aspect-ratio: 326/197;
+					 } 
 				}
 			}
 		}
 		&_3 {
 			.slider__title {
 				color: $akcent;
+			}
+			.slider__img {
+				@media (max-width:$mobile){
+					 aspect-ratio: 326/197;
+					 img {
+						aspect-ratio: 326/197;
+					 } 
+				}
 			}
 		}
 		&_4 {
@@ -97,45 +122,134 @@
 					font-size: 16px;
 				}
 			}
+			.slider__img {
+				@media (max-width:$mobile){
+					 aspect-ratio: 326/238;
+					 img {
+						aspect-ratio: 326/238;
+					 } 
+				}
+			}
 		}
 		&_5 {
+			.last-br {
+				display: none;
+			}
 			.last-br2 {
 			display: none;
-			@media (max-width:1070px){
-				display: block;
+			@media (max-width:$tablet){
+				// display: block;
 			}
 			}
 			.button__wrapper {
 				display: inline;
+				@media (max-width: toEm(865)){
+					  display: flex;
+				}
 			}
 			.button[class] {
 				border: initial;
 				display: inline-flex;
 				height: 40px;
 				border: 1px solid $akcent;
+				@media (max-width: toEm(865)){
+					  width: 100%;
+				}
+
 			}
 			.cut {
 				right: 0.8px;
 				width: 21px;
 			}
-			
+			.slider__img {
+				@media (max-width:$mobile){
+					 aspect-ratio: 326/179;
+					 img {
+						aspect-ratio: 326/179;
+					 } 
+				}
+			}
 		}
 		&_6 {
+			flex-direction: row;
+
 			.slider__title {
 				color: $akcent;
+				@media (max-width:$mobile){
+					 flex: 1 0 100%; 
+				}
+
 			}
 			.slider__content {
 				gap: 20px;
+			}
+			@media (max-width:$mobile){
+				flex-wrap: wrap;
+				.slider__content {
+					flex: 0 0 60%;
+				}
+				
+				 .slider__img {
+					flex: 1 0 30%;
+					width: 100%;
+					img {
+						position: relative;
+						aspect-ratio: initial;
+					}
+					@media (max-width:$mobileSmall){
+						 display: flex;
+						 img {
+							margin-top: auto;
+						 } 
+					}
+				 } 
+			}
+			@media (max-width:$mobileSmall){
+				.slider__list-item[class] {
+					font-size: 14px;
+					line-height: 1.46;
+					margin-bottom: 0;
+					&:last-child{
+						margin-bottom: 20px;
+					}
+				}
 			}
 		}
 		&_7 {
 			.slider__title {
 				color: $akcent;
 			}
+			.slider__img {
+				@media (max-width:$mobile){
+					 aspect-ratio: 326/286;
+					 img {
+						aspect-ratio: 326/286;
+					 } 
+				}
+			}
 		}
 		&_8 {
 			.slider__title {
 				max-width: 600px;
+			}
+			.slider__img {
+				@media (max-width:$mobile){
+					 aspect-ratio: 326/197;
+					 img {
+						aspect-ratio: 326/197;
+					 } 
+				}
+			}
+		}
+
+		&_9 {
+			.slider__img {
+				@media (max-width:$mobile){
+					 aspect-ratio: 326/197;
+					 img {
+						aspect-ratio: 326/197;
+					 } 
+				}
 			}
 		}
 
@@ -144,6 +258,7 @@
 			padding-block: 40px;
 			.slider__content {
 				gap: 20px;
+				flex: 0 0 100%;
 			}
 			.slider__title {
 				color: $akcent;
@@ -239,7 +354,7 @@
 		font-weight: 700;
 		line-height: 156%;
 		letter-spacing: 0.01em;
-		padding-left: 24px;
+		padding-left: 22px;
 		position: relative;
 		&::before {
 			content: "";
@@ -250,6 +365,7 @@
 			background-color: $akcent;
 			z-index: 3;
 			top: 50%;
+			top: 12px;
 			transform: translateY(-50%);
 			left: 8px;
 		}
@@ -262,12 +378,17 @@
 	}
 
 	&__img {
-		outline: 1px solid red;
+		// outline: 1px solid red;
 		position: relative;
 		@media (max-width:$mobile){
+			aspect-ratio: 2/1;
+			// aspect-ratio: 326/218;
 			 margin-inline: -15px;
 			 img {
-				aspect-ratio: 2/1;
+				position: absolute;
+				inset: 0;
+				// aspect-ratio: 2/1;
+				aspect-ratio: 326/218;
 				object-fit: cover;
 			 }
 		}
@@ -293,16 +414,5 @@
 				height: 5px;
 			}
 		}
-	}
-}
-.swiper {
-}
-.swiper-wrapper {
-}
-.swiper-slide {
-}
-
-.button {
-	&_yellow {
 	}
 }
