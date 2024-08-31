@@ -9,28 +9,29 @@
 	}
 
 	&__title {
-		
 		font-family: $fontSecondFamily;
 		font-weight: 900;
-font-size: 50px;
+		font-size: 50px;
 
-/* line-height: 50px; */ 
-line-height: 100%;
-letter-spacing: 0.01em;
-text-transform: uppercase;
-color: $akcent;
-margin-bottom: 25px;span {
-	font-family: $fontFamily;
-}
+		/* line-height: 50px; */
+		line-height: 100%;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		color: $akcent;
+		margin-bottom: 25px;
+		span {
+			font-family: $fontFamily;
+		}
 	}
 
 	&__text {
 		font-weight: 600;
-font-size: 20px;
-
-/* line-height: 25px; */ 
-line-height: 125%;
-letter-spacing: 0.01em;
+		line-height: 125%;
+		letter-spacing: 0.01em;
+		@media (max-width:$mobile){
+			 br {display: none;} 
+		}
+		@include adaptiveValue("font-size", 20, 16, 0, 1170, 768);
 	}
 
 	&__content {
@@ -41,22 +42,31 @@ letter-spacing: 0.01em;
 
 	&__progress {
 		margin-top: 40px;
+		@media (max-width:$mobile){
+			 margin-top: 30px; 
+		}
+		@media (max-width: $mobileSmall) {
+			margin-top: 0px;
+		}
 	}
 
 	&__decor {
 		position: absolute;
 		img {
-		 width:100%;
-		 height:auto
+			width: 100%;
+			height: auto;
 		}
 		&_1 {
-			
 			// top: -200px;
 			right: 0px;
 			top: -150px;
-			@media (min-width:toEm(1350)){
-				@include adaptiveValue("top", -450, -150,0,4000,1350);
-				  @include adaptiveValue("width", 1500,550,0, 4000,1350);
+			@media (min-width: toEm(1350)) {
+				@include adaptiveValue("top", -450, -150, 0, 4000, 1350);
+				@include adaptiveValue("width", 1500, 550, 0, 4000, 1350);
+			}
+			@media (max-width: toEm(1350)) {
+				@include adaptiveValue("width", 500, 370, 0, 1350, 700);
+				top: -100px;
 			}
 		}
 		&_2 {
@@ -96,10 +106,9 @@ letter-spacing: 0.01em;
 	// @media (max-width:$mobile){
 	flex-direction: column;
 	width: max-content;
-	@media (max-width:$mobile){
+	@media (max-width: $mobile) {
 		.production & {
-
-			width: initial; 
+			width: initial;
 		}
 	}
 
@@ -118,8 +127,8 @@ letter-spacing: 0.01em;
 		top: 8px;
 		left: 7.5px;
 		transform: translate(-50%, 0%);
-		&::after{
-			content:'';
+		&::after {
+			content: "";
 			position: absolute;
 			inset: 0;
 			background-color: $akcent2;
@@ -132,36 +141,41 @@ letter-spacing: 0.01em;
 		justify-content: center;
 		position: relative;
 		z-index: 4;
-		&::before, &::after{
-			content:'';
+		&::before,
+		&::after {
+			content: "";
 			position: absolute;
 			width: 15px;
 			height: 15px;
 			border-radius: 50%;
 			background-color: $akcent2;
 			top: 7px;
-			@media (max-width:$mobile){
+			@media (max-width: $tablet) {
+				top: 2px;
+			}
+			@media (max-width: $mobileSmall) {
 				.production & {
-
-					display: none; 
+					display: none;
 				}
 			}
-			}
-		&::after{
+		}
+		&::after {
 			filter: blur(10px);
 		}
-		
-		@media (max-width:$mobile){
-			 &:not(:last-child) {
+
+		@media (max-width: $mobile) {
+			&:not(:last-child) {
 				// margin-bottom: 75px;
-			 } 
+			}
 		}
 	}
 	&__line-mobile {
 		display: flex;
 		justify-content: center;
-		@media (min-width:$mobile){
-			 display: none; 
+		margin-top: 15px;
+		margin-bottom: 10px;
+		@media (min-width: $mobileSmall) {
+			display: none;
 		}
 	}
 	&__description {
@@ -175,34 +189,40 @@ letter-spacing: 0.01em;
 		line-height: 120%;
 		position: relative;
 		left: 0;
-		&::before,&::after{
-			content:'';
+		@include adaptiveValue("font-size", 25, 16, 0, 1170, 768);
+		&::before,
+		&::after {
+			content: "";
 			position: absolute;
 			left: 6.5px;
 			top: 15px;
 			width: 2px;
 			height: 110%;
 			background-color: $akcent2;
-			@media (max-width:$mobile){
+			@media (max-width: $tablet) {
+				height: 100%;
+			}
+			@media (max-width: $mobileSmall) {
 				.production & {
-					display: none; 
+					display: none;
 				}
 			}
 		}
-		&::after{
+		&::after {
 			filter: blur(10px);
 		}
 		&_last {
-			&::before, &::after{
+			&::before,
+			&::after {
 				display: none;
 			}
 		}
-		
+
 		@media (max-width: $tablet) {
 			// font-size: 16px;
 		}
 		// text-wrap: nowrap;
-		@media (max-width: $mobile) {
+		@media (max-width: $mobileSmall) {
 			.production & {
 				padding-left: 0px;
 				width: 100%;
@@ -210,9 +230,5 @@ letter-spacing: 0.01em;
 				padding-bottom: 0;
 			}
 		}
-		@media (max-width: $mobileSmall) {
-
-		}
-	
 	}
 }

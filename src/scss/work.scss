@@ -9,6 +9,7 @@
 		position: absolute;
 		left: 0;
 		top: -280px;
+		z-index: -1;
 		@media (min-width: toEm(1350)) {
 			@include adaptiveValue("top", -750, -280, 0, 4000, 1350);
 			@include adaptiveValue("width", 1000, 300, 0, 4000, 1350);
@@ -18,11 +19,27 @@
 	&__container {
 		display: flex;
 		gap: 30px;
+		@media (max-width:$tablet){
+			gap: 20px;
+		}
 	}
 
 	&__item {
+		&_first {
+			@media (max-width:$mobile){
+				 img {
+				  width:100%;
+				  height:auto
+				 } 
+			}
+		}
 		&:first-child{
-			flex: 0 0 40.17094%; /* 470/1170 */
+			@media (min-width:$mobile){
+				flex: 0 0 40.17094%; /* 470/1170 */
+			}
+			@media (max-width:$mobile){
+				
+			}
 		}
 		&:last-child{
 			display: flex;
@@ -35,19 +52,32 @@
 	}
 
 	&__title {
-		padding-right: 70px;
+		@media (min-width:$tablet){
+			  
+			padding-right: 70px;
+		}
+		
 	}
 
 	&__social {
 		margin-top: auto;
 		display: flex;
-		gap: 35px;
+		@include adaptiveValue("gap",35 , 20,0,1440,992);
+		@media (max-width:$tablet){
+			flex-direction: column;
+			width: 100%;
+		}
 	}
 
 	&__link {
 		width: 200px;
 		height: 54px;
-		
+		@media (min-width:$tablet){
+			@include adaptiveValue("width", 200,140,0,1440,992 );
+		}
+		@media (max-width:$tablet){
+			width: 100%;
+		}
 	}
 }
 .text {

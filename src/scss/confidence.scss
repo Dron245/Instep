@@ -1,19 +1,21 @@
 .page {
-
 	&__confidence {
 	}
 }
 .confidence {
 	position: relative;
 	&__decor {
-	position: absolute;
+		position: absolute;
+		@media (max-width:$pc){
+			 display: none; 
+		}
 		&_elipce {
 		}
 
 		&_cepb {
-		right: 16%;
-		top: 167px;
-		z-index: -1;
+			right: 16%;
+			top: 167px;
+			z-index: -1;
 		}
 	}
 
@@ -26,7 +28,7 @@
 	}
 
 	&__content {
-		@media (min-width: $mobileSmall) and (max-width: 1170px){
+		@media (min-width: $mobile) and (max-width: 1170.02px) {
 			display: flex;
 		}
 	}
@@ -38,8 +40,7 @@
 	}
 
 	&__text {
-		@media (min-width:$maxWidthContainer){
-			  
+		@media (min-width: 1170.02px) {
 			flex: 0 0 48.461538%; /* 567/1170 */
 		}
 	}
@@ -47,78 +48,78 @@
 	&__last-img {
 		display: flex;
 		gap: 30px;
-		@media (max-width:$mobile){
-			 display: none; 
+		@media (max-width: $mobile) {
+			display: none;
 		}
 	}
 
 	&__subtitle {
 		font-weight: 700;
-font-size: 30px;
-font-family: $fontSecondFamily;
-color: $akcent;
-/* line-height: 52px; */ 
-line-height: 173%;
-letter-spacing: 0.01em;
-text-transform: uppercase;
-margin-bottom: 30px;
-& + p {
-	margin-bottom: 20px;
-}
+		font-size: 30px;
+		font-family: $fontSecondFamily;
+		color: $akcent;
+		/* line-height: 52px; */
+		line-height: 173%;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		& + p {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__bottom {
-		@media (min-width: $mobileSmall) and (max-width: 1170px){
+		@media (min-width: $mobile) and (max-width: 1170.02px) {
 			flex: 0 0 47%;
 			width: 47%; /* 349/738 */
 		}
 	}
 
 	&__slider {
+		& + p {
+			display: none;
+		}
 		&.swiper {
-			@media (min-width:$mobile){
-				  
+			@media (min-width: $mobile) {
 				// overflow: initial;
 			}
-			
 		}
-	& + p {
-		// display: none;
+		& + .confidence__slide_text {
+			display: none;
 		}
 	}
 
 	&__wrapper {
-		@media (min-width:$maxWidthContainer){
-			 gap: 30px; 
+		@media (min-width: 1170.02px) {
+			gap: 30px;
 		}
 	}
 
 	&__slide {
-		@media (min-width:$maxWidthContainer){
-			 flex: 0 0 270px; 
+		@media (min-width: 1170.02px) {
+			flex: 0 0 270px;
 		}
 		img {
-		 width:100%;
-		 height:auto
+			width: 100%;
+			height: auto;
 		}
 		&_rotate-top {
-			@media (min-width:$maxWidthContainer){
-				  transform: rotate(-10deg);
-				  top: 30px;
-				  left: 10px;
-				  position: relative;
-				  z-index: 2;
-				&::before{
-					content:'';
+			@media (min-width: 1170.02px) {
+				transform: rotate(-10deg);
+				top: 30px;
+				left: 10px;
+				position: relative;
+				z-index: 2;
+				&::before {
+					content: "";
 					position: absolute;
 					inset: -12px;
 					border: 3px solid $akcent2;
 					background-color: transparent;
 					box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-					
 				}
-				&::after{
-					content:'';
+				&::after {
+					content: "";
 					position: absolute;
 					inset: -12px;
 					border: 3px solid $akcent2;
@@ -127,7 +128,6 @@ margin-bottom: 30px;
 					border-radius: 20px;
 				}
 			}
-			
 		}
 
 		&_last-top {
@@ -142,15 +142,24 @@ margin-bottom: 30px;
 				font-size: 16px;
 				line-height: 1.31;
 			}
-			@media (max-width:$mobile){
+			@media (max-width:$pc) and (min-width:$mobile){
+				 p:last-child {
+				 margin-top: 10px;
+				 font-size: 20px;
+				 } 
+			}
+			@media (max-width: $mobile) {
 				margin-top: 20px;
+				&.swiper-slide {
+					display: none;
+				}
 			}
 		}
 	}
 
 	&__pagination {
-		@media (max-width: toEm(1170)){
-			  display: flex;
+		@media (max-width: toEm(1170)) {
+			display: flex;
 		}
 	}
 }

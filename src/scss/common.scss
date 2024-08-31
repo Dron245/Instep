@@ -165,11 +165,16 @@ section:not(:first-child) {
 h2[class*="__title"] {
 	font-family: $fontSecondFamily;
 	font-weight: 700;
-	font-size: 50px;
+	// font-size: 50px;
 	color: $akcent;
 	line-height: 104%;
 	letter-spacing: 0.01em;
 	text-transform: uppercase;
+	@include adaptiveValue("font-size", 50, 25,0,1170,768);
+	@media (max-width:$mobile){
+		 line-height: 1.25;
+		 margin-bottom: 20px; 
+	}
 }
 
 .text {
@@ -177,6 +182,7 @@ h2[class*="__title"] {
 	font-size: 20px;
 	line-height: 125%;
 	letter-spacing: 0.01em;
+	@include adaptiveValue("font-size", 20, 16,0,1170,768);
 	span {
 		color: $akcent;
 	}
@@ -201,6 +207,10 @@ div[class*="decor"] {
 		&:first-child {
 			border-top: 1px solid $osnovnoy;
 		}
+		@media (max-width:$mobile){
+			 flex-direction: column;
+			 gap: 15px;
+		}
 	}
 }
 .punkt {
@@ -216,16 +226,18 @@ div[class*="decor"] {
 .list-item-content {
 	&__title {
 		font-weight: 700;
-		font-size: 25px;
+		// font-size: 25px;
 		font-family: $fontSecondFamily;
 		/* line-height: 27px; */
 		line-height: 108%;
 		letter-spacing: 0.01em;
 		margin-bottom: 10px;
+		@include adaptiveValue("font-size", 25, 18,0,1170,768);
 	}
 
 	&__text {
 		line-height: 131%;
 		letter-spacing: 0.01em;
+		@include adaptiveValue("font-size", 16, 14,0,1170,768);
 	}
 }

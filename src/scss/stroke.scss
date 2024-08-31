@@ -22,6 +22,9 @@
 			inset: 0px;
 			filter: blur(10px);
 		}
+		@media (max-width:$mobile){
+			 height: 40px; 
+		}
 	}
 
 	&__text {
@@ -34,6 +37,9 @@
 		white-space: nowrap;
 		@media (min-width: toEm(2600)) {
 			animation: text2 40s infinite linear;
+		}
+		@media (max-width:$mobile){
+			 font-size: 16px; 
 		}
 	}
 	@keyframes text {

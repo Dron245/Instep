@@ -338,7 +338,7 @@ window.addEventListener("load", function (e) {
 					// autoHeight: true,
 				},
 				768: {
-					slidesPerView: 1.7,
+					slidesPerView: 1.2,
 					// spaceBetween: 20,
 					// autoHeight: true,
 				},

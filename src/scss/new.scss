@@ -6,18 +6,41 @@
 }
 .new {
 	@include gridContainer(3);
+	@media (max-width: toEm(1000)){
+		@include gridContainer(0)
+	}
 	&__content {
 		display: flex;
 		gap: 30px;
+		@media (max-width: toEm(1000)){
+			  flex-direction: column;
+		}
+		@media (max-width:$mobile){
+			 gap: 20px; 
+		}
 	}
 	&__item {
 		&_left {
-			flex:0 0 36.016%;
+			// flex:0 0 36.016%;
 			flex: 0 0 470px;
+			@media (max-width: toEm(1440)){
+				  flex: 0 0 36%;
+			}
+			@media (max-width: toEm(1000)){
+				  flex: 0 0 auto;
+			}
+			@media (max-width:$tablet){
+				// flex: 0 0 44%;
+			}
+
 		}
 
 		&_right {
 			flex: 1;
+			@media (max-width: toEm(1440)){
+				  display: flex;
+				  flex-direction: column;
+			}
 		}
 	}
 
@@ -29,6 +52,10 @@
 		grid-column: initial;
 	}
 	&__img {
+		@media (max-width:$tablet){
+			// aspect-ratio: 219/355;
+			position: relative;
+		}
 		img {
 		 width:100%;
 		 height:auto
@@ -38,28 +65,64 @@
 	&__text {
 		margin-top: 34px;
 		font-weight: 600;
-		font-size: 30px;
+		// font-size: 30px;
 		line-height: 107%;
 		letter-spacing: 0.01em;
 		text-transform: uppercase;
-		padding-right: 50px;
+		@media (min-width:$tablet){
+			padding-right: 50px;
+			  
+		}
+		@include adaptiveValue("font-size", 30, 20,0,1170,992);
+		@media (max-width:1000px){
+			@include adaptiveValue("font-size", 30, 20,1000,768);
+			br {display: none;}
+		}
 	}
 
 	&__title {
 		margin-bottom: 30px;
+		@media (max-width: toEm(1000)){
+			  br {display: none;}
+		}
 	}
 
 	&__galery {
 		display: flex;
 		gap: 30px;
+		@media (max-width:$mobile){
+			 gap: 20px; 
+		}
 		@media (min-width:toEm(1440)){
 			  justify-content: space-between;
 		}
+		@media (max-width: toEm(1440)){
+			  margin-top: auto;
+			// height: 100%;
+		}
+		@media (max-width:$tablet){
+			// margin-top: initial;
+			// height: 100%;
+		}
+		@media (max-width:$mobileSmall){
+			 flex-direction: column; 
+		}
 		.new__img:first-child {
 			flex: 0 0 58.385093%; /* 470/805 */
+			@media (max-width:$mobileSmall){
+				 flex: 0 0 auto; 
+			}
 		}
 		.new__img {
-			flex: 0 0 38%;
+				flex: 0 0 38%;
+				position: relative;
+				@media (max-width:$tablet){
+					img {
+						// position: absolute;
+						// inset: 0;
+						// object-fit: cover;
+					}
+				}
 		}
 	}
 }

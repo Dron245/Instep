@@ -17,11 +17,17 @@
 		&_cepb {
 			// top: 700px;
 			bottom: -300px;
+			@media (max-width: toEm(1215)){
+				  display: none;
+			}
 		}
 
 		&_handle {
 			top: -50px;
 			right: 0;
+			@media (max-width: toEm(1280)){
+				  display: none;
+			}
 		}
 	
 		&_lcepb {
