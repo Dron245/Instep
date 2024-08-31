@@ -25,6 +25,10 @@
 	&__title {
 		text-align: right;
 		margin-bottom: 60px;
+		@media (max-width:$mobile){
+			text-align: left; 
+			br {display: none;}
+		}
 	}
 
 	&__content {

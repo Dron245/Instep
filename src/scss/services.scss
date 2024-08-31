@@ -10,7 +10,9 @@
 		display: flex;
 		align-items: flex-end;
 		gap: 50px;
-		@include adaptiveValue("margin-bottom", 70, 30,0,1170,768);
+		@media (min-width:$mobile){
+			@include adaptiveValue("margin-bottom", 70, 20,0,1170,768);
+		}
 		@media (max-width:$pc){
 			align-items: flex-start;
 			 flex-direction: column;
@@ -73,7 +75,7 @@
 		}
 		@media (max-width: $mobile) {
 			clip-path: none;
-			height: 50px;
+			height: 40px;
 			padding-left: 0;
 			width: 100%;
 			font-weight: 700;
@@ -86,6 +88,9 @@
 			text-transform: uppercase;
 			border: none;
 			position: relative;
+			.services-inner__content & {
+				color: inherit;
+			}
 			&::before{
 				content:attr(name);
 				// position: absolute;
@@ -93,6 +98,9 @@
 				top: 50%;
 				transform: translateY(-48%);
 				opacity: 0;
+				@media (max-width: toEm(486)){
+						transform: translateY(-90%);
+				}
 				._tab-active & {
 					opacity: 1;
 					filter: blur(5px);
@@ -105,6 +113,12 @@
 			&:active[class] {
 				background-color: initial;
 			}
+		}
+		@media (max-width: toEm(486)){
+			  height: 60px;
+			  .button__wrapper_last & {
+				align-items: flex-start;
+			  }
 		}
 	}
 
@@ -125,8 +139,10 @@
 			}
 			.galery-services__item {
 				@media (min-width:$mobile){
-					  
-					@include adaptiveValue("width", 300,173,0,1170,768 );
+					// @include adaptiveValue("width", 300,181,0,1170,768 );
+				}
+				@media (max-width:$mobile){
+					//  @include adaptiveValue("width", 181, 136,0,768,360); 
 				}
 				&:first-child {
 					margin-top: auto;
@@ -136,9 +152,8 @@
 					bottom: 0;
 					z-index: 3;
 					left: 45%;
-					@media (min-width:$mobile){
-						  
-						@include adaptiveValue("width",183 ,136,0,1170,768 );
+					@media (max-width:$mobile){
+						 left: 40%; 
 					}
 				}
 
@@ -225,6 +240,9 @@
 			font-size: 18px;
 			// white-space: nowrap;
 			line-height: 1.28;
+		}
+		@media (max-width:$mobile){
+			 br {display: none;} 
 		}
 	}
 
@@ -322,6 +340,11 @@
 			 @include adaptiveValue("height", 700, 400,0,767.98,360); 
 		}
 	}
+	.services__body_3 & {
+		@media (max-width:$mobile){
+			 @include adaptiveValue("height", 750, 330,0,767.98,360); 
+		}
+	}
 	&__item {
 		.services__body_1 & {
 			@media (min-width:$mobile){
@@ -337,6 +360,20 @@
 			}
 			@media (max-width:$mobile){
 				 @include adaptiveValue("width", 400, 213,0, 767.98, 360); 
+			}
+		}
+		.services__body_3 & {
+			@media (min-width:$mobile){
+				  @include adaptiveValue("width", 297, 171, 0, 1170,768);
+				  &.galery-services__item_center {
+					@include adaptiveValue("width", 180, 130, 0, 1170,768);
+				  }
+			}
+			@media (max-width:$mobile){
+				@include adaptiveValue("width", 400, 171, 0, 767.98,360);
+				&.galery-services__item_center {
+				 @include adaptiveValue("width", 250, 104, 0, 767.98,360);
+				}
 			}
 		}
 		&:first-child {
@@ -363,5 +400,13 @@
 				}
 			}
 		}
+		&_center {
+			@media (min-width:$mobile){
+				//  @include adaptiveValue("width", , ); 
+			}
+		}
+	}
+	@media (max-width:$mobile){
+		 margin-bottom: 20px; 
 	}
 }

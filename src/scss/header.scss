@@ -31,7 +31,7 @@
 		justify-content: space-between;
 		align-items: center;
 		@media (max-width:$mobile){
-			 justify-content: initial;
+			//  justify-content: initial;
 			 .button__wrapper {
 				margin-left: auto;
 			 }

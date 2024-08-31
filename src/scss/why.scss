@@ -7,6 +7,9 @@
 .why {
 	.list-top .list__item {
 		padding-right: 30px;
+		@media (max-width:$mobileSmall){
+			 padding-right: 0; 
+		}
 		.list-item-content__text {
 			padding-right: 40px;
 		}
