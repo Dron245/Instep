@@ -11,6 +11,12 @@
 		z-index: 1;
 		background-color: $akcent2;
 	}
+	&._tab-active .button {
+		@media (min-width:$mobile){
+			background-color: $akcent;
+			  
+		}
+	}
 	&_yellow {
 		.t,
 		.b,
@@ -18,7 +24,7 @@
 		.r,
 		.cut {
 			position: absolute;
-			transition: filter 0.3s;
+			// transition: filter 0.3s;
 			z-index: 1;
 			background-color: $akcent;
 		}
@@ -127,6 +133,7 @@
 		&::after {
 			border-top-color: $akcent2;
 		}
+		
 	}
 }
 
