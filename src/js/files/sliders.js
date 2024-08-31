@@ -377,7 +377,7 @@ window.addEventListener("load", function (e) {
 	 }
 	
 	 resizableSwiper(
-		'(max-width: 767.96px)',
+		'(max-width: 991.96px)',
 		'.videos__slider',
 		{
 			modules: [Pagination],
@@ -387,7 +387,7 @@ window.addEventListener("load", function (e) {
 			spaceBetween: 20,
 			// autoHeight: true,
 			speed: 800,
-			
+			// loop: true,
 			// Пагинация
 			
 			pagination: {
@@ -398,7 +398,8 @@ window.addEventListener("load", function (e) {
 			// Брейкпоинты
 			breakpoints: {
 				360: {
-					slidesPerView: 1,
+					slidesPerView: 2,
+					slidesPerGroup: 2
 					// spaceBetween: 20,
 					// autoHeight: true,
 				},
