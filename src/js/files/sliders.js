@@ -397,12 +397,14 @@ window.addEventListener("load", function (e) {
 			
 			// Брейкпоинты
 			breakpoints: {
-				360: {
+				0: {
+					slidesPerView: 1,
+					slidesPerGroup: 1
+				},
+				600: {
 					slidesPerView: 2,
 					slidesPerGroup: 2
-					// spaceBetween: 20,
-					// autoHeight: true,
-				},
+				}
 				
 			},
 		},
