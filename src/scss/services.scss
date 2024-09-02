@@ -72,10 +72,11 @@
 		}
 		@media (max-width:$tablet){
 			width: 240px;
+			height: 50px;
 		}
 		@media (max-width: $mobile) {
 			clip-path: none;
-			height: 40px;
+			// height: 40px;
 			padding-left: 0;
 			width: 100%;
 			font-weight: 700;
@@ -115,7 +116,7 @@
 			}
 		}
 		@media (max-width: toEm(486)){
-			  height: 60px;
+			//   height: 60px;
 			  .button__wrapper_last & {
 				align-items: flex-start;
 			  }

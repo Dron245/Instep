@@ -3,7 +3,7 @@
 	&__icon {
 	}
 	// .menu__body
-	&__body {
+	header &__body {
 		@media (max-width: $mobile) {
 			position: fixed;
 			width: 83.333333%; /* 300/360 */
@@ -45,6 +45,12 @@
 		justify-content: center;
 		@media (max-width: $mobile) {
 			flex-direction: column;
+			footer & {
+				flex-direction: row;
+				@media (max-width: toEm(760)){
+					  padding-inline: 0;
+				}
+			}
 		}
 	}
 	// .menu__item
@@ -56,6 +62,14 @@
 		font-weight: 500;
 		transition: text-shadow 0.3s, color 0.3s;
 		position: relative;
+		@media (max-width:$tablet){
+			font-size: 15px;
+		}
+		.footer & {
+			@media (max-width: toEm(760)){
+				  @include adaptiveValue("font-size", 22, 15,0,760,360);
+			}
+		}
 		&::after{
 			content:attr(name);
 			position: absolute;

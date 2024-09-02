@@ -1,38 +1,64 @@
 //====================================================================================================
 .footer {
-	clip-path: polygon(93% 0, 100% 15%, 100% 100%, 0 100%, 0 15%, 7% 0);
-background-color: $osnovnoy-2;
+	background-color: $osnovnoy-2;
+	@media (min-width:768.02px){
+		clip-path: polygon(93% 0, 100% 15%, 100% 100%, 0 100%, 0 15%, 7% 0);
+		  
+	}
 	.button__wrapper {
-
-		width: 28.547009%; /* 334/1170 */
+		width: 334px;
+		height: 50px;
 	}
 	.header__link {
 		height: 50px;
 		width: initial;
+		@media (max-width: toEm(760)){
+			  width: 100%;
+		}
 	}
 	&__container {
-		padding-top: 116px;
+		// padding-top: 116px;
+		@include adaptiveValue("padding-top", 116, 45,0,1170,768);
+		.menu__list {
+			@media (max-width: toEm(760)){
+				flex-direction: column;
+			}
+		}
 	}
 
 	&__top {
 		// outline: 1px solid red;
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: flex-start;
+		@media (max-width: toEm(760)){
+			  margin-bottom: 30px;
+		}
 	}
 
 	&__logo {
+		@media (max-width: toEm(760)){
+			flex: 0 0 100%;
+			  display: flex;
+			  justify-content: space-between;
+			  align-items: center;
+		}
 	}
 
 	&__contacts {
 		flex: 0 0 200px;
 		display: grid;
 		gap: 10px;
-		transform: translateY(12px);
+		@media (max-width: toEm(760)){
+			  margin-block: 20px;
+		}
 	}
 
 	&__link {
 		text-align: end;
+		@media (max-width: toEm(760)){
+			  text-align: start;
+		}
 	}
 
 	&__center {
@@ -49,47 +75,45 @@ background-color: $osnovnoy-2;
 		 height:auto
 		}
 	}
-}
-.header {
-
-	&__logo {
-	}
-
-	&__menu {
-	}
-
-	&__link {
+	.menu[class] {
+		@media (min-width:$mobile){
+			// transform: translateY(100%);
+			  
+		}
 	}
 }
-.menu {
 
-	&__body {
-	}
-
-	&__list {
-	}
-
-	&__item {
-	}
-
-	&__link {
-	}
-}
-.light {
-}
 .center-footer {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 32px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid $osnovnoy;
+	@media (max-width:$mobile) {
+		 margin-top: 20px; 
+	}
+	@media (max-width: toEm(760)){
+		  display: block;
+	}
 	&__social {
 		display: flex;
 		gap: 15px;
-		transform: translateY(-12px);
+		@include adaptiveValue("margin-top", 20, 10,0,1170,768);
+		// transform: translateY(-12px);
+		@media (max-width: toEm(760)){
+			  margin-top: 0;
+		}
 	}
 
 	&__link {
+	}
+
+	.button__wrapper {
+		@media (min-width:toEm(760)){
+		margin-left: auto;
+		}
+		@media (max-width: toEm(760)){
+			  width: 100%;
+		}
 	}
 }
 .button {
@@ -97,7 +121,15 @@ background-color: $osnovnoy-2;
 .bottom-footer {
 	display: flex;
 	justify-content: space-between;
+	@media (min-width:$mobile){
 	margin-top: 50px;
+	}
+	@media (max-width:$mobile){
+		 flex-direction: column;
+		 justify-content: initial; 
+		 gap: 20px;
+		 font-size: 15px;
+	}
 
 	&__docs {
 
@@ -115,8 +147,14 @@ background-color: $osnovnoy-2;
 
 	&__text {
 		text-align: right;
+		@media (max-width:$mobile){
+			 text-align-last: left; 
+		}
 		& p:not(:last-child) {
 			margin-bottom: 5px;
+			@media (max-width:$mobile){
+				 margin-bottom: 10px; 
+			}
 		}
 	}
 }

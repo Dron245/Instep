@@ -6,6 +6,11 @@
 .vk {
 
 	&__container {
+		.button__wrapper {
+			@media (max-width: toEm(600)){
+				  margin-top: 20px;
+			}
+		}
 	}
 
 	&__top {
@@ -13,25 +18,33 @@
 		justify-content: space-between;
 		align-items: flex-end;
 		margin-bottom: 50px;
+		@media (max-width:$mobile){
+			 margin-bottom: 20px; 
+		}
 	}
 
-	&__title {
+	&__title[class] {
+		margin-bottom: 0;
 	}
 
 	&__content {
 	}
 
 	&__slider[class] {
-		@media (min-width:$mobile){
+		@media (min-width:$tablet){
 			 overflow: initial; 
 		}
 	}
 
 	&__wrapper[class] {
+		@media (min-width:$tablet){
+			 display: grid;
+			 justify-content: center;
+			 grid-template-columns: repeat(3, 29%); 
+			 row-gap: 40px;
+			 column-gap: 50px;
+		}
 		@media (min-width:$mobile){
-			flex-wrap: wrap;
-			row-gap: 40px;
-			column-gap: 50px;
 			}
 	}
 
@@ -39,7 +52,7 @@
 		position: relative;
 		z-index: 2;
 		@media (min-width:$mobile){
-			  flex: 0 0 30.48%; /* 360/1170 */
+			//   flex: 0 0 30.48%; /* 360/1170 */
 		}
 	}
 
@@ -58,6 +71,9 @@
 			top: -20px;
 			right: -20px;
 			z-index: 2;
+			@media (max-width:$tablet){
+				display: none;
+			}
 			img {
 			 width:100%;
 			 height:auto;
@@ -74,12 +90,21 @@
 			}
 	}
 	&__pagination {
+		@media (max-width:$tablet){
+			display: flex;
+		}
 	}
 
 	&__button {
 		width: 270px;
 		height: 60px;
 		text-transform: uppercase;
+		@media (max-width:$mobile){
+			 height: 45px; 
+		}
+		@media (max-width: toEm(600)){
+			  width: 100%;
+		}
 		// left: 20px;
 	}
 }
@@ -90,7 +115,7 @@
 
 	&__wrapper {
 		.vk & {
-			left: 20px;
+			// left: 20px;
 		}
 		&_yellow {
 		}

@@ -6,21 +6,45 @@
 	&__container {
 		.button {
 			text-transform: uppercase;
+			@media (max-width:$tablet){
+				height: 50px;
+				font-size: 16px;
+			}
 		}
 	}
 
 	&__body {
 		position: relative;
-		height: 571px;
 		border: 2px solid $akcent;
-		// clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 calc(0% + 70px));
 		clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 70px);
 		border-radius: 2px;
+		@media (min-width:992.4px){
+			@include adaptiveValue("height", 571, 480,0, 1170,992.52);
+		}
+		@media (max-width:992.2px) and (min-width: 650px){
+			@include adaptiveValue("height", 571, 342,0,992.41,768);
+		}
+		@media (max-width: toEm(649.98)){
+			@include adaptiveValue("height", 556, 650,0,650,360);
+		}
+		@media (max-width: $mobile) {
+			clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+			
+			.cut {
+				transform: rotate(-43deg);
+			}
+			.button::after {
+				transform: rotate(-43deg);
+			}
+		}
 		.content {
 			position: absolute;
 			inset: 0;
 			z-index: 3;
 			padding-inline: 50px;
+			@media (max-width: toEm(649.98)){
+				  padding-inline: 10px;
+			}
 		}
 		.lt,
 		.rb {
@@ -30,17 +54,24 @@
 			height: 101px;
 			z-index: 2;
 			transform: rotate(45deg);
+			@media (max-width: $mobile) {
+				height: 51px;
+			}
 		}
 
 		.lt {
 			top: -34px;
 			left: -1px;
 			transform-origin: bottom;
+			@media (max-width: $mobile) {
+			}
 		}
 		.rb {
 			right: -1px;
 			bottom: -34px;
 			transform-origin: top;
+			@media (max-width: $mobile) {
+			}
 		}
 
 		.in-wrapper {
@@ -50,6 +81,7 @@
 			.in-rb {
 				position: absolute;
 				background-color: $akcent2;
+				// background-color: red;
 				// display: none;
 				opacity: 0;
 				width: 2px;
@@ -57,6 +89,9 @@
 				transform: rotate(45deg);
 				height: 97px;
 				// transition: opacity 0.4s;
+				@media (max-width: $mobile) {
+					display: none;
+				}
 			}
 			.in-rb {
 				transform-origin: top;
@@ -66,7 +101,7 @@
 					animation: view 2s linear infinite;
 				}
 			}
-			
+
 			.in-lt {
 				top: -12px;
 				left: 15px;
@@ -76,12 +111,18 @@
 				}
 			}
 			@keyframes view {
-				
-					0% {opacity: 0;}
-					32% {opacity: 1;}
-					92% {opacity: 1;}
-					100% {opacity: 0;}
-			
+				0% {
+					opacity: 0;
+				}
+				32% {
+					opacity: 1;
+				}
+				95% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
 			}
 		}
 		.in {
@@ -108,6 +149,9 @@
 				background-position: 0 0;
 				background: repeating-conic-gradient(from -71.5deg, $akcent2 0% 25%, transparent 25% 50%, $akcent2 50%);
 				animation: rotate 8s linear infinite;
+				@media (max-width: $mobile) {
+					display: none;
+				}
 			}
 
 			&::after {
@@ -127,31 +171,32 @@
 		}
 	}
 
-	&__lt {
-	}
-
-	&__rb {
-	}
-
-	&__in-wrapper {
-	}
-
-	&__in-rb {
-	}
-
-	&__in-lt {
-	}
-
-	&__in {
-	}
-
 	&__content {
-		margin-top: 100px;
+		// margin-top: 100px;
+		@media (min-width:$mobile){
+			@include adaptiveValue("margin-top", 100, 50,0,992,768);
+		}
+		@media (max-width:$mobile){
+			 margin-top: 15px; 
+		}
+	}
+
+	&__fond {
+		img {
+		 width:100%;
+		 height:auto
+		}
 	}
 
 	&__title[class] {
 		line-height: 1.25;
 		margin-bottom: 30px;
+		@include adaptiveValue("font-size", 50, 20,0,1170,768);
+		@media (max-width:$tablet){
+			line-height: 1.2;
+			@include adaptiveValue("margin-bottom", 30, 20,0,992,768);
+			br {display: none;}
+		}
 	}
 
 	&__bottom {
@@ -162,61 +207,47 @@
 	}
 
 	&__item {
-
+		p br {
+			@media (max-width: toEm(1000)) {
+				display: none;
+			}
+		}
 	}
 	.button__wrapper {
-		margin-top: 40px;
 		width: fit-content;
+		@include adaptiveValue("margin-top", 40, 20,0,992,768);
+		@media (max-width: toEm(649.98)){
+			  width: 100%;
+		}
 	}
 	&__button {
 		width: 270px;
 		height: 61px;
+		@media (max-width: toEm(649.98)){
+			  width: 100%;
+		}
 	}
 
 	&__list {
-		flex: 0 0 49.145299%; /* 575/1170 */
-		display: flex;
 		gap: 10px;
-	}
-
-	&__fond {
-		
-	}
-}
-.test {
-}
-.lt {
-}
-.rb {
-}
-.in-wrapper {
-}
-.in-rb {
-}
-.in-lt {
-}
-.in {
-}
-.content {
-}
-.text {
-}
-.button {
-	&_yellow {
-	}
-
-	&__wrapper {
-		&_yellow {
+		@media (min-width: 992.02px) {
+			flex: 0 0 49.145299%; /* 575/1170 */
+			display: flex;
+		}
+		@media (max-width: 992.02px) {
+			flex: 0 0 42%;
+			display: grid;
+			justify-items: center;
+			grid-template-columns: auto auto;
+			@media (max-width:$mobile){
+				justify-content: end;
+				grid-template-columns: 105px 105px;
+			}
+			@media (max-width: toEm(649.98)){
+				  grid-template-columns: 140px 140px;
+				  justify-items: initial;
+				  justify-content: center;
+			}
 		}
 	}
-}
-.t {
-}
-.b {
-}
-.l {
-}
-.r {
-}
-.cut {
 }

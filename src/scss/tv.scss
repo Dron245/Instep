@@ -4,13 +4,16 @@
 
 		&__container {
 			display: flex;
-
+			@include adaptiveValue("gap", 50, 20,0,1170, 767);
+			@media (max-width: toEm(650)){
+				  flex-direction: column;
+			}
 		}
 
 		&__item {
-			flex: 0 0 50%;
-			&:not(:last-child) {
-				margin-right: 50px;
+			flex: 0 0 47%;
+			@media (max-width: toEm(850)){
+				  flex: 0 0 48.3%;
 			}
 		}
 		
@@ -27,6 +30,8 @@
 				position: absolute;
 				bottom: 20px;
 				right: 20px;
+				margin-bottom: 0;
+				
 				&::after{
 					content:'';
 					position: absolute;
@@ -47,17 +52,13 @@
 			top: -20px;
 			right: -20px;
 			z-index: -1;
+			@media (max-width: toEm(850)){
+				display: none;
+		 }
 			img {
 			 width:100%;
 			 height:auto
 			}
 		}
 }
-.videos {
 
-		&__img {
-		}
-
-		&__link {
-		}
-}

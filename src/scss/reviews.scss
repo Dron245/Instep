@@ -26,10 +26,17 @@
 
 	&__wrapper {
 	}
-
+	&__yandex {
+		@media (max-width: toEm(590)){
+			width: 400px !important;
+		}
+		@media (max-width: toEm(470)){
+			  width: 300px !important;
+		}
+	}
 	&__slide {
 		cursor: pointer;
-		padding-block: 125px;
+		padding-block: 10px;
 		display: grid;
 		place-items: center;
 		background-color: white;
@@ -46,10 +53,13 @@
 	&__pagination {
 		@media (min-width: $mobile) {
 			margin-top: 40px;
-			display: flex;
+			// display: flex;
 			.swiper-pagination-bullet {
 				height: 5px;
 			}
+		}
+		@media (max-width:$mobile){
+			 display: none; 
 		}
 	}
 }

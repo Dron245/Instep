@@ -7,7 +7,16 @@
 
 	&__container {
 		display: flex;
-		gap: 35px;
+		@include adaptiveValue("gap", 35, 10,0,1170,768);
+		@media (max-width:$mobileSmall){
+			 flex-direction: column;
+			 row-gap: 20px;
+		}
+		.popup__subtext {
+			@media (max-width:$mobile){
+				 margin-top: 15px; 
+			}
+		}
 	}
 
 	&__body {
@@ -18,52 +27,19 @@
 	}
 
 	&__text {font-weight: 500;
-		font-size: 20px;
-		
-		/* line-height: 25px; */ 
 		line-height: 125%;
 		letter-spacing: 0.01em;
+		@include adaptiveValue("font-size", 20, 16,0,1170,768);
 	}
 }
 .popup {
 
 	&__form {
 		.request & {
-			flex: 0 0 570px;
-		}
-	}
-
-	&__form-item {
-	}
-
-	&__subtext {
-	}
-
-	&__button {
-	}
-}
-.input {
-}
-.input-mask {
-}
-.button {
-
-	&_yellow {
-	}
-
-	&__wrapper {
-
-		&_yellow {
+			@media (min-width:$mobileSmall){
+				flex: 0 0 48.717949%; /* 570/1170 */
+			}
 		}
 	}
 }
-.t {
-}
-.b {
-}
-.l {
-}
-.r {
-}
-.cut {
-}
+

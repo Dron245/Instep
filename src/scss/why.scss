@@ -58,13 +58,28 @@
 	}
 
 	&__galery {
+		@media (max-width:$tablet){
+			margin-right: 10px;
+			flex: 0 0 30%;
+			img {
+			 width:100%;
+			 height:auto
+			}
+		}
+		@media (max-width:$mobile){
+			 display: none; 
+		}
 	}
 
 	&__img {
 	}
 
-	&__title {
+	&__title[class] {
 		margin-bottom: 60px;
+		@media (max-width:$mobileSmall){
+			 letter-spacing: initial;
+			 line-height: 1.2; 
+		}
 	}
 }
 

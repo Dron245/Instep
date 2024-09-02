@@ -1,5 +1,4 @@
 .page {
-
 	&__capability {
 	}
 }
@@ -19,48 +18,69 @@
 	}
 
 	&__title {
-		width: 1300px;
-		margin-inline: auto;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		translate: -50% -50%;
+		
 		font-weight: 700;
-font-size: 70px;
-font-family: $fontSecondFamily;
-color: $akcent;
-/* line-height: 78px; */ 
-line-height: 111%;
-letter-spacing: 0.01em;
-text-transform: uppercase;
-text-align: center;
-@media (min-width:toEm(1440)){
-	  @include adaptiveValue("font-size", 160,70,0,4000,1440 );
-}
-@media (min-width:toEm(2600)){
-	width: 2400px;
-}
-span {
-	font-family: $fontFamily;
-	font-weight: 900;
-}
+		font-size: 70px;
+		font-family: $fontSecondFamily;
+		color: $akcent;
+		/* line-height: 78px; */
+		line-height: 111%;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		text-align: center;
+		@media (min-width:$mobileSmall){
+			margin-inline: auto;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			width: 100%;
+		}
+		@media (min-width: toEm(1440)) {
+			@include adaptiveValue("font-size", 160, 70, 0, 4000, 1440);
+		}
+		@media (min-width: toEm(2600)) {
+			width: 2400px;
+		}
+		@media (max-width: toEm(1350)) and (min-width:768px) {
+			  @include adaptiveValue("font-size", 70, 40,0,1350,768);
+			  max-width: 95%;
+		}
+		@media (max-width:$mobile){
+			max-width: 95%;
+			 @include adaptiveValue("font-size", 40, 25,0,768,360); 
+		}
+		span {
+			font-family: $fontFamily;
+			font-weight: 900;
+		}
+		@media (max-width:$mobileSmall){
+			max-width: initial;
+			//  position: relative; 
+		}
 	}
 
 	&__galery {
 		display: flex;
 		justify-content: space-between;
+		@media (max-width:$mobileSmall){
+			 display: none; 
+		}
 	}
 
 	&__img {
 		img {
-		 width:100%;
-		 height:auto
+			width: 100%;
+			height: auto;
 		}
-		@media (min-width:toEm(1440)){
+		@media (min-width: toEm(1440)) {
 			// @include adaptiveValue("top", -350, 150,0,4000,1350);
-			  @include adaptiveValue("width", 1000,405,0, 4000,1440);
+			@include adaptiveValue("width", 1000, 405, 0, 4000, 1440);
 		}
-		&:last-child{
+		@media (max-width: toEm(1350)){
+			  @include adaptiveValue("width", 405, 186,0, 1350, 768);
+		}
+		&:last-child {
 			margin-top: 166px;
 		}
 	}
