@@ -62,7 +62,7 @@ function initSliders() {
 
 	if (document.querySelector('.reviews__slider')) { //Указываем класс нужного слайдера
 		//Создаем слайдер
-				new Swiper('.reviews__slider', { //Указываем класс нужного слайдера
+				new Swiper('.reviews__sliderr', { //Указываем класс нужного слайдера
 						//Подключаем модули слайдера
 						//для конкретного случая
 					modules: [Pagination],
@@ -73,7 +73,7 @@ function initSliders() {
 					// autoHeight: true,
 					speed: 800,
 		
-					loop: true,
+					// loop: true,
 		
 					// Пагинация
 					
