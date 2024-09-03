@@ -75,10 +75,13 @@
 	}
 
 	&__title[class] {
-		margin-bottom: 60px;
+		@include adaptiveValue("margin-bottom", 50, 20,0,1170,768);
+		@media (max-width:$mobile){
+			  
+			line-height: 1.2; 
+		}
 		@media (max-width:$mobileSmall){
 			 letter-spacing: initial;
-			 line-height: 1.2; 
 		}
 	}
 }

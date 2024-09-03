@@ -11,7 +11,7 @@
 	&__container {
 		display: flex;
 		gap: 30px;
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			gap: 10px;
 		}
 	}
@@ -19,8 +19,8 @@
 	&__item {
 		&:first-child {
 			flex: 0 0 48.717949%; /* 570/1170 */
-			@media (max-width:$mobile){
-				 flex: 0 0 100%; 
+			@media (max-width: 768.02px) {
+				flex: 0 0 100%;
 			}
 		}
 		.text:not(:last-child) {
@@ -28,8 +28,8 @@
 		}
 
 		&_last {
-			@media (max-width:$mobile){
-				 margin-bottom: 20px; 
+			@media (max-width: 768.02px) {
+				margin-bottom: 20px;
 			}
 		}
 	}
@@ -44,9 +44,9 @@
 		line-height: 100%;
 		letter-spacing: 0.01em;
 		margin-bottom: 80px;
-		@include adaptiveValue("margin-bottom", 80, 15,0,1170,992);
-		@include adaptiveValue("font-size", 25, 16,0,1170,992);
-		@media (max-width:$tablet){
+		@include adaptiveValue("margin-bottom", 80, 15, 0, 1170, 992);
+		@include adaptiveValue("font-size", 25, 16, 0, 1170, 992);
+		@media (max-width: $tablet) {
 			line-height: 1.25;
 		}
 	}

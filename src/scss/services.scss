@@ -51,6 +51,11 @@
 			gap: 0;
 			.button__wrapper {
 				width: 100%;
+				@media (max-width: toEm(486)){
+					  &:not(:last-child) {
+						margin-bottom: 10px;
+					  }
+				}
 				span {
 					display: none;
 				}
@@ -72,9 +77,9 @@
 		}
 		@media (max-width:$tablet){
 			width: 240px;
-			height: 50px;
 		}
 		@media (max-width: $mobile) {
+			height: 50px;
 			clip-path: none;
 			// height: 40px;
 			padding-left: 0;

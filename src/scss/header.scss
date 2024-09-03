@@ -1,11 +1,9 @@
 .header {
-	padding-top: 90px;
-	padding-bottom: 60px;
 	position: relative;
 	z-index: 2;
-	@media (max-width:$pc){
-		 padding-top: 20px; 
-	}
+	@include adaptiveValue("padding-top", 90, 20,0,1170,768);
+	@include adaptiveValue("padding-bottom", 60, 20,0,1170,768);
+	
 	&__drop {
 		background: #020001;
     position: fixed;

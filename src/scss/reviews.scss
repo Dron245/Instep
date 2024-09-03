@@ -7,13 +7,13 @@
 	}
 
 	&__top {
-		margin-bottom: 50px;
 		display: flex;
 		align-items: flex-end;
 		justify-content: space-between;
 	}
 
 	&__title {
+		@include adaptiveValue("margin-bottom", 50, 20,0,1170,768);
 	}
 
 	&__button {

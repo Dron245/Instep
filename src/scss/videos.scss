@@ -238,6 +238,7 @@
 			bottom: 20px;
 			left: 20px;
 			@media (min-width:$tablet){
+				right: 10px;
 			}
 			@media (max-width:$tablet){
 			min-height: 150px;
@@ -260,7 +261,7 @@
 }
 
 .fancybox__container[class] {
-	max-width: 2000px;
+	max-width: 100%;
 }
 
 .fancybox__content {

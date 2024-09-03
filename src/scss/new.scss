@@ -1,46 +1,41 @@
 .page {
 	&__new {
 		margin-top: 120px;
-		position: relative
+		position: relative;
 	}
 }
 .new {
 	@include gridContainer(3);
-	@media (max-width: toEm(1000)){
-		@include gridContainer(0)
+	@media (max-width: toEm(1000)) {
+		@include gridContainer(0);
 	}
 	&__content {
 		display: flex;
 		gap: 30px;
-		@media (max-width: toEm(1000)){
-			  flex-direction: column;
+		@media (max-width: toEm(1000)) {
+			gap: 20px;
 		}
-		@media (max-width:$mobile){
-			 gap: 20px; 
+		@media (max-width: 768.02px) {
+			gap: 20px;
+			flex-direction: column;
 		}
 	}
 	&__item {
 		&_left {
-			// flex:0 0 36.016%;
 			flex: 0 0 470px;
-			@media (max-width: toEm(1440)){
-				  flex: 0 0 36%;
+			@media (max-width: toEm(1440)) {
+				flex: 0 0 36%;
 			}
-			@media (max-width: toEm(1000)){
-				  flex: 0 0 auto;
+			@media (max-width: toEm(768)) {
+				flex: 0 0 auto;
 			}
-			@media (max-width:$tablet){
-				// flex: 0 0 44%;
-			}
-
 		}
 
 		&_right {
 			flex: 1;
-			@media (max-width: toEm(1440)){
-				  display: flex;
-				  flex-direction: column;
-			}
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 		}
 	}
 
@@ -52,77 +47,75 @@
 		grid-column: initial;
 	}
 	&__img {
-		@media (max-width:$tablet){
-			// aspect-ratio: 219/355;
+		@media (max-width: $tablet) {
 			position: relative;
 		}
 		img {
-		 width:100%;
-		 height:auto
+			width: 100%;
+			height: auto;
 		}
 	}
 
 	&__text {
-		margin-top: 34px;
 		font-weight: 600;
 		// font-size: 30px;
 		line-height: 107%;
 		letter-spacing: 0.01em;
 		text-transform: uppercase;
-		@media (min-width:$tablet){
+		@media (min-width: $tablet) {
 			padding-right: 50px;
-			  
 		}
-		@include adaptiveValue("font-size", 30, 20,0,1170,992);
-		@media (max-width:1000px){
-			@include adaptiveValue("font-size", 30, 20,1000,768);
-			br {display: none;}
+		@include adaptiveValue("margin-top", 34, 22, 0, 1170, 768);
+		@include adaptiveValue("font-size", 30, 20, 0, 1170, 768);
+		@media (max-width: 1000px) {
+			br {
+				display: none;
+			}
 		}
 	}
 
 	&__title {
-		margin-bottom: 30px;
-		@media (max-width: toEm(1000)){
-			  br {display: none;}
+		@include adaptiveValue("margin-bottom", 30, 15, 0, 1170, 992);
+		@media (max-width: toEm(1000)) {
+			br {
+				display: none;
+			}
 		}
 	}
 
 	&__galery {
 		display: flex;
 		gap: 30px;
-		@media (max-width:$mobile){
-			 gap: 20px; 
+		flex: 1;
+		@media (max-width: 768.02px) {
+			gap: 20px;
+			justify-content: space-between;
 		}
-		@media (min-width:toEm(1440)){
-			  justify-content: space-between;
+		@media (min-width: toEm(1440)) {
+			justify-content: space-between;
 		}
-		@media (max-width: toEm(1440)){
-			  margin-top: auto;
-			// height: 100%;
-		}
-		@media (max-width:$tablet){
-			// margin-top: initial;
-			// height: 100%;
-		}
-		@media (max-width:$mobileSmall){
-			 flex-direction: column; 
+		@media (max-width: $mobileSmall) {
+			flex-direction: column;
 		}
 		.new__img:first-child {
 			flex: 0 0 58.385093%; /* 470/805 */
-			@media (max-width:$mobileSmall){
-				 flex: 0 0 auto; 
+			@media (max-width: $mobileSmall) {
+				flex: 0 0 auto;
 			}
 		}
 		.new__img {
-				flex: 0 0 38%;
-				position: relative;
-				@media (max-width:$tablet){
-					img {
-						// position: absolute;
-						// inset: 0;
-						// object-fit: cover;
-					}
+			flex: 0 0 38%;
+			position: relative;
+			img {
+				@media (min-width: 768.02px) {
+					position: absolute;
+					width: 100%;
+					left: 0;
+					top: 0;
+					height: 100%;
+					object-fit: cover;
 				}
+			}
 		}
 	}
 }

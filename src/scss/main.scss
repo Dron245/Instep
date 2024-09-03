@@ -58,6 +58,8 @@
 	}
 
 	&__actions {
+		display: flex;
+			flex-direction: column;	
 		flex: 0 0 45.213675%; /* 529/1170 */
 		aspect-ratio: 529/440;
 		position: relative;
@@ -65,20 +67,25 @@
 		padding: 64px 32px;
 		.button__wrapper {
 			width: fit-content;
+			margin-top: auto;
+			@media (max-width:$mobile){
+				 width: 100%; 
+				 @include adaptiveValue("margin-bottom", 30, 5,0,768,360);
+			}
 		}
 		@media (max-width:$tablet){
-			flex: 0 0 50%; /* 369/738 */
-			// padding: 64px toRem(20);
+			flex: 0 0 45%; /* 369/738 */
+			padding: 44px toRem(32);
+			
 		}
 		@media (max-width:$mobile){
 			padding-inline: toRem(35);
 			padding-block: 60px;
-			// aspect-ratio: 369/254;
-			display: flex;
-			flex-direction: column;
+			// aspect-ratio: 330/254;
+			
 			.button__wrapper {
 				margin-top: auto;
-				margin-bottom: 25px;
+				// margin-bottom: 25px;
 			}
 		}
 		@media (max-width:$mobileSmall){
@@ -93,7 +100,7 @@
 		z-index: -1;
 		img {
 		 width:100%;
-		 height:auto
+		position: absolute;
 		}
 	}
 	&__title {
@@ -106,11 +113,11 @@
 		  font-size: 70px;
 	}
 	@media (min-width: $mobile) and (max-width: 1170px){
-		  @include adaptiveValue("font-size", 70, 28,0,$maxWidthContainer, 768);
+		  @include adaptiveValue("font-size", 70, 30,0,$maxWidthContainer, 768);
 	}
 	@media (max-width:$mobile){
-		  
 		@include adaptiveValue("font-size", 70, 30,0,768,360);
+		
 	}
 	}
 
@@ -119,23 +126,37 @@
 		font-weight: 600;
 		line-height: 1.25;
 		br {display: none;}
-		@include adaptiveValue("font-size", 20, 16,0,768,360);
+		@media (min-width:$mobile){
+			@include adaptiveValue("font-size", 20, 16,0, 1170,768);
+		}
 		@media (max-width:$mobile){
-			 br {display: block;}
+			@include adaptiveValue("font-size", 20, 16,0,768,360);
+		}
+		@media (max-width: toEm(450)){
+			br {display: block;}
+			  
 		}
 	}
 	
 	&__button {
-		margin-top: 75px;
+		margin-top: auto;
 		height: 61px;
 		padding-inline: 38px;
 		text-transform: uppercase;
-		@media (max-width: toEm(1150)){
-			  margin-top: 50px;
+		@media (max-width: toEm(1170)) and (min-width:$mobile){
+			//   @include adaptiveValue("margin-top", 50, 20,0,1150,768);
 			  height: 50px;
 		}
+		@media (max-width:$tablet){
+			padding-inline: 22px;
+		}
 		@media (max-width:$mobile){
-			 margin-top: 0; 
+			 margin-top: 0;
+			 width: 100%;
+			 @include adaptiveValue("height", 60, 50,0,768, 460);
+		}
+		@media (min-width: $mobile) and (max-width: $tablet){
+			 white-space: nowrap; 
 		}
 		@media (max-width:$mobileSmall){
 			padding-inline: 15px;

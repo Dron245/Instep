@@ -1,5 +1,8 @@
 .page {
-	&__capability {
+	&__capability[class] {
+		@media (max-width:$mobileSmall){
+			 margin-block: 60px; 
+		}
 	}
 }
 .capability {

@@ -1,64 +1,75 @@
 .page {
 }
 .tv {
-
-		&__container {
-			display: flex;
-			@include adaptiveValue("gap", 50, 20,0,1170, 767);
-			@media (max-width: toEm(650)){
-				  flex-direction: column;
-			}
+	&__container {
+		display: flex;
+		@include adaptiveValue("gap", 50, 20, 0, 1170, 767);
+		@media (max-width: toEm(650)) {
+			flex-direction: column;
 		}
+	}
 
-		&__item {
-			flex: 0 0 47%;
-			@media (max-width: toEm(850)){
-				  flex: 0 0 48.3%;
-			}
+	&__item {
+		flex: 0 0 47%;
+		@media (max-width: toEm(850)) {
+			flex: 0 0 48.3%;
 		}
-		
-		&__img {
-			border: 1px solid $akcent2;
-			aspect-ratio: 550/365;
-			position: relative;
-			background-color: $osnovnoy-2;
-			// z-index: 2;
-			display: grid;
-			place-items: center;
-			
-			.videos__link {
-				position: absolute;
-				bottom: 20px;
-				right: 20px;
-				margin-bottom: 0;
-				
-				&::after{
-					content:'';
-					position: absolute;
-					inset: 0;
-					border: 2px solid $akcent;
-					transition: filter 0.3s;
-				}
-				&:hover{
-					&::after{
-						filter: blur(10px);
-					}
-				}
-			}
-		}
+	}
 
-		&__after {
+	&__img {
+		border: 1px solid $akcent2;
+		aspect-ratio: 550/365;
+		position: relative;
+		background-color: $osnovnoy-2;
+		// z-index: 2;
+		display: grid;
+		place-items: center;
+
+		.videos__link {
 			position: absolute;
-			top: -20px;
-			right: -20px;
-			z-index: -1;
-			@media (max-width: toEm(850)){
-				display: none;
-		 }
-			img {
-			 width:100%;
-			 height:auto
+			bottom: 20px;
+			right: 20px;
+			margin-bottom: 0;
+			@media (max-width:$mobile) and (min-width: 650px){
+				 width: 40px;
+				 img {
+					width: 100%;
+				 } 
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border: 2px solid $akcent;
+				transition: filter 0.3s;
+			}
+			&:hover {
+				&::after {
+					filter: blur(10px);
+				}
 			}
 		}
-}
+	}
 
+	&__after {
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		z-index: -1;
+		@media (max-width: toEm(850)) {
+			display: none;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	&__img-wrapper {
+		@media (min-width: 650px) and (max-width: $tablet){
+			 transform: scale(0.6); 
+		}
+		@media (max-width: $mobileSmall) {
+			transform: scale(0.6);
+		}
+	}
+}

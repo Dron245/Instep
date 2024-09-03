@@ -59,14 +59,15 @@
 
 	&__subtitle {
 		font-weight: 700;
-		font-size: 30px;
+		
 		font-family: $fontSecondFamily;
 		color: $akcent;
 		/* line-height: 52px; */
 		line-height: 173%;
 		letter-spacing: 0.01em;
 		text-transform: uppercase;
-		margin-bottom: 30px;
+		@include adaptiveValue("margin-bottom", 30, 20,0,1170,768);
+		@include adaptiveValue("font-size", 30, 20,0,1170,768);
 		& + p {
 			margin-bottom: 20px;
 		}
@@ -146,10 +147,11 @@
 				font-size: 16px;
 				line-height: 1.31;
 			}
-			@media (max-width:$pc) and (min-width:$mobile){
+			@media (max-width:1170.02px) and (min-width:$mobile){
 				 p:last-child {
 				 margin-top: 10px;
 				 font-size: 20px;
+				 @include adaptiveValue("font-size", 20, 16,0,1170,768);
 				 } 
 			}
 			@media (max-width: $mobile) {

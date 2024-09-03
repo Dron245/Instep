@@ -28,23 +28,23 @@
 		gap: 50px;
 		cursor: pointer;
 		// z-index: 1;
-		@media (max-width:$pc){
+		@media (max-width: $pc) {
 			//  gap: 0;
-			 justify-content: space-between;
-			 .slider__img {
+			justify-content: space-between;
+			.slider__img {
 				//  flex: 0 0 50%;
 				img {
 					width: 100%;
 				}
-			 } 
+			}
 		}
-		@media (max-width:$mobile){
+		@media (max-width: $mobile) {
 			// grid-template-columns: 1fr;
 			align-items: initial;
-			 flex-direction: column;
-			 padding-top: 20px;
-			 padding-inline: 15px;
-			 gap: 20px;
+			flex-direction: column;
+			padding-top: 20px;
+			padding-inline: 15px;
+			gap: 20px;
 		}
 		&:before {
 			content: "";
@@ -53,81 +53,104 @@
 			inset: 0px;
 			filter: blur(5px);
 		}
-		
+
 		&_1 {
+			.slider__title {
+				br {display: none;}
+				@media (max-width: toEm(412)){
+					  br {display: block;}
+				}
+			}
 			.slider__button[class] {
-				
 			}
 			br {
-				@media (max-width:$mobile){
-					 display: none; 
+				@media (max-width: $mobile) {
+					display: none;
 				}
 			}
 			.slider__img {
-				@media (max-width:$mobile){
-					 aspect-ratio: 326/197;
-					 img {
+				@media (max-width: $mobile) {
+					aspect-ratio: 326/197;
+					img {
 						aspect-ratio: 326/197;
-					 } 
+					}
 				}
 			}
 		}
 		&_2 {
 			.button__wrapper {
-				// width: 456px;
+				@media (min-width: $tablet) {
+					width: 456px;
+				}
+				@media (min-width: $mobile) and (max-width: $tablet) {
+					width: 300px;
+				}
 			}
-			
+
 			.button {
 				// width: 456px;
 				height: 98px;
+				justify-content: initial;
 				br {
-					@media (max-width:$mobile){
-						 display: none; 
+					@media (max-width: $mobile) {
+						display: none;
 					}
 				}
-				@media (max-width:$tablet){
-					 height: 60px; 
+				@media (max-width: $tablet) {
+					height: 60px;
 				}
 			}
 			.slider__img {
-				@media (max-width:$mobile){
-					 aspect-ratio: 326/197;
-					 img {
+				@media (max-width: $mobile) {
+					aspect-ratio: 326/197;
+					img {
 						aspect-ratio: 326/197;
-					 } 
+					}
 				}
 			}
 		}
 		&_3 {
 			.slider__title {
 				color: $akcent;
+				@media (max-width: $mobile) {
+					br {
+						display: none;
+					}
+				}
 			}
 			.slider__img {
-				@media (max-width:$mobile){
-					 aspect-ratio: 326/197;
-					 img {
+				@media (max-width: $mobile) {
+					aspect-ratio: 326/197;
+					img {
 						aspect-ratio: 326/197;
-					 } 
+					}
 				}
 			}
 		}
 		&_4 {
 			.button__wrapper {
-				// width: 500px;
+				
+				@media (min-width: $tablet) {
+					width: 500px;
+				}
+				@media (min-width: $mobile) and (max-width: $tablet) {
+					width: 300px;
+				}
 			}
 			.button[class] {
 				// width: 500px;
 				padding-inline: 20px;
-				@media (max-width:$tablet){
+				justify-content: initial;
+				@media (max-width: $tablet) {
 					font-size: 16px;
 				}
 			}
 			.slider__img {
-				@media (max-width:$mobile){
-					 aspect-ratio: 326/238;
-					 img {
+				@media (max-width: $mobile) {
+					aspect-ratio: 326/238;
+					img {
 						aspect-ratio: 326/238;
-					 } 
+					}
 				}
 			}
 		}
@@ -136,15 +159,15 @@
 				display: none;
 			}
 			.last-br2 {
-			display: none;
-			@media (max-width:$tablet){
-				// display: block;
-			}
+				display: none;
+				@media (max-width: $tablet) {
+					// display: block;
+				}
 			}
 			.button__wrapper {
 				display: inline;
-				@media (max-width: toEm(865)){
-					  display: flex;
+				@media (max-width: toEm(865)) {
+					display: flex;
 				}
 			}
 			.button[class] {
@@ -152,21 +175,20 @@
 				display: inline-flex;
 				height: 40px;
 				border: 1px solid $akcent;
-				@media (max-width: toEm(865)){
-					  width: 100%;
+				@media (max-width: $mobile) {
+					margin-top: 7px;
 				}
-
 			}
 			.cut {
 				right: 0.8px;
 				width: 21px;
 			}
 			.slider__img {
-				@media (max-width:$mobile){
-					 aspect-ratio: 326/179;
-					 img {
+				@media (max-width: $mobile) {
+					aspect-ratio: 326/179;
+					img {
 						aspect-ratio: 326/179;
-					 } 
+					}
 				}
 			}
 		}
@@ -175,41 +197,40 @@
 
 			.slider__title {
 				color: $akcent;
-				@media (max-width:$mobile){
-					 flex: 1 0 100%; 
+				@media (max-width: $mobile) {
+					flex: 1 0 100%;
 				}
-
 			}
 			.slider__content {
 				gap: 20px;
 			}
-			@media (max-width:$mobile){
+			@media (max-width: $mobile) {
 				flex-wrap: wrap;
 				.slider__content {
 					flex: 0 0 60%;
 				}
-				
-				 .slider__img {
+
+				.slider__img {
 					flex: 1 0 30%;
 					width: 100%;
 					img {
 						position: relative;
 						aspect-ratio: initial;
 					}
-					@media (max-width:$mobileSmall){
-						 display: flex;
-						 img {
-							margin-top: auto;
-						 } 
+					@media (max-width: $mobileSmall) {
+						display: flex;
+						img {
+							// margin-top: auto;
+						}
 					}
-				 } 
+				}
 			}
-			@media (max-width:$mobileSmall){
+			@media (max-width: $mobileSmall) {
 				.slider__list-item[class] {
 					font-size: 14px;
 					line-height: 1.46;
 					margin-bottom: 0;
-					&:last-child{
+					&:last-child {
 						margin-bottom: 20px;
 					}
 				}
@@ -220,11 +241,11 @@
 				color: $akcent;
 			}
 			.slider__img {
-				@media (max-width:$mobile){
-					 aspect-ratio: 326/286;
-					 img {
+				@media (max-width: $mobile) {
+					aspect-ratio: 326/286;
+					img {
 						aspect-ratio: 326/286;
-					 } 
+					}
 				}
 			}
 		}
@@ -233,22 +254,22 @@
 				max-width: 600px;
 			}
 			.slider__img {
-				@media (max-width:$mobile){
-					 aspect-ratio: 326/197;
-					 img {
+				@media (max-width: $mobile) {
+					aspect-ratio: 326/197;
+					img {
 						aspect-ratio: 326/197;
-					 } 
+					}
 				}
 			}
 		}
 
 		&_9 {
 			.slider__img {
-				@media (max-width:$mobile){
-					 aspect-ratio: 326/197;
-					 img {
+				@media (max-width: $mobile) {
+					aspect-ratio: 326/197;
+					img {
 						aspect-ratio: 326/197;
-					 } 
+					}
 				}
 			}
 		}
@@ -269,8 +290,7 @@
 				// height: 47px;
 			}
 			.button[class] {
-				// display: inline;
-				// height: 47px;
+				transform: translateY(-4px);
 				font-size: 17px;
 			}
 			.slider__button[class] {
@@ -280,37 +300,31 @@
 			}
 			br {
 				display: none;
-				@media (max-width:$pc){
-					 display: block; 
+				@media (max-width: $pc) {
+					display: block;
 				}
 			}
-			
-			.slider__text_button {
-				// display: flex;
-				// align-items: center;
-				// gap: 20px;
+			@media (min-width: toEm(1170)) {
+				height: 399px;
 			}
 		}
 	}
 
 	&__content {
 		position: relative;
-		margin-left: 50px;
 		display: grid;
 		gap: 30px;
-		@media (min-width:$mobile){
-			//  padding-right: 50px; 
+		@media (min-width: $mobile) {
+			margin-left: 50px;
 		}
-		@media (max-width:$pc){
-			 margin-left: 15px;
-			 flex: 0 0 50%;
+		@media (max-width: $pc) and (min-width: $mobile) {
+			margin-left: 15px;
+			flex: 0 0 50%;
+			// flex: 0 0 60%;
 		}
-		@media (max-width:$mobile){
-			 margin-left: 0; 
-			 
-		}
-		@media (max-width:$mobileSmall){
-			 gap: 15px; 
+
+		@media (max-width: $mobileSmall) {
+			gap: 15px;
 		}
 		// max-width: 500px;
 	}
@@ -323,8 +337,8 @@
 		line-height: 120%;
 		letter-spacing: 0.01em;
 		text-transform: uppercase;
-		@media (max-width:$tablet) {
-			@include adaptiveValue("font-size", 40, 20,0,992,768);
+		@media (max-width: $tablet) {
+			@include adaptiveValue("font-size", 40, 20, 0, 992, 768);
 		}
 		span {
 			color: $akcent;
@@ -336,7 +350,7 @@
 		font-weight: 700;
 		line-height: 1.33;
 		font-size: 30px;
-		@include adaptiveValue("font-size", 30, 20,0,1170,768);
+		@include adaptiveValue("font-size", 30, 20, 0, 1170, 768);
 	}
 	&__button {
 		height: 58px;
@@ -345,6 +359,9 @@
 		padding-inline: 28px;
 		/* line-height: 40px; */
 		line-height: 133%;
+		@media (max-width: $mobileSmall) {
+			padding-inline: 20px;
+		}
 	}
 
 	&__list {
@@ -380,17 +397,17 @@
 	&__img {
 		// outline: 1px solid red;
 		position: relative;
-		@media (max-width:$mobile){
+		@media (max-width: $mobile) {
 			aspect-ratio: 2/1;
 			// aspect-ratio: 326/218;
-			 margin-inline: -15px;
-			 img {
+			margin-inline: -15px;
+			img {
 				position: absolute;
 				inset: 0;
 				// aspect-ratio: 2/1;
 				aspect-ratio: 326/218;
 				object-fit: cover;
-			 }
+			}
 		}
 		img {
 			//  width:100%;
@@ -399,10 +416,10 @@
 	}
 	&__button.button {
 		font-size: 30px;
-		@media (max-width:$pc){
-			 font-size: 24px; 
+		@media (max-width: $pc) {
+			// font-size: 24px;
 		}
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			font-size: 17px;
 		}
 	}
