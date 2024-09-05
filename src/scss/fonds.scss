@@ -82,13 +82,11 @@
 				position: absolute;
 				background-color: $akcent2;
 				// background-color: red;
-				// display: none;
 				opacity: 0;
 				width: 2px;
 				z-index: 4;
 				transform: rotate(45deg);
 				height: 97px;
-				// transition: opacity 0.4s;
 				@media (max-width: $mobile) {
 					display: none;
 				}
@@ -97,38 +95,30 @@
 				transform-origin: top;
 				right: 15px;
 				bottom: -12px;
-				&._view {
-					animation: view 2s linear infinite;
-				}
+				animation: view 8s linear infinite;
 			}
 
 			.in-lt {
 				top: -12px;
 				left: 15px;
 				transform-origin: bottom;
-				&._view {
-					animation: view 2s linear infinite;
-				}
+				animation: view 8s linear infinite;
 			}
 			@keyframes view {
-				0% {
-					opacity: 0;
-				}
-				32% {
-					opacity: 1;
-				}
-				95% {
-					opacity: 1;
-				}
-				100% {
-					opacity: 0;
-				}
+				0% {opacity: 0;}
+				23% {opacity: 0;}
+				25% {opacity: 1;}
+				48% {opacity: 1;}
+				50% {opacity: 0;}
+				73% {opacity: 0;}
+				75% {opacity: 1;}
+				98% {opacity: 1;}
+				100% {opacity: 0;}
 			}
 		}
 		.in {
 			position: absolute;
 			inset: 15px;
-			// clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 calc(0% + 70px));
 			clip-path: polygon(70px 0, 100% 0, 100% calc(100% - 70px), calc(100% - 70px) 100%, 0 100%, 0 70px);
 			span {
 				position: absolute;
@@ -147,13 +137,18 @@
 				background-color: #1a232a;
 				background-repeat: no-repeat;
 				background-position: 0 0;
-				background: repeating-conic-gradient(from -71.5deg, $akcent2 0% 25%, transparent 25% 50%, $akcent2 50%);
+				background: conic-gradient(from -61.5deg, $akcent2 0% 25%, transparent 25% 50%, $akcent2 50% 75%, transparent 75% 100%);
 				animation: rotate 8s linear infinite;
 				@media (max-width: $mobile) {
 					display: none;
 				}
 			}
-
+			@keyframes rotate {
+				100% {
+					transform: rotate(1turn);
+					// transform: rotate(0turn);
+				}
+			}
 			&::after {
 				content: "";
 				position: absolute;
@@ -164,11 +159,7 @@
 			}
 		}
 
-		@keyframes rotate {
-			100% {
-				transform: rotate(1turn);
-			}
-		}
+		
 	}
 
 	&__content {

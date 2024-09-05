@@ -42,12 +42,4 @@ window.addEventListener("DOMContentLoaded", () => {
 			document.querySelector(".menu-open") ? document.documentElement.classList.remove("menu-open") : null;
 		}
 	}
-
-	const inrb = document.querySelector('.in-rb');
-	const inlt = document.querySelector('.in-lt');
-	setInterval(function(){inrb.classList.add('_view')},2000)
-	setInterval(function(){inrb.classList.remove('_view')},4000,2000)
-	setInterval(function(){inlt.classList.add('_view')},2000)
-	setInterval(function(){inlt.classList.remove('_view')},4000,2000);
-	
 })
