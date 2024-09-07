@@ -20,14 +20,12 @@
 		position: relative;
 		border: 1px solid $akcent2;
 		display: flex;
-		// display: grid;
-		// grid-template-columns: auto 50%;
 		align-items: center;
 		justify-content: space-between;
 		overflow: hidden;
 		gap: 50px;
 		cursor: pointer;
-		// z-index: 1;
+		
 		@media (max-width: $pc) {
 			//  gap: 0;
 			justify-content: space-between;
@@ -316,6 +314,7 @@
 		gap: 30px;
 		@media (min-width: $mobile) {
 			margin-left: 50px;
+			padding-block: 20px;
 		}
 		@media (max-width: $pc) and (min-width: $mobile) {
 			margin-left: 15px;

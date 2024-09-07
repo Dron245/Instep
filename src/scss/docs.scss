@@ -1,0 +1,44 @@
+.page {
+
+	&__docs {
+	}
+}
+.docs {
+
+	&__container {
+	}
+
+	&__title {
+	}
+
+	&__spoilers {
+		margin-top: 50px;
+	}
+
+	&__list {
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+	}
+}
+.spollers {
+
+	&__item {
+	}
+
+	&__title {
+	}
+
+	&__arrow {
+	}
+
+	&__body {
+	}
+}

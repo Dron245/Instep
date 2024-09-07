@@ -26,6 +26,11 @@
 		@include adaptiveValue("margin-bottom", 50, 20, 0, 1170, 768);
 	}
 
+	&__items {
+		@media (min-width:$mobile){
+			 display: flex; 
+		}
+	}
 	&__item {
 		&:not(:last-child) {
 			margin-bottom: 50px;
@@ -41,17 +46,17 @@
 		color: $akcent;
 		font-family: $fontSecondFamily;
 		@include adaptiveValue("margin-bottom", 30, 20,0,1170,768);
-		@include adaptiveValue("font-size", 40, 20, 0, 1170, 768);
+		@include adaptiveValue("font-size", 30, 18, 0, 1170, 768);
 	}
 
 	&__text {
 		font-weight: 500;
-line-height: 103%;
+line-height: 124%;
 		letter-spacing: 0.01em;
 		&:not(:last-child) {
 			margin-bottom: 20px;
 		}
-		@include adaptiveValue("font-size", 30, 15, 0, 1170, 768);
+		@include adaptiveValue("font-size", 25, 15, 0, 1170, 768);
 	}
 
 	&__map {

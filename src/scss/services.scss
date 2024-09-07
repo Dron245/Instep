@@ -88,12 +88,14 @@
 			font-size: 18px;
 			color: $akcent;
 			font-family: $fontSecondFamily;
-			/* line-height: 27px; */
 			line-height: 150%;
 			letter-spacing: 0.01em;
 			text-transform: uppercase;
 			border: none;
 			position: relative;
+			&.button_yellow[class] {
+				border: none;
+			}
 			.services-inner__content & {
 				color: inherit;
 			}

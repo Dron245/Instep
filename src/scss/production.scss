@@ -160,9 +160,17 @@
 			}
 		}
 		&::after {
-			filter: blur(10px);
+			filter: blur(0px);
+			transition: filter 0.3s;
+			
 		}
-
+		@media (any-hover: hover){
+			&:hover{
+				&::after {
+					filter: blur(10px);
+				}
+			}
+		}
 		@media (max-width: $mobile) {
 			&:not(:last-child) {
 				// margin-bottom: 75px;
@@ -185,11 +193,16 @@
 		font-size: 25px;
 		display: block;
 		padding-bottom: 20px;
-		// width: 300px;
 		line-height: 120%;
 		position: relative;
 		left: 0;
+		transition: translate 0.3s;
 		@include adaptiveValue("font-size", 25, 16, 0, 1170, 768);
+		@media (any-hover: hover){
+			&:hover{
+				translate: 0 -5px;
+			}
+		}
 		&::before,
 		&::after {
 			content: "";

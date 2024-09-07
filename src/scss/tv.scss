@@ -11,6 +11,27 @@
 
 	&__item {
 		flex: 0 0 47%;
+		@media (any-hover: hover){
+			&:hover{
+				.tv__img-wrapper {
+					animation: move linear infinite 3s;
+					@keyframes move {
+						0% {
+							translate: 0 0px;
+						}
+						25% {
+							translate: 0 -15px;
+						}
+						75% {
+							translate: 0 15px;
+						}
+						100% {
+							translate: 0 0px;
+						}
+					}
+				}
+			}
+		}
 		@media (max-width: toEm(850)) {
 			flex: 0 0 48.3%;
 		}

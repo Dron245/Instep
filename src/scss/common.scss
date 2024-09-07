@@ -1,77 +1,52 @@
 // Заголовки, общие БЄМ блоки и прочее...
 .button__wrapper {
 	position: relative;
-	.t,
-	.b,
-	.l,
-	.r,
-	.cut {
+	.t,.b,.l,.r,.cut {
 		position: absolute;
-		transition: filter 0.3s;
 		z-index: 1;
 		background-color: $akcent2;
 	}
 	&._tab-active .button {
-		@media (min-width:$mobile){
+		@media (min-width: $mobile) {
 			background-color: $akcent;
-			  
 		}
 	}
 	&_yellow {
-		.t,
-		.b,
-		.l,
-		.r,
-		.cut {
+		.t,.b,.l,.r,.cut {
 			position: absolute;
-			// transition: filter 0.3s;
 			z-index: 1;
 			background-color: $akcent;
 		}
 	}
 	.t {
 		width: 100%;
-		height: 1px;
-		top: 0;
-		left: 0;
 	}
 	.l {
-		width: 1px;
 		height: 100%;
-		top: 0;
-		left: 0;
 	}
 	.r {
-		width: 1px;
 		right: 0;
-		top: 0;
 		height: calc(100% - 14px);
 	}
 	.b {
-		height: 1px;
 		width: calc(100% - 17px);
-		left: 0;
 		bottom: 0;
 	}
 	.cut {
-		right: 0;
 		width: 1px;
-		bottom: 0;
-		height: 1px;
-		transform: rotate(40deg);
-		transform-origin: right top;
 		top: calc(100% - 15px);
-		bottom: 0;
-		right: 1px;
+		right: 0px;
 		width: 20px;
 		transform-origin: right top;
 		transform: rotate(-40deg);
 	}
-	&:hover .t,
-	&:hover .l,
-	&:hover .r,
-	&:hover .b,
-	&:hover .cut {
+	&:hover .t,&:hover .b,&:hover .cut {
+		height: 3px;
+	}
+	&:hover .l,&:hover .r {
+		width: 3px;
+	}
+	&:hover .t,&:hover .l,&:hover .r,&:hover .b,&:hover .cut {
 		filter: blur(10px);
 	}
 
@@ -86,41 +61,29 @@
 		justify-content: center;
 		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
 		z-index: 2;
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			font-size: 15px;
 		}
 		&_yellow[class] {
-			border-color: $akcent;
+			border: 1px solid $akcent;
 			&:active {
 				background-color: $akcent;
 			}
 			&::before {
-				border-color: $akcent;
+				border: 1px solid $akcent;
 			}
 			&::after {
 				border-top-color: $akcent;
 			}
 		}
-		&:before {
-			// content: "";
-			border: 1px solid;
-			border-color: $akcent2;
-			position: absolute;
-			inset: -1px;
-			transition: filter 0.3s;
-			filter: blur(0px);
-		}
 
-		&::after {
+		&::after { //скошенная линия ссылки
 			content: "";
 			display: block;
 			position: absolute;
-			right: -4px;
-			border-top: 6px solid $akcent2;
-			width: 54px;
-			transform-origin: right top;
+			border-top: 1px solid $akcent2;
 			top: calc(100% - 15px);
-			bottom: 0;
+			// bottom: 0;
 			right: -1px;
 			width: 28px;
 			transform-origin: right top;
@@ -133,40 +96,38 @@
 		&::after {
 			border-top-color: $akcent2;
 		}
-		
 	}
 }
 
 //========================================================================================================================================================
 .pagination {
 	margin-top: 20px;
-		display: flex;
-		gap: 5px;
-		align-items: center;
-		justify-content: center;
-		.swiper-pagination-bullet {
-			cursor: pointer;
-			width: 30px;
-			height: 5px;
-			background-color: $osnovnoy;
-			@media (max-width:$mobile){
-				 width: 18px; 
-			}
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+	.swiper-pagination-bullet {
+		cursor: pointer;
+		width: 30px;
+		height: 5px;
+		background-color: $osnovnoy;
+		@media (max-width: $mobile) {
+			width: 18px;
 		}
-		
-		.swiper-pagination-bullet-active {
-			background-color: $akcent;
-			@media (max-width:$mobile){
-				width: 24px;
-				  
-			}
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: $akcent;
+		@media (max-width: $mobile) {
+			width: 24px;
 		}
-		@media (min-width:$mobile){
-			 display: none; 
-		}
+	}
+	@media (min-width: $mobile) {
+		display: none;
+	}
 }
 section:not(:first-child) {
-	@include adaptiveValue("margin-top", 150, 40,0,$maxWidthContainer, 768);	
+	@include adaptiveValue("margin-top", 150, 40, 0, $maxWidthContainer, 768);
 }
 
 h2[class*="__title"] {
@@ -177,10 +138,10 @@ h2[class*="__title"] {
 	line-height: 104%;
 	letter-spacing: 0.01em;
 	text-transform: uppercase;
-	@include adaptiveValue("font-size", 50, 25,0,1170,768);
-	@media (max-width:$mobile){
-		 line-height: 1.25;
-		 margin-bottom: 20px; 
+	@include adaptiveValue("font-size", 50, 25, 0, 1170, 768);
+	@media (max-width: $mobile) {
+		line-height: 1.25;
+		margin-bottom: 20px;
 	}
 }
 
@@ -189,7 +150,7 @@ h2[class*="__title"] {
 	font-size: 20px;
 	line-height: 125%;
 	letter-spacing: 0.01em;
-	@include adaptiveValue("font-size", 20, 16,0,1170,768);
+	@include adaptiveValue("font-size", 20, 16, 0, 1170, 768);
 	span {
 		color: $akcent;
 	}
@@ -199,14 +160,15 @@ div[class*="decor"] {
 	@media (min-width: toEm(1920)) {
 		display: none;
 	}
-	@media (max-width:$mobile){
-		 display: none; 
+	@media (max-width: $mobile) {
+		display: none;
 	}
 }
 
 .list {
 	&__item {
 		display: flex;
+		flex-direction: row-reverse;
 		align-items: flex-start;
 		gap: 66px;
 		padding-block: 20px;
@@ -214,9 +176,9 @@ div[class*="decor"] {
 		&:first-child {
 			border-top: 1px solid $osnovnoy;
 		}
-		@media (max-width:$mobile){
-			 flex-direction: column;
-			 gap: 15px;
+		@media (max-width: $mobile) {
+			flex-direction: column-reverse;
+			gap: 15px;
 		}
 	}
 }
@@ -225,10 +187,18 @@ div[class*="decor"] {
 	font-size: 28px;
 	color: $akcent;
 	font-family: $fontSecondFamily;
-	/* line-height: 27px; */
 	line-height: 96%;
 	letter-spacing: 0.01em;
 	text-transform: uppercase;
+	position: relative;
+	&::after {
+		content: attr(name);
+		transition: 0.3s;
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+
+	}
 }
 .list-item-content {
 	&__title {
@@ -239,12 +209,27 @@ div[class*="decor"] {
 		line-height: 108%;
 		letter-spacing: 0.01em;
 		margin-bottom: 10px;
-		@include adaptiveValue("font-size", 25, 18,0,1170,768);
+		transition: 0.3s;
+		@include adaptiveValue("font-size", 25, 18, 0, 1170, 768);
+		@media (any-hover: hover) {
+			&:hover {
+				translate: 0 -5px;
+			}
+		}
 	}
 
 	&__text {
 		line-height: 131%;
 		letter-spacing: 0.01em;
-		@include adaptiveValue("font-size", 16, 14,0,1170,768);
+		@include adaptiveValue("font-size", 16, 14, 0, 1170, 768);
+	}
+
+	@media (any-hover: hover){
+		&:hover{
+			& +.punkt::after {
+				opacity: 1;
+				filter: blur(10px);
+			}
+		}
 	}
 }
