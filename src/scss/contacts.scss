@@ -68,6 +68,9 @@ line-height: 124%;
 		@include adaptiveValue("margin-top", 60, 20,0,1170,768);
 		iframe {
 			aspect-ratio: 330/111;
+			@media (max-width:$mobile){
+				 aspect-ratio: 330/180; 
+			}
 		}
 	}
 }

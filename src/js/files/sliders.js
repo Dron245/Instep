@@ -43,7 +43,7 @@ function initSliders() {
 			autoplay: {
 				delay: 3000
 			},
-			loop: true,
+			// loop: true,
 
 			/*
 			// Эффекты
@@ -52,7 +52,10 @@ function initSliders() {
 				disableOnInteraction: false,
 			},
 			*/
-
+			navigation: {
+				prevEl: '.slider__arrow_left',
+				nextEl: '.slider__arrow_right',
+			},
 			// Пагинация
 			
 			pagination: {
@@ -101,13 +104,13 @@ function initSliders() {
 					// autoHeight: true,
 					speed: 800,
 		
-					loop: true,
+					// loop: true,
 					autoplay: {
 						delay: 3000
 					},
 					navigation: {
-						prevEl: '.swiper-button-prev',
-						nextEl: '.swiper-button-next',
+						prevEl: '.certificates__arrow_left',
+						nextEl: '.certificates__arrow_right',
 					},
 					// Пагинация
 					
@@ -223,6 +226,10 @@ window.addEventListener("load", function (e) {
 					slidesPerView: 1,
 					// spaceBetween: 20,
 					// autoHeight: true,
+				},
+				500: {
+					slidesPerView: 2,
+					spaceBetween: 20,
 				},
 				768: {
 					slidesPerView: 1.2,

@@ -211,11 +211,11 @@ div[class*="decor"] {
 		margin-bottom: 10px;
 		transition: 0.3s;
 		@include adaptiveValue("font-size", 25, 18, 0, 1170, 768);
-		@media (any-hover: hover) {
+		// @media (any-hover: hover) {
 			&:hover {
 				translate: 0 -5px;
 			}
-		}
+		// }
 	}
 
 	&__text {
@@ -224,12 +224,12 @@ div[class*="decor"] {
 		@include adaptiveValue("font-size", 16, 14, 0, 1170, 768);
 	}
 
-	@media (any-hover: hover){
+	// @media (any-hover: hover){
 		&:hover{
 			& +.punkt::after {
 				opacity: 1;
 				filter: blur(10px);
 			}
 		}
-	}
+	// }
 }

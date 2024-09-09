@@ -54,23 +54,29 @@
 		gap: 5px;
 		position: relative;
 		z-index: 3;
-		max-width: 170px;
-		img {
-		 width:100%;
-		 height:auto
-		}
+		width: 170px;
+	
 		p {
 			font-size: toRem(12);
 			letter-spacing: 0.01em;
 			@media (max-width:$mobile){
-				 display: none; 
+				 display: none;
 			}
 		}
 		@media (max-width:$mobileSmall){
 			  width: 118px;
 		}
 	}
-
+	&__img-logo {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 170/40.6;
+		img {
+			position: absolute;
+			// aspect-ratio: 170/40.6;
+			height: 100%;
+		}
+	}
 	&__menu {
 		
 	}

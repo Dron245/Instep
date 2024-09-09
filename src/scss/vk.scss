@@ -73,13 +73,13 @@
 		transition: filter 0.3s;
 		border: 2px solid $akcent;
 	}
-	@media (any-hover: hover){
+	// @media (any-hover: hover){
 		&:hover{
 			&::before {
 				filter: blur(10px);
 			}
 		}
-	}
+	// }
 	&::after{
 		background: url('@img/videos/play.svg') 0 0 no-repeat;
 	}

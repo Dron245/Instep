@@ -8,6 +8,7 @@
 }
 .slider {
 	&__container {
+		position: relative;
 	}
 
 	&__slider {
@@ -18,13 +19,29 @@
 	&__navigation {
 		position: absolute;
 		top: 50%;
-		translate: 0 -50%;
-		width: 100%;
+		left: 50%;
+		translate: -50% -50%;
+		width: 109%;
+		@media (max-width: 1300px){
+			 display: none; 
+		}
+		// outline: 1px solid red;
 	}
 
 	&__arrow {
+		position: absolute;
+		z-index: 4;
+		& svg g path {
+			fill: $akcent;
+		}
+		&[disabled] svg g path {
+			fill: #e3e3e3;
+		}
 		&.arrow-right {
-			rotate: 180deg;
+			right: 0;
+			svg {
+				rotate: 180deg;
+			}
 		}
 	}
 
@@ -303,10 +320,19 @@
 			.button[class] {
 				transform: translateY(-4px);
 				font-size: 17px;
+				@media (max-width:$tablet){
+					transform: translateY(0);
+				}
 			}
 			.slider__button[class] {
 				height: 37px;
 				display: inline-flex;
+				@media (max-width:$tablet){
+					height: 30px;
+				}
+				@media (max-width:$mobileSmall){
+					 height: 26px; 
+				}
 				// transform: translateY(-5px);
 			}
 			br {

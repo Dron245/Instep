@@ -164,13 +164,13 @@
 			transition: filter 0.3s;
 			
 		}
-		@media (any-hover: hover){
+		// @media (any-hover: hover){
 			&:hover{
 				&::after {
 					filter: blur(10px);
 				}
 			}
-		}
+		// }
 		@media (max-width: $mobile) {
 			&:not(:last-child) {
 				// margin-bottom: 75px;
@@ -198,11 +198,12 @@
 		left: 0;
 		transition: translate 0.3s;
 		@include adaptiveValue("font-size", 25, 16, 0, 1170, 768);
-		@media (any-hover: hover){
+		// @media (any-hover: hover){
 			&:hover{
 				translate: 0 -5px;
 			}
-		}
+		// }
+		
 		&::before,
 		&::after {
 			content: "";

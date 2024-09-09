@@ -99,6 +99,12 @@ body::after {
 	}
 
 	&__close {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		font-size: 30px;
+		font-weight: 600;
+		color: $akcent;
 	}
 
 	&__title {

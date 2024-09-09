@@ -48,6 +48,14 @@
 		flex: 0 0 200px;
 		display: grid;
 		gap: 10px;
+		.footer__link {
+			transition: translate 0.3s;
+			@media (any-hover: hover){
+				&:hover{
+					translate: 0 -3px
+				}
+			}
+		}
 		@media (max-width: toEm(760)) {
 			margin-block: 20px;
 		}
