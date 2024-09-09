@@ -93,21 +93,26 @@
 			text-transform: uppercase;
 			border: none;
 			position: relative;
+			[data-popup] & {
+				border: 1px solid $akcent !important;
+				clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);;
+			}
 			&.button_yellow[class] {
 				border: none;
 			}
 			.services-inner__content & {
 				color: inherit;
 			}
-			&::before{
+			&.button::before{
 				content:attr(name);
-				// position: absolute;
+				position: absolute;
 				border: none;
 				top: 50%;
 				transform: translateY(-48%);
 				opacity: 0;
 				@media (max-width: toEm(486)){
-						transform: translateY(-90%);
+					
+						// transform: translateY(-90%);
 				}
 				._tab-active & {
 					opacity: 1;
@@ -115,8 +120,16 @@
 					border-color: initial;
 				}
 			}
+			@media (max-width: toEm(486)){
+				 .button__wrapper_last &::before {
+					transform: translateY(-90%);
+				 }
+			}
 			&::after{
 				display: none;
+				[data-popup] & {
+					display: block;
+				}
 			}
 			&:active[class] {
 				background-color: initial;

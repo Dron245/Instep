@@ -141,7 +141,17 @@ margin-bottom: 30px;
 		border: 1px solid rgba(243, 243, 243, 0.6);
 		height: 50px;
 	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
-	
+	&:has(input:focus-visible)::after {
+		// background-color: greenyellow;
+	}
+	input:focus-visible {
+		// border-color: rgba(243, 243, 243, 0.6);
+		outline: 1px auto rgba(243, 243, 243, 0.6);
+		
+		&::after {
+			outline: 1px auto rgba(243, 243, 243, 0.6);
+		}
+	}
 	&._form-focus {
 		border-color: rgba(243, 243, 243, 0.6);
 		&::before,&::after{

@@ -33,7 +33,7 @@ function initSliders() {
 		new Swiper('.slider__slider', { //Указываем класс нужного слайдера
             //Подключаем модули слайдера
             //для конкретного случая
-			modules: [Pagination, Autoplay],
+			modules: [Pagination,Navigation, Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
@@ -93,7 +93,7 @@ function initSliders() {
 				new Swiper('.sertificates__slider', { //Указываем класс нужного слайдера
 						//Подключаем модули слайдера
 						//для конкретного случая
-					modules: [Pagination, Autoplay],
+					modules: [Pagination, Navigation, Autoplay],
 					observer: true,
 					observeParents: true,
 					slidesPerView: 3,
@@ -105,7 +105,10 @@ function initSliders() {
 					autoplay: {
 						delay: 3000
 					},
-		
+					navigation: {
+						prevEl: '.swiper-button-prev',
+						nextEl: '.swiper-button-next',
+					},
 					// Пагинация
 					
 					pagination: {
