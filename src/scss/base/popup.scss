@@ -63,8 +63,8 @@ body::after {
 	width: 100%;
 	max-width: 690px;
 	text-align: center;
-	@media (max-width:$mobile){
-		 padding: toRem(50) toRem(5) toRem(75) toRem(5); 
+	@media (max-width: $mobile) {
+		padding: toRem(50) toRem(5) toRem(75) toRem(5);
 	}
 	.lock & {
 		visibility: visible;
@@ -73,12 +73,10 @@ body::after {
 
 //========================================================================================================================================================
 .popup {
-
 	&__wrapper {
 	}
 
 	&__decor {
-
 		&_left-elipce {
 			left: 0;
 			top: 0;
@@ -109,29 +107,29 @@ body::after {
 
 	&__title {
 		font-weight: 700;
-font-size: 30px;
-font-family: $fontSecondFamily;
-line-height: 83%;
-letter-spacing: 0.01em;
-text-align: center;
-color: $akcent;
-margin-bottom: 20px;
-@media (max-width:$mobileSmall){
-	 font-size: 18px;
-	 line-height: 1.21; 
-}
+		font-size: 30px;
+		font-family: $fontSecondFamily;
+		line-height: 83%;
+		letter-spacing: 0.01em;
+		text-align: center;
+		color: $akcent;
+		margin-bottom: 20px;
+		@media (max-width: $mobileSmall) {
+			font-size: 18px;
+			line-height: 1.21;
+		}
 	}
 
 	&__text {
 		max-width: 440px;
 		font-size: 20px;
 		margin-inline: auto;
-/* line-height: 25px; */ 
-line-height: 125%;
-margin-bottom: 30px;
-@media (max-width:$mobileSmall){
-	 font-size: 16px; 
-}
+		/* line-height: 25px; */
+		line-height: 125%;
+		margin-bottom: 30px;
+		@media (max-width: $mobileSmall) {
+			font-size: 16px;
+		}
 		#calculation & {
 			max-width: 515px;
 		}
@@ -146,72 +144,76 @@ margin-bottom: 30px;
 		position: relative;
 		border: 1px solid rgba(243, 243, 243, 0.6);
 		height: 50px;
-	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
-	&:has(input:focus-visible)::after {
-		// background-color: greenyellow;
-		outline: 1px auto rgba(243, 243, 243, 0.6);
-		right: -3px;
-		width: 26px;
-	}
-	input:focus-visible {
-		// border-color: rgba(243, 243, 243, 0.6);
-		outline: 1px auto rgba(243, 243, 243, 0.6);
-		
-		&::after {
+		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
+		&:has(input:focus-visible)::after {
 			outline: 1px auto rgba(243, 243, 243, 0.6);
+			right: -3px;
+			width: 26px;
 		}
-	}
-	&._form-focus {
-		border-color: rgba(243, 243, 243, 0.6);
-		&::before,&::after{
-			content:'';
+		input:focus-visible {
+			// border-color: rgba(243, 243, 243, 0.6);
+			outline: 1px auto rgba(243, 243, 243, 0.6);
+
+			&::after {
+				outline: 1px auto rgba(243, 243, 243, 0.6);
+			}
+		}
+		&._form-focus {
 			border-color: rgba(243, 243, 243, 0.6);
+			&::before,
+			&::after {
+				content: "";
+				border-color: rgba(243, 243, 243, 0.6);
+			}
 		}
-	}
-	&._form-error {
-		border:1px solid #ba0000 ;
-		.form__error {
-			display: none;
+		&._form-error {
+			border: 1px solid #ba0000;
+			.form__error {
+				display: none;
+			}
+			&::before,
+			&::after {
+				// content:'';
+				border: 1px solid #ba0000;
+			}
+			&::after {
+				top: calc(100% - 16px);
+			}
 		}
-		&::before,&::after{
-			// content:'';
-			border:1px solid  #ba0000;
-		}
-	}
 
-	&.succes {
-		border-color: #76ca66;
-		&::before,&::after{
-			content:'';
+		&.succes {
 			border-color: #76ca66;
+			&::before,
+			&::after {
+				content: "";
+				border-color: #76ca66;
+			}
 		}
-	}
 
-	&::before{
-		content:'';
-		border: 1px solid rgba(243, 243, 243, 0.6);
-		position: absolute;
-		inset: 0px;
-	}
-	&::after{
-		content:'';
-		display: block;
-	position: absolute;
-	right: -4px;
-	border-top: 6px solid rgba(243, 243, 243, 0.6);
-	width: 54px;
-	transform-origin: right top;
-	transform: rotate(-46deg);
-	top: calc(100% - 15px);
-	right: -1px;
-	width: 28px;
-	transform-origin: right top;
-	transform: rotate(-40deg);
-	}
+		&::before {
+			content: "";
+			border: 1px solid rgba(243, 243, 243, 0.6);
+			position: absolute;
+			inset: 0px;
+		}
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			right: -4px;
+			border-top: 6px solid rgba(243, 243, 243, 0.6);
+			width: 54px;
+			transform-origin: right top;
+			transform: rotate(-46deg);
+			top: calc(100% - 15px);
+			right: -1px;
+			width: 28px;
+			transform-origin: right top;
+			transform: rotate(-40deg);
+		}
 		&:not(:last-child) {
 			margin-bottom: 10px;
 		}
-		
 	}
 
 	&__subtext {
@@ -219,11 +221,11 @@ margin-bottom: 30px;
 		text-align: left;
 		font-size: 15px;
 		max-width: 90%;
-/* line-height: 21px; */ 
-line-height: 140%;
-@media (max-width:$mobileSmall){
-	 font-size: 13px; 
-}
+		/* line-height: 21px; */
+		line-height: 140%;
+		@media (max-width: $mobileSmall) {
+			font-size: 13px;
+		}
 	}
 
 	&__button {
@@ -237,8 +239,6 @@ line-height: 140%;
 .input-mask {
 }
 .button {
-
 	&_yellow {
 	}
 }
-

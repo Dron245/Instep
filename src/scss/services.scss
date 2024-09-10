@@ -56,7 +56,7 @@
 			.button__wrapper {
 				// width: 100%;
 				flex: 0 0;
-				@include adaptiveValue("flex-basis", 300, 250,0,768,360);
+				@include adaptiveValue("flex-basis", 300, 260,0,768,360);
 				@media (max-width: toEm(486)){
 					  &:not(:last-child) {
 						// margin-bottom: 10px;

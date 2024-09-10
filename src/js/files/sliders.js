@@ -40,9 +40,9 @@ function initSliders() {
 			spaceBetween: 0,
 			// autoHeight: true,
 			speed: 800,
-			// autoplay: {
-			// 	delay: 3000
-			// },
+			autoplay: {
+				delay: 3000
+			},
 			// loop: true,
 
 			/*

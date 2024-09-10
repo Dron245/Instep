@@ -22,8 +22,8 @@
 		left: 50%;
 		translate: -50% -50%;
 		width: 109%;
-		@media (max-width: 1300px){
-			 display: none; 
+		@media (max-width: 1300px) {
+			display: none;
 		}
 		// outline: 1px solid red;
 	}
@@ -45,6 +45,53 @@
 		}
 	}
 
+	&__content {
+		position: relative;
+		display: grid;
+		gap: 30px;
+		@media (min-width: $mobile) {
+			padding-left: 50px;
+			padding-block: 20px;
+		}
+		@media (max-width: $pc) and (min-width: $mobile) {
+			padding-left: 15px;
+			padding-right: 10px;
+			// flex: 1;
+		}
+
+		@media (max-width: $mobileSmall) {
+			gap: 15px;
+		}
+	}
+
+	&__img {
+		// outline: 1px solid red;
+		position: relative;
+		@media (min-width: $mobile) {
+			height: 100%;
+			flex: 0 0 40.17094%; /* 470/1170 */
+			min-height: 397px;
+		}
+		@media (max-width: $mobile) {
+			aspect-ratio: 2/1;
+			margin-inline: -15px;
+		}
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			object-fit: cover;
+			@media (min-width: $mobile) {
+				aspect-ratio: 470/397;
+			}
+			@media (max-width: $mobile) {
+				aspect-ratio: initial;
+			}
+		}
+	}
+
 	&__slide {
 		width: 100%;
 		position: relative;
@@ -55,23 +102,13 @@
 		overflow: hidden;
 		gap: 50px;
 		cursor: pointer;
-		
-		@media (max-width: $pc) {
-			//  gap: 0;
-			justify-content: space-between;
-			.slider__img {
-				//  flex: 0 0 50%;
-				img {
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					left: 0;
-					top: 0;
-					aspect-ratio: 470/397;
-					object-fit: cover;
-				}
-			}
+		& > * {
+			// outline: 1px solid red;
 		}
+		@media (min-width: $mobile) {
+			@include adaptiveValue("gap", 50, 30, 0, 1170, 768);
+		}
+
 		@media (max-width: $mobile) {
 			// grid-template-columns: 1fr;
 			align-items: initial;
@@ -90,9 +127,13 @@
 
 		&_1 {
 			.slider__title {
-				br {display: none;}
-				@media (max-width: toEm(412)){
-					  br {display: block;}
+				br {
+					display: none;
+				}
+				@media (max-width: toEm(412)) {
+					br {
+						display: block;
+					}
 				}
 			}
 			.slider__button[class] {
@@ -104,9 +145,9 @@
 			}
 			.slider__img {
 				@media (max-width: $mobile) {
-					aspect-ratio: 326/197;
+					// aspect-ratio: 326/197;
 					img {
-						aspect-ratio: 326/197;
+						// aspect-ratio: 326/197;
 					}
 				}
 			}
@@ -136,9 +177,9 @@
 			}
 			.slider__img {
 				@media (max-width: $mobile) {
-					aspect-ratio: 326/197;
+					// aspect-ratio: 326/197;
 					img {
-						aspect-ratio: 326/197;
+						// aspect-ratio: 326/197;
 					}
 				}
 			}
@@ -154,16 +195,15 @@
 			}
 			.slider__img {
 				@media (max-width: $mobile) {
-					aspect-ratio: 326/197;
+					// aspect-ratio: 326/197;
 					img {
-						aspect-ratio: 326/197;
+						// aspect-ratio: 326/197;
 					}
 				}
 			}
 		}
 		&_4 {
 			.button__wrapper {
-				
 				@media (min-width: $tablet) {
 					width: 500px;
 				}
@@ -181,9 +221,9 @@
 			}
 			.slider__img {
 				@media (max-width: $mobile) {
-					aspect-ratio: 326/238;
+					// aspect-ratio: 326/238;
 					img {
-						aspect-ratio: 326/238;
+						object-position: 0 -150px;
 					}
 				}
 			}
@@ -221,42 +261,23 @@
 				@media (max-width: $mobile) {
 					// aspect-ratio: 326/179;
 					img {
-						aspect-ratio: 326/179;
-						object-position: 0 -30px;
+						object-position: 0 -150px;
 					}
 				}
 			}
 		}
 		&_6 {
-			flex-direction: row;
-
 			.slider__title {
 				color: $akcent;
-				@media (max-width: $mobile) {
-					flex: 1 0 100%;
-				}
+				
 			}
 			.slider__content {
-				gap: 20px;
+				// gap: 20px;
 			}
 			@media (max-width: $mobile) {
-				flex-wrap: wrap;
-				.slider__content {
-					flex: 0 0 60%;
-				}
-
 				.slider__img {
-					flex: 1 0 30%;
-					width: 100%;
 					img {
-						position: relative;
-						aspect-ratio: initial;
-					}
-					@media (max-width: $mobileSmall) {
-						display: flex;
-						img {
-							// margin-top: auto;
-						}
+						object-position: 0 -150px;
 					}
 				}
 			}
@@ -277,9 +298,8 @@
 			}
 			.slider__img {
 				@media (max-width: $mobile) {
-					aspect-ratio: 326/286;
 					img {
-						aspect-ratio: 326/286;
+						object-position: 0 -150px;
 					}
 				}
 			}
@@ -290,9 +310,9 @@
 			}
 			.slider__img {
 				@media (max-width: $mobile) {
-					aspect-ratio: 326/197;
+					// aspect-ratio: 326/197;
 					img {
-						aspect-ratio: 326/197;
+						// aspect-ratio: 326/197;
 					}
 				}
 			}
@@ -301,20 +321,25 @@
 		&_9 {
 			.slider__img {
 				@media (max-width: $mobile) {
-					aspect-ratio: 326/197;
+					// aspect-ratio: 326/197;
 					img {
-						aspect-ratio: 326/197;
+						object-position: 0 -20px;
 					}
 				}
 			}
 		}
 
 		&_10 {
-			grid-template-columns: 1fr;
+			// grid-template-columns: 1fr;
 			padding-block: 40px;
+			@media (max-width: $mobile) {
+				padding-block: 20px;
+			}
 			.slider__content {
 				gap: 20px;
-				flex: 0 0 100%;
+				@media (min-width: $mobile) and (max-width: $pc) {
+					flex: 0 0 100%;
+				}
 			}
 			.slider__title {
 				color: $akcent;
@@ -327,18 +352,18 @@
 			.button[class] {
 				transform: translateY(-4px);
 				font-size: 17px;
-				@media (max-width:$tablet){
+				@media (max-width: $tablet) {
 					transform: translateY(0);
 				}
 			}
 			.slider__button[class] {
 				height: 37px;
 				display: inline-flex;
-				@media (max-width:$tablet){
+				@media (max-width: $tablet) {
 					height: 30px;
 				}
-				@media (max-width:$mobileSmall){
-					 height: 26px; 
+				@media (max-width: $mobileSmall) {
+					height: 26px;
 				}
 				// transform: translateY(-5px);
 			}
@@ -352,26 +377,6 @@
 				height: 399px;
 			}
 		}
-	}
-
-	&__content {
-		position: relative;
-		display: grid;
-		gap: 30px;
-		@media (min-width: $mobile) {
-			margin-left: 50px;
-			// padding-block: 20px;
-		}
-		@media (max-width: $pc) and (min-width: $mobile) {
-			margin-left: 15px;
-			flex: 0 0 50%;
-			// flex: 0 0 60%;
-		}
-
-		@media (max-width: $mobileSmall) {
-			gap: 15px;
-		}
-		// max-width: 500px;
 	}
 
 	&__title {
@@ -395,6 +400,13 @@
 		font-weight: 700;
 		line-height: 1.33;
 		font-size: 30px;
+		@media (max-width: $mobile) {
+			display: none;
+			.swiper-slide-active & {
+				display: block;
+			}
+		}
+
 		@include adaptiveValue("font-size", 30, 20, 0, 1170, 768);
 	}
 	&__button {
@@ -410,6 +422,12 @@
 	}
 
 	&__list {
+		@media (max-width: $mobile) {
+			display: none;
+			.swiper-slide-active & {
+				display: block;
+			}
+		}
 	}
 
 	&__list-item {
@@ -439,30 +457,6 @@
 		}
 	}
 
-	&__img {
-		// outline: 1px solid red;
-		position: relative;
-		height: 100%;
-		@media (min-width:$mobile){
-			flex: 0 0 40%;
-		}
-		@media (max-width: $mobile) {
-			aspect-ratio: 2/1;
-			// aspect-ratio: 326/218;
-			margin-inline: -15px;
-			img {
-				position: absolute;
-				inset: 0;
-				// aspect-ratio: 2/1;
-				aspect-ratio: 326/218;
-				object-fit: cover;
-			}
-		}
-		img {
-			//  width:100%;
-			height: auto;
-		}
-	}
 	&__button.button {
 		font-size: 30px;
 		@media (max-width: $pc) {
