@@ -38,19 +38,16 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			autoHeight: true,
+			// autoHeight: true,
 			speed: 800,
-			autoplay: {
-				delay: 3000
-			},
+			// autoplay: {
+			// 	delay: 3000
+			// },
 			// loop: true,
 
 			/*
 			// Эффекты
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
+			
 			*/
 			navigation: {
 				prevEl: '.slider__arrow_left',

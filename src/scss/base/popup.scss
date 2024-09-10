@@ -149,6 +149,9 @@ margin-bottom: 30px;
 	clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
 	&:has(input:focus-visible)::after {
 		// background-color: greenyellow;
+		outline: 1px auto rgba(243, 243, 243, 0.6);
+		right: -3px;
+		width: 26px;
 	}
 	input:focus-visible {
 		// border-color: rgba(243, 243, 243, 0.6);
@@ -200,7 +203,6 @@ margin-bottom: 30px;
 	transform-origin: right top;
 	transform: rotate(-46deg);
 	top: calc(100% - 15px);
-	bottom: 0;
 	right: -1px;
 	width: 28px;
 	transform-origin: right top;

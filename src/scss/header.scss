@@ -54,7 +54,7 @@
 		gap: 5px;
 		position: relative;
 		z-index: 3;
-		width: 170px;
+		max-width: 170px;
 	
 		p {
 			font-size: toRem(12);
@@ -67,16 +67,7 @@
 			  width: 118px;
 		}
 	}
-	&__img-logo {
-		position: relative;
-		width: 100%;
-		aspect-ratio: 170/40.6;
-		img {
-			position: absolute;
-			// aspect-ratio: 170/40.6;
-			height: 100%;
-		}
-	}
+	
 	&__menu {
 		
 	}
@@ -84,8 +75,6 @@
 	&__link {
 		width: 200px;
 		height: 47px;
-
-		
 	}
 }
 
