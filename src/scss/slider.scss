@@ -224,6 +224,9 @@
 					// aspect-ratio: 326/238;
 					img {
 						object-position: 0 -150px;
+						@media (max-width:$mobileSmall){
+							 object-position: 0 -110px; 
+						}
 					}
 				}
 			}
@@ -262,6 +265,9 @@
 					// aspect-ratio: 326/179;
 					img {
 						object-position: 0 -150px;
+						@media (max-width:$mobileSmall){
+							 object-position: 0 -110px; 
+						}
 					}
 				}
 			}
@@ -278,6 +284,9 @@
 				.slider__img {
 					img {
 						object-position: 0 -150px;
+						@media (max-width:$mobileSmall){
+							 object-position: 0 -110px; 
+						}
 					}
 				}
 			}
@@ -300,6 +309,9 @@
 				@media (max-width: $mobile) {
 					img {
 						object-position: 0 -150px;
+						@media (max-width:$mobileSmall){
+							 object-position: 0 -110px; 
+						}
 					}
 				}
 			}
