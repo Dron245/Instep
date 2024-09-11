@@ -28,7 +28,8 @@
 
 	&__items {
 		@media (min-width:$mobile){
-			 display: flex; 
+			 display: flex;
+			 gap: 20px;
 		}
 	}
 	&__item {

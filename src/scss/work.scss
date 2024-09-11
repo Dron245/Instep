@@ -25,11 +25,9 @@
 
 	&__item {
 		&_first {
-			@media (max-width: $mobile) {
-				img {
-					width: 100%;
-					height: auto;
-				}
+			img {
+				width: 100%;
+				height: auto;
 			}
 		}
 		&:first-child {

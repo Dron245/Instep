@@ -41,6 +41,9 @@
 		display: flex;
 		margin-bottom: 30px;
 		justify-content: space-between;
+		@media (min-width: $mobile) and (max-width: 1170.02px) {
+			padding-right: 10px;
+		}
 	}
 
 	&__text {

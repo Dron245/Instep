@@ -86,11 +86,14 @@
 		}
 	}
 	&__img-wrapper {
+		width: 100%;
+		height: auto;
+		transform: scale(0.5);
 		@media (min-width: 650px) and (max-width: $tablet){
-			 transform: scale(0.6); 
+			 transform: scale(0.3); 
 		}
 		@media (max-width: $mobileSmall) {
-			transform: scale(0.6);
+			transform: scale(0.3);
 		}
 	}
 }
