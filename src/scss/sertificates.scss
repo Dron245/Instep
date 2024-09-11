@@ -30,14 +30,14 @@
 		}
 	}
 
-	&__pagination {
+	&__pagination[class] {
 		margin-top: 40px;
 		@media (min-width:toEm(1300)){
 			display: none;
 	 }
-		@media (min-width:$mobile){
-			 display: flex; 
-		}
+	 @media (max-width: toEm(1300)){
+		  display: flex;
+	 }
 	}
 }
 .swiper {

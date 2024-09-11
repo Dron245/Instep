@@ -22,6 +22,7 @@
 		left: 50%;
 		translate: -50% -50%;
 		width: 109%;
+		height: 43px;
 		@media (max-width: 1300px) {
 			display: none;
 		}
@@ -478,13 +479,15 @@
 			font-size: 17px;
 		}
 	}
-	&__pagination {
+	&__pagination[class] {
 		@media (min-width:toEm(1300)){
 			  display: none;
 		}
+		@media (max-width: toEm(1300)){
+			  display: flex;
+		}
 		@media (min-width: $mobile) {
 			margin-top: 20px;
-			display: flex;
 			.swiper-pagination-bullet {
 				height: 5px;
 			}

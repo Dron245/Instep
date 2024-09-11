@@ -76,7 +76,7 @@
 			width: 100%;
 			height: auto;
 		}
-		@media (min-width: toEm(1440)) {
+		@media (min-width: toEm(1350)) {
 			// @include adaptiveValue("top", -350, 150,0,4000,1350);
 			@include adaptiveValue("width", 1000, 405, 0, 4000, 1440);
 		}
