@@ -136,7 +136,8 @@
 	display: flex;
 	justify-content: space-between;
 	@media (min-width: $mobile) {
-		margin-top: 50px;
+		// margin-top: 50px;
+		margin-block: 20px;
 	}
 	@media (max-width: $mobile) {
 		flex-direction: column;

@@ -32,6 +32,9 @@
 
 	&__pagination {
 		margin-top: 40px;
+		@media (min-width:toEm(1300)){
+			display: none;
+	 }
 		@media (min-width:$mobile){
 			 display: flex; 
 		}

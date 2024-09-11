@@ -25,7 +25,7 @@
 			@include adaptiveValue("height", 571, 342,0,992.41,768);
 		}
 		@media (max-width: toEm(649.98)){
-			@include adaptiveValue("height", 556, 650,0,650,360);
+			@include adaptiveValue("height", 556, 670,0,650,360);
 		}
 		@media (max-width: $mobile) {
 			clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
