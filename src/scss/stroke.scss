@@ -10,11 +10,9 @@
 		height: 80px;
 		width: 110%;
 		left: -5px;
-		// width:300px;
 		margin: 0 auto;
 		background: $akcent2;
-		rotate: -3deg;
-		// filter: blur(10px);
+		rotate: -2.5deg;
 		&::after {
 			content: "";
 			position: absolute;
