@@ -1,25 +1,37 @@
 .page {
-	&__services {
-	}
+	&__services {}
 }
+
 .services {
-	&__container {
-	}
+	&__container {}
 
 	&__top {
 		display: flex;
 		align-items: flex-end;
 		gap: 50px;
-		@media (min-width:$mobile){
-			@include adaptiveValue("margin-bottom", 70, 20,0,1170,768);
+
+		@media (min-width:$mobile) {
+			@include adaptiveValue("margin-bottom", 70, 20, 0, 1170, 768);
 		}
-		@media (max-width:$pc){
+
+		@media (max-width:$pc) {
 			align-items: flex-start;
-			 flex-direction: column;
-			 gap: 40px; 
+			flex-direction: column;
+			gap: 40px;
 		}
+
 		@media (max-width: $mobile) {
 			display: block;
+			position: relative;
+		}
+	}
+
+	&__options {
+		@media (max-width:$mobile){
+			 display: flex;
+			 align-items: center;
+			 justify-content: space-between;
+			 margin-bottom: 20px;
 		}
 	}
 
@@ -32,40 +44,77 @@
 		line-height: 104%;
 		letter-spacing: 0.01em;
 		text-transform: uppercase;
+
 		@media (max-width: $mobile) {
-			margin-bottom: 15px;
+			&[class] {
+			 margin-bottom: 0px;
+			}	
 		}
 	}
 
-	&__tabs {
+	&__filter {
+		color: $akcent;
+		font-size: 15px;
+		line-height: 21px;
+		@media (min-width:$mobile){
+			 display: none; 
+		}
 	}
 
+	&__menu {}
+
+	&__tabs {}
+
 	&__navigation {
-		flex: 0 0 74.358974%; /* 870/1170 */
+		flex: 0 0 74.358974%;
+		/* 870/1170 */
 		display: flex;
 		align-items: center;
 		gap: 30px;
-		@include adaptiveValue("gap",30 ,10,0,1170,768 );
+		@include adaptiveValue("gap", 30, 10, 0, 1170, 768);
+
 		@media (max-width: $mobile) {
 			// flex-direction: column;
 			margin-bottom: 20px;
-			gap: 10px;
-			align-items: baseline;
-			overflow-x: auto;
-			overflow-y: hidden;
+			gap: 0px;
+			align-items: initial;
+			// overflow-x: auto;
+			// overflow-y: hidden;
+			flex-direction: column;
+			outline: 1px solid red;
+			// width: 60%;
+			width: 300px;
+			position: absolute;
+			right: -100%;
+			top: 0;
+			z-index: 30;
+			transition: right 0.3s;
+			background-color: $osnovnoy-2;
+			padding: 20px;
+			&._menu-open {
+				right: 0;
+			}
+
 			.button__wrapper {
+				max-width: 200px;
+				&:not(:last-child) {margin-bottom: toRem(4);}
 				// width: 100%;
-				flex: 0 0;
-				@include adaptiveValue("flex-basis", 300, 260,0,768,360);
-				@media (max-width: toEm(486)){
-					  &:not(:last-child) {
-						// margin-bottom: 10px;
-					  }
-				}
+				// flex: 0 0;
+				// @include adaptiveValue("flex-basis", 300, 260,0,768,360);
+
 				span {
 					display: none;
 				}
 			}
+		}
+	}
+
+	&__close-menu {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		@media (min-width:$mobile){
+			 display: none; 
 		}
 	}
 
@@ -78,12 +127,15 @@
 		text-align: left;
 		padding-left: 20px;
 		justify-content: initial;
-		@media (max-width:$pc){
-			 width: 260px; 
+
+		@media (max-width:$pc) {
+			width: 260px;
 		}
-		@media (max-width:$tablet){
+
+		@media (max-width:$tablet) {
 			width: 240px;
 		}
+
 		@media (max-width: $mobile) {
 			height: 50px;
 			clip-path: none;
@@ -91,7 +143,8 @@
 			padding-left: 0;
 			width: 100%;
 			font-weight: 700;
-			font-size: 18px;
+			// font-size: 18px;
+			font-size: 14px;
 			color: $akcent;
 			font-family: $fontSecondFamily;
 			line-height: 150%;
@@ -99,79 +152,92 @@
 			text-transform: uppercase;
 			border: none;
 			position: relative;
+
 			[data-popup] & {
 				border: 1px solid $akcent !important;
-				clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);;
+				clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
+				;
 			}
+
 			&.button_yellow[class] {
 				border: none;
 			}
+
 			.services-inner__content & {
 				color: inherit;
 			}
-			&.button::before{
-				content:attr(name);
+
+			&.button::before {
+				content: attr(name);
 				position: absolute;
 				border: none;
 				top: 50%;
 				transform: translateY(-48%);
 				opacity: 0;
-				
+
 				._tab-active & {
 					opacity: 1;
 					filter: blur(5px);
 					border-color: initial;
 				}
 			}
-			@media (max-width: toEm(486)){
-				 .button__wrapper_last &::before {
-					transform: translateY(-90%);
-				 }
+
+			@media (max-width: toEm(486)) {
+				.button__wrapper_last &::before {
+					// transform: translateY(-90%);
+				}
 			}
-			&::after{
+
+			&::after {
 				display: none;
+
 				[data-popup] & {
 					display: block;
 				}
 			}
+
 			&:active[class] {
 				background-color: initial;
 			}
 		}
-		@media (max-width: toEm(486)){
+
+		@media (max-width: toEm(486)) {
+
 			//   height: 60px;
-			  .button__wrapper_last & {
+			.button__wrapper_last & {
 				align-items: flex-start;
-			  }
+			}
 		}
 	}
 
-	&__content {
-	}
+	&__content {}
 
 	&__body {
 		&_3 {
 			.button__wrapper {
 				margin-top: 20px;
 			}
+
 			.galery-services__item {
-				
+
 				&:first-child {
 					margin-top: auto;
 				}
+
 				&_center {
 					position: absolute;
 					bottom: 0;
 					z-index: 3;
 					left: 45%;
-					@media (max-width:$mobile){
-						 left: 40%; 
+
+					@media (max-width:$mobile) {
+						left: 40%;
 					}
 				}
 
 				img {
-				 width:100%;
-				 height:auto
+					width: 100%;
+					height: auto
 				}
 			}
 		}
@@ -181,28 +247,34 @@
 .services-inner {
 	.progress {
 		width: initial;
+
 		.progress__description {
-			@media (max-width:$tablet){
+			@media (max-width:$tablet) {
 				padding-bottom: 10px;
 			}
 		}
 	}
+
 	&__body {
 		display: flex;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 30px;
-		@media (max-width:$tablet){
+
+		@media (max-width:$tablet) {
 			// gap: 20px;
-			grid-template-columns: 44.715447% 1fr; /* 330/738 */
+			grid-template-columns: 44.715447% 1fr;
+			/* 330/738 */
 		}
+
 		.services__body_3 & {
 			@media (max-width:$tablet) and (min-width:$mobile) {
 				grid-template-columns: 55% 1fr;
 			}
 		}
-		@media (max-width:$mobile){
-			 grid-template-columns: auto; 
+
+		@media (max-width:$mobile) {
+			grid-template-columns: auto;
 		}
 	}
 
@@ -225,15 +297,19 @@
 		letter-spacing: 0.01em;
 		text-transform: uppercase;
 		margin-bottom: 30px;
-		@media (max-width:$tablet){
-			.services__body_1 &, .services__body_2 & {
+
+		@media (max-width:$tablet) {
+
+			.services__body_1 &,
+			.services__body_2 & {
 				display: none;
 			}
 		}
-		@media (max-width: toEm(870)){
-			  .services__body_3 & {
+
+		@media (max-width: toEm(870)) {
+			.services__body_3 & {
 				display: none;
-			  }
+			}
 		}
 	}
 
@@ -244,49 +320,59 @@
 		/* line-height: 30px; */
 		line-height: 150%;
 		letter-spacing: 0.01em;
-		@media (max-width:$tablet){
+
+		@media (max-width:$tablet) {
 			font-size: 18px;
 			// white-space: nowrap;
 			line-height: 1.28;
 		}
-		@media (max-width:$mobile){
+
+		@media (max-width:$mobile) {
 			font-size: 16px;
-			 br {display: none;} 
+
+			br {
+				display: none;
+			}
 		}
 	}
 
-	&__costs {
-	}
+	&__costs {}
 
 	&__galery {
 		// flex: 0 0 48.717949%; /* 570/1170 */
 		position: relative;
 	}
 }
+
 .production {
-	&__list {
-	}
+	&__list {}
 
 	&__progress {
 		.services & {
 			margin-top: 20px;
 			margin-bottom: 30px;
-			@media (max-width:$tablet){
+
+			@media (max-width:$tablet) {
 				margin-top: 15px;
 				margin-bottom: 20px;
 			}
-			@media (max-width:$mobile){
-				 margin-block: 20px; 
+
+			@media (max-width:$mobile) {
+				margin-block: 20px;
 			}
 		}
 	}
 }
+
 .progress {
 	&__circle {
-		&::before,&::after{
+
+		&::before,
+		&::after {
+
 			// content:'';
 			.services & {
-				@media (max-width:$tablet){
+				@media (max-width:$tablet) {
 					top: 7px;
 				}
 			}
@@ -294,11 +380,14 @@
 	}
 
 	&__description {
-		&::before, &::after {
+
+		&::before,
+		&::after {
 			.services & {
 				height: 100%;
 			}
 		}
+
 		.services & {
 			font-size: 16px;
 			transform: translateY(5px);
@@ -308,6 +397,7 @@
 		}
 	}
 }
+
 .costs-services {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -315,8 +405,9 @@
 	flex-wrap: wrap;
 	row-gap: 20px;
 	justify-content: space-between;
+
 	&__item {
-		@include adaptiveValue("font-size", 30, 18,0,1170,768);
+		@include adaptiveValue("font-size", 30, 18, 0, 1170, 768);
 	}
 
 	&__title {
@@ -335,72 +426,90 @@
 		text-transform: uppercase;
 	}
 }
+
 .galery-services {
 	// outline: 1px solid red;
 	display: flex;
 	align-items: stretch;
+
 	.services__body_1 & {
-		@media (max-width:$mobile){
-			 @include adaptiveValue("height", 660, 330,0,767.98,360); 
+		@media (max-width:$mobile) {
+			@include adaptiveValue("height", 660, 330, 0, 767.98, 360);
 		}
 	}
+
 	.services__body_2 & {
-		@media (max-width:$mobile){
-			 @include adaptiveValue("height", 700, 400,0,767.98,360); 
+		@media (max-width:$mobile) {
+			@include adaptiveValue("height", 700, 400, 0, 767.98, 360);
 		}
 	}
+
 	.services__body_3 & {
-		@media (max-width:$mobile){
-			 @include adaptiveValue("height", 750, 330,0,767.98,360); 
+		@media (max-width:$mobile) {
+			@include adaptiveValue("height", 750, 330, 0, 767.98, 360);
 		}
 	}
+
 	&__item {
 		.services__body_1 & {
-			@media (min-width:$mobile){
-				@include adaptiveValue("width",370 ,222,0,1170,768 );
+			@media (min-width:$mobile) {
+				@include adaptiveValue("width", 370, 222, 0, 1170, 768);
 			}
-			@media (max-width:$mobile){
-				 @include adaptiveValue("width",400 , 213,0,767.98,360); 
+
+			@media (max-width:$mobile) {
+				@include adaptiveValue("width", 400, 213, 0, 767.98, 360);
 			}
 		}
+
 		.services__body_2 & {
-			@media (min-width:$mobile){
-				@include adaptiveValue("width",370 ,245,0,1170,768 );
+			@media (min-width:$mobile) {
+				@include adaptiveValue("width", 370, 245, 0, 1170, 768);
 			}
-			@media (max-width:$mobile){
-				 @include adaptiveValue("width", 400, 213,0, 767.98, 360); 
+
+			@media (max-width:$mobile) {
+				@include adaptiveValue("width", 400, 213, 0, 767.98, 360);
 			}
 		}
+
 		.services__body_3 & {
-			@media (min-width:$mobile){
-				  @include adaptiveValue("width", 297, 171, 0, 1170,768);
-				  &.galery-services__item_center {
-					@include adaptiveValue("width", 180, 130, 0, 1170,768);
-				  }
-			}
-			@media (max-width:$mobile){
-				@include adaptiveValue("width", 400, 171, 0, 767.98,360);
+			@media (min-width:$mobile) {
+				@include adaptiveValue("width", 297, 171, 0, 1170, 768);
+
 				&.galery-services__item_center {
-				 @include adaptiveValue("width", 250, 104, 0, 767.98,360);
+					@include adaptiveValue("width", 180, 130, 0, 1170, 768);
+				}
+			}
+
+			@media (max-width:$mobile) {
+				@include adaptiveValue("width", 400, 171, 0, 767.98, 360);
+
+				&.galery-services__item_center {
+					@include adaptiveValue("width", 250, 104, 0, 767.98, 360);
 				}
 			}
 		}
+
 		&:first-child {
 			position: relative;
 			z-index: 2;
 			margin-top: auto;
-			.services__body_1 &, .services__body_2 & {
+
+			.services__body_1 &,
+			.services__body_2 & {
 				img {
-				 width:100%;
-				 height:auto
+					width: 100%;
+					height: auto
 				}
 			}
 		}
+
 		&:last-child {
 			position: absolute;
 			right: 0;
 			top: 0;
-			.services__body_1 &, .services__body_2 & {
+
+			.services__body_1 &,
+			.services__body_2 & {
 				img {
 					width: 100%;
 					position: absolute;
@@ -409,13 +518,15 @@
 				}
 			}
 		}
+
 		&_center {
-			@media (min-width:$mobile){
+			@media (min-width:$mobile) {
 				//  @include adaptiveValue("width", , ); 
 			}
 		}
 	}
-	@media (max-width:$mobile){
-		 margin-bottom: 20px; 
+
+	@media (max-width:$mobile) {
+		margin-bottom: 20px;
 	}
 }
