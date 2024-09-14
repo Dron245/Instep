@@ -215,6 +215,9 @@
 	.button__wrapper {
 		width: fit-content;
 		// @include adaptiveValue("margin-top", 40, 20,0,992,768);
+		@media (min-width:toEm(650)){
+			@include adaptiveValue("margin-top", 50, 30,0,1170,650);
+		}
 		@media (max-width: toEm(649.98)){
 			  width: 100%;
 			  margin-top: auto;

@@ -54,8 +54,9 @@
 
 	&__filter {
 		color: $akcent;
-		font-size: 15px;
+		font-size: 18px;
 		line-height: 21px;
+		font-weight: 600;
 		@media (min-width:$mobile){
 			 display: none; 
 		}
@@ -67,37 +68,35 @@
 
 	&__navigation {
 		flex: 0 0 74.358974%;
-		/* 870/1170 */
 		display: flex;
 		align-items: center;
-		gap: 30px;
 		@include adaptiveValue("gap", 30, 10, 0, 1170, 768);
 
 		@media (max-width: $mobile) {
 			// flex-direction: column;
-			margin-bottom: 20px;
-			gap: 0px;
+			// margin-bottom: 20px;
+			gap: 20px;
 			align-items: initial;
 			// overflow-x: auto;
 			// overflow-y: hidden;
 			flex-direction: column;
-			outline: 1px solid red;
+			// outline: 1px solid red;
 			// width: 60%;
 			width: 300px;
 			position: absolute;
 			right: -100%;
 			top: 0;
 			z-index: 30;
-			transition: right 0.3s;
+			transition: right 0.4s;
 			background-color: $osnovnoy-2;
-			padding: 20px;
+			padding: 0px 20px 20px 20px;
+
 			&._menu-open {
 				right: 0;
 			}
 
 			.button__wrapper {
 				max-width: 200px;
-				&:not(:last-child) {margin-bottom: toRem(4);}
 				// width: 100%;
 				// flex: 0 0;
 				// @include adaptiveValue("flex-basis", 300, 260,0,768,360);
@@ -111,7 +110,7 @@
 
 	&__close-menu {
 		position: absolute;
-		top: 20px;
+		top: 0px;
 		right: 20px;
 		@media (min-width:$mobile){
 			 display: none; 
@@ -137,23 +136,22 @@
 		}
 
 		@media (max-width: $mobile) {
-			height: 50px;
+			height: 36px;
 			clip-path: none;
-			// height: 40px;
 			padding-left: 0;
 			width: 100%;
 			font-weight: 700;
-			// font-size: 18px;
 			font-size: 14px;
 			color: $akcent;
 			font-family: $fontSecondFamily;
-			line-height: 150%;
+			line-height: 129%;
 			letter-spacing: 0.01em;
 			text-transform: uppercase;
 			border: none;
 			position: relative;
-
+			
 			[data-popup] & {
+				height: 50px;
 				border: 1px solid $akcent !important;
 				clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 17px) 100%, 0 100%);
 				;

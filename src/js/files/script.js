@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 		if (targetElement.closest('.services__filter') && flags == 0) {
 			flags = 1;
-			console.log(1);
+			// console.log(1);
 			const nav = targetElement.closest('.services__top').querySelector('nav');
 			nav.classList.add('_menu-open');
 		} else {
@@ -68,10 +68,6 @@ window.addEventListener('DOMContentLoaded', () => {
 					.closest('.services__top')
 					.querySelector('nav')
 					.classList.contains('_menu-open')
-				// ||
-				// flags ==1 &&
-				// (!targetElement.closest('.services__close-menu') &&
-				// targetElement.closest('.services__top').querySelector('nav').classList.contains('_menu-open'))
 			) {
 				flags = 0;
 				const nav = targetElement.closest('.services__top').querySelector('.services__navigation');
@@ -84,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				document.querySelector('._menu-open') &&
 				flags == 1
 			) {
-				console.log(2);
+				// console.log(2);
 				flags = 0;
 				const nav = document.querySelector('.services__navigation');
 				nav.classList.remove('_menu-open');
