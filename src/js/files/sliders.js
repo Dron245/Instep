@@ -202,14 +202,16 @@ window.addEventListener("load", function (e) {
 		'(max-width: 1170.02px)',
 		'.confidence__slider',
 		{
-			modules: [Pagination],
+			modules: [Pagination, Autoplay],
 			observer: true,
 			observeParents: true,
 			// slidesPerView: 1,
 			spaceBetween: 20,
 			// autoHeight: true,
 			speed: 800,
-			
+			autoplay: {
+				delay: 3000
+			},
 			// Пагинация
 			
 			pagination: {
@@ -271,7 +273,7 @@ window.addEventListener("load", function (e) {
 		'(max-width: 991.96px)',
 		'.videos__slider',
 		{
-			modules: [Pagination],
+			modules: [Pagination, Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1.7,
@@ -280,7 +282,9 @@ window.addEventListener("load", function (e) {
 			speed: 800,
 			// loop: true,
 			// Пагинация
-			
+			autoplay: {
+				delay: 3000
+			},
 			pagination: {
 				el: '.videos__pagination',
 				clickable: true,
@@ -334,7 +338,7 @@ window.addEventListener("load", function (e) {
 		'(max-width: 991.92px)',
 		'.vk__slider',
 		{
-			modules: [Pagination],
+			modules: [Pagination, Autoplay],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1.7,
@@ -343,7 +347,9 @@ window.addEventListener("load", function (e) {
 			speed: 800,
 			
 			// Пагинация
-			
+			autoplay: {
+				delay: 3000
+			},
 			pagination: {
 				el: '.vk__pagination',
 				clickable: true,
