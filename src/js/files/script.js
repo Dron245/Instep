@@ -87,4 +87,9 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 		}
 	}
+
+	const mainSlider = document.querySelector('.page__slider')
+	setTimeout(() => {
+		mainSlider.style.visibility = 'visible'
+	}, 300);
 });
